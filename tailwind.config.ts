@@ -22,8 +22,8 @@ const config: Config = {
         'light-gray': 'var(--color-light-gray)',
       },
       fontFamily: {
-        'instrument-serif': ['var(--font-instrument-serif)', 'serif'],
-        'inter': ['var(--font-inter)', 'sans-serif'],
+        'red-hat-display': ['var(--font-red-hat-display)', 'sans-serif'],
+        'manrope': ['var(--font-manrope)', 'sans-serif'],
       },
     },
   },

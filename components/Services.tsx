@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 interface Service {
@@ -29,12 +29,23 @@ const services: Service[] = [
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<number>(0)
+  const [isFading, setIsFading] = useState<boolean>(false)
+
+  const handleServiceChange = (index: number) => {
+    if (index !== selectedService) {
+      setIsFading(true)
+      setTimeout(() => {
+        setSelectedService(index)
+        setIsFading(false)
+      }, 200) // Half of transition duration
+    }
+  }
 
   return (
     <section className="relative bg-white py-24 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#1a1a1a] text-5xl md:text-6xl font-instrument-serif font-normal mb-16 text-center md:text-left">
+        <h2 className="text-[#1a1a1a] text-4xl red-hat-display-medium font-light mb-16 text-center md:text-left">
           Our Services
         </h2>
 
@@ -42,46 +53,60 @@ export default function Services() {
           {/* Left Side - Service Cards */}
           <div className="flex flex-col gap-4">
             {services.map((service, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedService(index)}
-                className={`text-left p-6 rounded-lg transition-all duration-300 relative overflow-hidden ${
-                  selectedService === index
-                    ? 'bg-gradient-to-br from-white to-gray-50 border-2 border-[#0066cc] shadow-lg'
-                    : 'bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 hover:border-gray-300 shadow-md'
-                }`}
-              >
-                {/* Shiny overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-transparent pointer-events-none" />
-                <h3 className="text-[#1a1a1a] text-2xl font-semibold mb-2 relative z-10">
-                  {service.title}
-                </h3>
-              </button>
+                  <button
+                    key={index}
+                    onClick={() => handleServiceChange(index)}
+                    className={`text-left px-2 py-20 md:px-8 md:py-10 rounded-3xl transition-all duration-300 h-[190px] relative overflow-hidden ${
+                      selectedService === index
+                        ? 'border-2 border-blue-400 shadow-lg'
+                        : 'border border-blue-200/50 hover:border-blue-300/50 shadow-md'
+                    }`}
+                    style={{
+                      background: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #e0f2fe 100%)',
+                      backgroundImage: `
+                        linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #e0f2fe 100%),
+                        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E")
+                      `,
+                      backgroundBlendMode: 'overlay',
+                    }}
+                  >
+                    <h3 className="text-white text-2xl font-red-hat-display font-normal relative z-10">
+                      {service.title}
+                    </h3>
+                  </button>
             ))}
           </div>
 
           {/* Right Side - Text Card with Background Image */}
-          <div className="relative rounded-lg overflow-hidden min-h-[500px]">
+          <div className="relative rounded-3xl overflow-hidden min-h-[500px]">
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
                 src={services[selectedService].image}
                 alt={services[selectedService].title}
                 fill
-                className="object-cover"
+                className={`object-cover transition-opacity duration-500 ease-in-out ${
+                  isFading ? 'opacity-0' : 'opacity-100'
+                }`}
               />
               {/* Dark Green Tint Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-teal-900/70 to-green-800/80" />
+              <div className={`absolute inset-0 bg-gradient-to-br from-green-900/80 via-teal-900/70 to-green-800/80 transition-opacity duration-500 ease-in-out ${
+                isFading ? 'opacity-0' : 'opacity-100'
+              }`} />
             </div>
             
             {/* Text Content */}
-            <div className="relative z-10 p-8 lg:p-12 h-full flex flex-col justify-end">
-              <h3 className="text-white text-3xl font-instrument-serif font-normal mb-6">
-                {services[selectedService].title}
-              </h3>
-              <p className="text-white text-lg leading-relaxed">
-                {services[selectedService].description}
-              </p>
+            <div className={`relative z-10 p-8 lg:p-12 h-full flex flex-col justify-end transition-all duration-500 ease-in-out ${
+              isFading 
+                ? 'opacity-0 scale-95 blur-sm' 
+                : 'opacity-100 scale-100 blur-0'
+            }`}>
+                      <h3 className="text-white text-3xl font-red-hat-display font-normal mb-6">
+                        {services[selectedService].title}
+                      </h3>
+                      <p className="text-white text-sm font-light font-manrope tracking-tight leading-relaxed">
+                        {services[selectedService].description}
+                      </p>
             </div>
           </div>
         </div>
