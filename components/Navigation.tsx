@@ -21,9 +21,9 @@ export default function Navigation() {
       isScrolled 
         ? 'bg-white backdrop-blur-sm shadow-md' 
         : 'bg-transparent'
-    }`}>
+    }`} style={{ borderBottom: '0.5px solid rgba(255, 255, 255, 0.3)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className={`text-2xl font-semibold tracking-tight transition-colors ${
@@ -34,7 +34,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className=" font-inter hidden md:flex items-center space-x-8">
             <a
               href="#specialized-care"
               className={`transition-colors flex items-center gap-1 ${
