@@ -54,7 +54,7 @@ function FacilityCard({ facility, index }: { facility: string; index: number }) 
 export default function WhoWeSupport() {
   return (
     <section className="relative bg-gray-50 py-24 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="red-hat-display-light text-2xl font-light text-black mb-6">

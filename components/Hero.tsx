@@ -36,7 +36,7 @@ export default function Hero() {
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         {/* Dark Tint Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-[1]" />
+        <div className="absolute inset-0 bg-orange-800/20 z-[1]" />
       </div>
       
       {/* Content Container */}

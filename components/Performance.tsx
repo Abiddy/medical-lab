@@ -97,7 +97,7 @@ function StatCard({ stat, index }: { stat: PerformanceStat; index: number }) {
   return (
     <div 
       ref={ref}
-      className="flex flex-col items-start gap-4 animate-fadeInUp"
+      className="flex flex-col items-start gap-4 animate-fadeInUp "
       style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}
     >
       <div className="flex items-baseline gap-1">
@@ -119,8 +119,8 @@ function StatCard({ stat, index }: { stat: PerformanceStat; index: number }) {
 
 export default function Performance() {
   return (
-    <section className="relative bg-white py-20 md:py-32 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative bg-white pt-5 py-20 md:py-32 px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
         <h2 className="red-hat-display-light text-3xl md:text-4xl lg:text-5xl font-light text-black mb-16 md:mb-20">
           Our Performance
         </h2>
