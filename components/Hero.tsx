@@ -37,7 +37,7 @@ export default function Hero() {
         </p>
 
         <button className="red-hat-display-light bg-black hover:bg-gray-200 text-white px-10 py-4 rounded-full transition-all duration-300 animate-fadeInUp-delay-2">
-          View Services
+          Get Started
         </button>
       </div>
     </section>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 interface Service {
@@ -27,83 +27,81 @@ const services: Service[] = [
   }
 ]
 
-export default function Services() {
-  const [selectedService, setSelectedService] = useState<number>(0)
-  const [isFading, setIsFading] = useState<boolean>(false)
+function ServiceCard({ service, index }: { service: Service; index: number }) {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const isEven = index % 2 === 0
 
-  const handleServiceChange = (index: number) => {
-    if (index !== selectedService) {
-      setIsFading(true)
-      setTimeout(() => {
-        setSelectedService(index)
-        setIsFading(false)
-      }, 200) // Half of transition duration
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
     }
-  }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
+    <div
+      ref={ref}
+      className={`max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${
+        isEven ? '' : 'lg:grid-flow-dense'
+      } ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
+      {/* Text Content */}
+      <div className={`space-y-6 ${isEven ? '' : 'lg:col-start-2'}`}>
+        <h3 className="red-hat-display-bold text-3xl md:text-4xl lg:text-3xl font-normal text-black">
+          {service.title}
+        </h3>
+        <p className="manrope-regular text-base md:text-lg text-gray-700 leading-relaxed">
+          {service.description}
+        </p>
+      </div>
+
+      {/* Image */}
+      <div className={`relative h-[200px] md:h-[500px] lg:h-[300px] rounded-2xl overflow-hidden ${
+        isEven ? '' : 'lg:col-start-1 lg:row-start-1'
+      }`}>
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          className="object-cover"
+          quality={85}
+          sizes="(max-width: 400px) 100vw, 50vw"
+        />
+      </div>
+    </div>
+  )
+}
+
+export default function Services() {
+  return (
     <section className="relative bg-white py-24 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#1a1a1a] text-4xl red-hat-display-light font-light mb-16 text-center md:text-left">
+        <h2 className="text-[#1a1a1a] text-4xl md:text-5xl red-hat-display-light font-light mb-20 md:mb-32">
           Our Services
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Side - Service Cards */}
-          <div className="flex flex-col gap-4">
-            {services.map((service, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleServiceChange(index)}
-                    className={`text-left px-2 py-20 md:px-8 md:py-10 rounded-3xl transition-all duration-300 h-[190px] relative overflow-hidden ${
-                      selectedService === index
-                        ? 'border-2 border-blue-400 shadow-lg'
-                        : 'border border-blue-200/50 hover:border-blue-300/50 shadow-md'
-                    }`}
-                
-                  >
-                    <h3 className="text-black text-2xl font-red-hat-display font-normal relative z-10">
-                      {service.title}
-                    </h3>
-                  </button>
-            ))}
-          </div>
-
-          {/* Right Side - Text Card with Background Image */}
-          <div className="relative rounded-3xl overflow-hidden min-h-[500px]">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-              <Image
-                src={services[selectedService].image}
-                alt={services[selectedService].title}
-                fill
-                className={`object-cover transition-opacity duration-500 ease-in-out ${
-                  isFading ? 'opacity-0' : 'opacity-100'
-                }`}
-                quality={85}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            
-            </div>
-            
-            {/* Text Content */}
-            <div className={`relative z-10 p-8 lg:p-12 h-full flex flex-col justify-end transition-all duration-500 ease-in-out ${
-              isFading 
-                ? 'opacity-0 scale-95 blur-sm' 
-                : 'opacity-100 scale-100 blur-0'
-            }`}>
-                      <h3 className="text-white text-3xl font-red-hat-display font-normal mb-6">
-                        {services[selectedService].title}
-                      </h3>
-                      <p className="text-white text-sm font-light font-manrope tracking-tight leading-relaxed">
-                        {services[selectedService].description}
-                      </p>
-            </div>
-          </div>
+        {/* Services List */}
+        <div className="space-y-32 md:space-y-40">
+          {services.map((service, index) => (
+            <ServiceCard key={index} service={service} index={index} />
+          ))}
         </div>
       </div>
     </section>
   )
 }
-
