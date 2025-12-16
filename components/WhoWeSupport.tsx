@@ -57,7 +57,7 @@ export default function WhoWeSupport() {
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="red-hat-display-light text-4xl md:text-5xl font-light text-black mb-6">
+          <h2 className="red-hat-display-light text-2xl font-light text-black mb-6">
             Who We Support
           </h2>
           <p className="manrope-regular text-small md:text-sm text-black max-w-3xl mx-auto">
