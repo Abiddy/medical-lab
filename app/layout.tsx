@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Red_Hat_Display, Manrope } from 'next/font/google'
 import './globals.css'
 import LenisProvider from '@/components/LenisProvider'
+import FontLoader from '@/components/FontLoader'
 
 const redHatDisplay = Red_Hat_Display({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -33,9 +34,11 @@ export default function RootLayout({
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 </style>
       <body>
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        <FontLoader>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </FontLoader>
       </body>
     </html>
   )
