@@ -7,18 +7,18 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isAllPagesHovered, setIsAllPagesHovered] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY
+  //     setIsScrolled(scrollPosition > 50)
+  //   }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 py-4 md:py-6">
+    <nav className="sticky top-6 w-full z-50 md:py-6">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-center">
           {/* Single Pill-shaped Navigation Container with Logo and Navigation */}

@@ -7,12 +7,11 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="bg-black">
+    <main className="bg-white">
       {/* Sticky Navbar */}
-      <Navigation />
       
       {/* Rounded Hero Container */}
-      <div className="relative mx-4 md:mx-6 lg:mx-8 mt-4 md:mt-6 lg:mt-8 rounded-3xl overflow-hidden">
+      <div className="relative mx-4 md:mx-6 lg:mx-8 md:mt-6 rounded-3xl overflow-hidden">
         <Hero />
       </div>
       

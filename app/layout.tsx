@@ -35,9 +35,9 @@ export default function RootLayout({
 </style>
       <body>
         <FontLoader>
-          <LenisProvider>
+
             {children}
-          </LenisProvider>
+       
         </FontLoader>
       </body>
     </html>
