@@ -13,17 +13,17 @@ const services: Service[] = [
   {
     title: 'Specialized Care',
     description: 'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care. By partnering with an experienced clinical team, your facility gains support with patient evaluation, treatment planning, biopsy coordination, and ongoing case oversight. These services work alongside our PCR diagnostics, fast logistics, and dedicated provider support to create a seamless, reliable workflow that strengthens care delivery and operational efficiency.',
-    image: '/s1.jpg'
+    image: '/s1-optimized.jpg'
   },
   {
     title: 'Diagnostics',
     description: 'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels. Every partner receives streamlined logistics, consistent turnaround times, and a provider onboarding process built to fit directly into your workflow.',
-    image: '/s2.jpg'
+    image: '/s2-optimized.jpg'
   },
   {
     title: 'Medical Billing',
     description: 'Our Medical Billing services give facilities complete revenue cycle support across all specialties. We handle claims submission, denial management, A/R follow-up, and payer communication, ensuring every encounter is processed accurately and without administrative burden. Providers gain a reliable billing partner that strengthens reimbursement, improves financial stability, and keeps their operations running efficiently.',
-    image: '/s3.jpg'
+    image: '/s3-optimized.jpg'
   }
 ]
 
@@ -45,7 +45,7 @@ export default function Services() {
     <section className="relative bg-white py-24 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#1a1a1a] text-4xl red-hat-display-medium font-light mb-16 text-center md:text-left">
+        <h2 className="text-[#1a1a1a] text-4xl red-hat-display-light font-light mb-16 text-center md:text-left">
           Our Services
         </h2>
 
@@ -61,16 +61,9 @@ export default function Services() {
                         ? 'border-2 border-blue-400 shadow-lg'
                         : 'border border-blue-200/50 hover:border-blue-300/50 shadow-md'
                     }`}
-                    style={{
-                      background: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #e0f2fe 100%)',
-                      backgroundImage: `
-                        linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #e0f2fe 100%),
-                        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E")
-                      `,
-                      backgroundBlendMode: 'overlay',
-                    }}
+                
                   >
-                    <h3 className="text-white text-2xl font-red-hat-display font-normal relative z-10">
+                    <h3 className="text-black text-2xl font-red-hat-display font-normal relative z-10">
                       {service.title}
                     </h3>
                   </button>
@@ -88,11 +81,10 @@ export default function Services() {
                 className={`object-cover transition-opacity duration-500 ease-in-out ${
                   isFading ? 'opacity-0' : 'opacity-100'
                 }`}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
-              {/* Dark Green Tint Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br from-green-900/80 via-teal-900/70 to-green-800/80 transition-opacity duration-500 ease-in-out ${
-                isFading ? 'opacity-0' : 'opacity-100'
-              }`} />
+            
             </div>
             
             {/* Text Content */}

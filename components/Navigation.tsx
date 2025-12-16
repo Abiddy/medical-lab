@@ -85,8 +85,8 @@ export default function Navigation() {
             
             {/* Dropdown Menu - Positioned below the pill */}
             {isAllPagesHovered && (
-              <div className="absolute top-full left-0 mt-4 bg-white rounded-lg shadow-xl p-6 min-w-[600px] border border-gray-100 animate-fadeIn">
-                <div className="grid grid-cols-3 gap-0">
+              <div className="absolute top-full left-0 mt-4 bg-white rounded-lg shadow-xl p-6 border border-gray-100 animate-fadeIn">
+                <div className="grid grid-cols-3 gap-0" style={{ gridTemplateColumns: 'auto auto auto' }}>
                   {/* Column 1 */}
                   <div className="flex flex-col gap-1">
                     <a href="#" className="text-[#1a1a1a] hover:text-gray-600 transition-colors text-sm">

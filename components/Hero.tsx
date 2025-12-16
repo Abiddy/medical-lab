@@ -8,27 +8,26 @@ export default function Hero() {
       {/* Full-width Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/b3.png"
+          src="/b3-optimized.jpg"
           alt="Medical laboratory"
           fill
           className="object-cover"
           priority
+          quality={85}
+          sizes="100vw"
         />
-        {/* Light Green Grainy Gradient from Bottom */}
+        {/* Fade Out Effect at Bottom */}
         <div 
-          className="absolute inset-0 bg-gradient-to-t from-green-50/60 via-green-50/20 to-transparent"
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"
           style={{
-            backgroundImage: `
-              linear-gradient(to top, rgba(240, 253, 244, 0.6), rgba(248, 255, 250, 0.2) 50%, transparent),
-              url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E")
-            `,
+            backgroundImage: 'linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%)',
           }}
         />
       </div>
       
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-start justify-center min-h-[calc(100vh-6rem)] gap-8">
-        <h1 className="red-hat-display-medium text-4xl md:text-6xl lg:text-8xl font-light text-black leading-tight text-left animate-fadeInUp">
+        <h1 className="red-hat-display-light text-4xl md:text-6xl lg:text-8xl font-light text-black leading-tight text-left animate-fadeInUp">
           Your Partner in <br/>
           Better Healthcare
         </h1>
@@ -37,7 +36,7 @@ export default function Hero() {
           Connecting the systems that matter most
         </p>
 
-        <button className="manrope-medium bg-black hover:bg-gray-200 text-white px-10 py-4 rounded-full transition-all duration-300 animate-fadeInUp-delay-2">
+        <button className="red-hat-display-light bg-black hover:bg-gray-200 text-white px-10 py-4 rounded-full transition-all duration-300 animate-fadeInUp-delay-2">
           View Services
         </button>
       </div>
