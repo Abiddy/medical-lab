@@ -39,7 +39,7 @@ body {
 
 body {
   color: var(--color-dark-tone);
-  background: var(--color-white);
+  background: #000000;
   font-family: var(--font-manrope);
 }
 

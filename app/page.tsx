@@ -2,17 +2,24 @@ import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import Performance from '@/components/Performance'
 import Services from '@/components/Services'
-import WhoWeSupport from '@/components/WhoWeSupport'
+import StickyGallery from '@/components/StickyGallery'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-black">
+      {/* Sticky Navbar */}
       <Navigation />
-      <Hero />
+      
+      {/* Rounded Hero Container */}
+      <div className="relative mx-4 md:mx-6 lg:mx-8 mt-4 md:mt-6 lg:mt-8 rounded-3xl overflow-hidden">
+        <Hero />
+      </div>
+      
+      {/* Rest of the sections */}
       <Performance />
       <Services />
-      <WhoWeSupport />
+      <StickyGallery />
       <Footer />
     </main>
   )
