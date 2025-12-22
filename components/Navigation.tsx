@@ -187,7 +187,7 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               Get Started
-            </button>
+            </a>
           </div>
         )}
       </div>

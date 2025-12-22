@@ -1,6 +1,7 @@
 'use client'
 
 import { Globe } from "./ui/globe"
+import { useRef, useEffect } from 'react'
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)

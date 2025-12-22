@@ -32,7 +32,7 @@ export default function RootLayout({
       <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 </style>
-      <body className={inter.className}>
+      <body>
         <Navigation />
         {children}
       </body>
