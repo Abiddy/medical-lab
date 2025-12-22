@@ -1,14 +1,12 @@
-import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
+import Metrics from '@/components/Metrics'
 import Services from '@/components/Services'
-import SmoothScroll from '@/components/SmoothScroll'
-import BorderLines from '@/components/BorderLines'
 
 export default function Home() {
   return (
     <main>
-      <Navigation />
       <Hero />
+      <Metrics />
       <Services />
     </main>
   )
