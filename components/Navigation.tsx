@@ -5,16 +5,17 @@ import { useState, useEffect } from 'react'
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isAllPagesHovered, setIsAllPagesHovered] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY
+  //     setIsScrolled(scrollPosition > 50)
+  //   }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg transition-all duration-300" style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)' }}>
@@ -36,19 +37,27 @@ export default function Navigation() {
               href="#specialized-care"
               className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1"
             >
-              Specialized Care
               <svg
                 className="w-3 h-3"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
               </svg>
             </a>
             <a
@@ -156,29 +165,29 @@ export default function Navigation() {
               className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Specialized Care
+              All Pages
             </a>
             <a
               href="#saliva-genetic"
               className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Saliva & Genetic Testing
+              Services
             </a>
             <a
               href="#medical-billing"
               className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Medical Billing
+              Billing
             </a>
             <a
               href="#providers"
               className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              For Providers
-            </a>
+              Get Started
+            </button>
           </div>
         )}
       </div>

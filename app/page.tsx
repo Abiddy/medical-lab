@@ -8,6 +8,8 @@ export default function Home() {
       <Hero />
       <Metrics />
       <Services />
+      <StickyGallery />
+      <Footer />
     </main>
   )
 }

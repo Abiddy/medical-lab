@@ -3,6 +3,17 @@
 import { Globe } from "./ui/globe"
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    // Ensure video plays when component mounts
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log('Video autoplay prevented:', error)
+      })
+    }
+  }, [])
+
   return (
     <section className="min-h-screen pt-20 flex flex-col relative">
       <div className="w-full pb-10 relative z-10 border-b border-black/10">
