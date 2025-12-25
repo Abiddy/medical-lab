@@ -18,24 +18,24 @@ export default function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#f7f5ef]"
       style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)' }}
       onMouseLeave={() => setActiveDropdown(null)}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-        <div className="flex items-center h-24">
+        <div className="flex items-center h-28">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-normal tracking-tight text-[#1a1a1a]">
+            <a href="/" className="text-4xl font-normal tracking-tight text-[#1a1a1a]">
               BDL
             </a>
           </div>
 
           {/* Vertical Divider */}
-          <div className="hidden md:block self-stretch w-px bg-black/10 mx-10" />
+          <div className="hidden md:block self-stretch w-px bg-black/10 mx-14" />
 
           {/* Desktop Navigation Links */}
-          <div className="font-inter hidden md:flex items-center gap-10 flex-1 text-sm">
+          <div className="font-inter hidden md:flex items-center gap-12 flex-1 text-base">
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('allPages')}
@@ -65,7 +65,7 @@ export default function Navigation() {
                   <div className="grid grid-cols-2 gap-3">
                     {[
                       { label: 'Wound Care Program', href: '/wound-care', span: 'col-span-1' },
-                      { label: 'Respiratory Care Program', href: '#respiratory-care', span: 'col-span-1' },
+                      { label: 'Respiratory Care Program', href: '/respiratory-care', span: 'col-span-1' },
                       { label: 'Sexual Health', href: '#sexual-health', comingSoon: true, span: 'col-span-2' },
                     ].map((item) => {
                       const content = (
@@ -134,7 +134,7 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center ml-auto">
-            <button className="px-10 py-4 rounded-md transition-colors text-sm font-normal bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white">
+            <button className="px-12 py-5 rounded-md transition-colors text-base font-normal bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white">
               Book a Call
             </button>
           </div>
