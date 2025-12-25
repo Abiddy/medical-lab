@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<null | 'allPages'>(null)
+  const [activeDropdown, setActiveDropdown] = useState<null | 'specializedCare' | 'salivaTesting'>(null)
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -38,12 +38,12 @@ export default function Navigation() {
           <div className="font-inter hidden md:flex items-center gap-12 flex-1 text-base">
             <div
               className="relative"
-              onMouseEnter={() => setActiveDropdown('allPages')}
+              onMouseEnter={() => setActiveDropdown('specializedCare')}
             >
               <button
                 type="button"
                 className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1"
-                aria-expanded={activeDropdown === 'allPages'}
+                aria-expanded={activeDropdown === 'specializedCare'}
               >
                 Specialized Care
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ export default function Navigation() {
                 className={[
                   "absolute left-0 top-[calc(100%+16px)]",
                   "transition-all duration-200 ease-out",
-                  activeDropdown === 'allPages'
+                  activeDropdown === 'specializedCare'
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 translate-y-2 pointer-events-none",
                 ].join(" ")}
@@ -110,12 +110,48 @@ export default function Navigation() {
               </div>
             </div>
 
-            <a href="#saliva-genetic" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
-              Saliva & Genetic Testing
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
+            <div className="relative" onMouseEnter={() => setActiveDropdown('salivaTesting')}>
+              <button
+                type="button"
+                className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1"
+                aria-expanded={activeDropdown === 'salivaTesting'}
+              >
+                Saliva & Genetic Testing
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div
+                className={[
+                  "absolute left-0 top-[calc(100%+16px)]",
+                  "transition-all duration-200 ease-out",
+                  activeDropdown === 'salivaTesting'
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 translate-y-2 pointer-events-none",
+                ].join(" ")}
+              >
+                <div className="w-[400px] rounded-2xl bg-white border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { label: 'Hormone Testing', href: '/hormone-testing', span: 'col-span-1' as const },
+                      { label: 'Genetic Testing', href: '/genetic-testing', span: 'col-span-1' as const },
+                    ].map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className={`${item.span} group flex items-center justify-between rounded-xl bg-[#e7dfd3] border border-black/5 px-5 py-6 text-[#1a1a1a] hover:bg-[#e2d8ca] transition-colors`}
+                      >
+                        <span className="text-base font-inter">{item.label}</span>
+                        <span className="text-xl text-[#1a1a1a]/70 group-hover:text-[#1a1a1a] transition-colors">
+                          →
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <a href="#medical-billing" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
               Medical Billing

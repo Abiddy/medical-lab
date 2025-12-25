@@ -15,7 +15,7 @@ export default function Hero() {
   const sphereY = useTransform(scrollYProgress, [0, 1], [0, -80])
 
   return (
-    <section ref={containerRef} className="min-h-screen pt-20 relative overflow-hidden">
+    <section ref={containerRef} className="min-h-screen pt-20 relative overflow-hidden bg-[#f7f5ef]">
       <div className="mx-auto h-[calc(100vh-5rem)] relative">
         {/* <motion.div style={{ y: sphereY }} className="absolute inset-x-0 top-24 md:top-28 lg:top-32 pointer-events-none opacity-90">
           <div className="mx-auto w-[420px] h-[420px] md:w-[520px] md:h-[520px] lg:w-[620px] lg:h-[620px] relative">

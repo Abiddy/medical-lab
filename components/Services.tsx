@@ -1,10 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 interface Service {
   title: string
   description: string
+  image: string
+  bullets: Array<{ title: string; description: string }>
 }
 
 export default function Services() {
@@ -13,119 +15,139 @@ export default function Services() {
       {
         title: 'Specialized Care',
         description:
-          'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care. By partnering with an experienced clinical team, your facility gains support with patient evaluation, treatment planning, biopsy coordination, and ongoing case oversight. These services work alongside our PCR diagnostics, fast logistics, and dedicated provider support to create a seamless, reliable workflow that strengthens care delivery and operational efficiency.',
+          'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care. By partnering with an experienced clinical team, your facility gains support with patient evaluation, treatment planning, biopsy coordination, and ongoing case oversight.',
+        image: '/spec1.jpg',
+        bullets: [
+          {
+            title: 'Clinical coverage',
+            description: 'Patient evaluation, biopsy coordination, and case oversight integrated into facility workflows.',
+          },
+          {
+            title: 'Same-day diagnostics',
+            description: 'Rapid PCR results with streamlined logistics and consistent reporting.',
+          },
+        ],
       },
       {
         title: 'Diagnostics',
         description:
-          'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels. Every partner receives streamlined logistics, consistent turnaround times, and a provider onboarding process built to fit directly into your workflow.',
+          'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels.',
+        image: '/s2-optimized.jpg',
+        bullets: [
+          {
+            title: 'Facility-first testing',
+            description: 'Panels built for wound care, respiratory, and broader clinical needs.',
+          },
+          {
+            title: 'Operational simplicity',
+            description: 'Supplies, logistics, and onboarding designed to fit directly into your workflow.',
+          },
+        ],
       },
       {
         title: 'Medical Billing',
         description:
-          'Our Medical Billing services give facilities complete revenue cycle support across all specialties. We handle claims submission, denial management, A/R follow-up, and payer communication, ensuring every encounter is processed accurately and without administrative burden. Providers gain a reliable billing partner that strengthens reimbursement, improves financial stability, and keeps their operations running efficiently.',
+          'Our Medical Billing services give facilities complete revenue cycle support across all specialties. We handle claims submission, denial management, A/R follow-up, and payer communication—without administrative burden.',
+        image: '/s3-optimized.jpg',
+        bullets: [
+          {
+            title: 'Revenue cycle support',
+            description: 'Accurate submission, denial management, and payer follow-up across specialties.',
+          },
+          {
+            title: 'Financial stability',
+            description: 'Improved reimbursement and predictable operations with a dedicated billing partner.',
+          },
+        ],
       },
     ],
     []
   )
 
-  const sectionRef = useRef<HTMLElement>(null)
-  const cardRefs = useRef<Array<HTMLElement | null>>([])
   const [activeIndex, setActiveIndex] = useState(0)
-
-  useEffect(() => {
-    const root = sectionRef.current
-    const targets = cardRefs.current.filter(Boolean) as HTMLElement[]
-    if (!root || targets.length === 0) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (a.boundingClientRect.top ?? 0) - (b.boundingClientRect.top ?? 0))
-
-        if (visible.length === 0) return
-        const idx = Number((visible[0].target as HTMLElement).dataset.index ?? 0)
-        setActiveIndex(idx)
-      },
-      {
-        root: null,
-        threshold: 0.55,
-        rootMargin: '-35% 0px -45% 0px',
-      }
-    )
-
-    targets.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+  const active = services[activeIndex]
 
   return (
-    <section ref={sectionRef} className="relative bg-white mt-40">
-      {/* Sticky header + horizontal divider */}
-      <div className="sticky top-20 z-20 bg-white">
-        <div className="mx-auto px-9 pt-16 pb-10">
-          <h2 className="font-inter text-[#1a1a1a] text-4xl md:text-6xl font-light tracking-tight">
-            Our Services
-          </h2>
-        </div>
-        <div className="border-t border-black/10" />
+    <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] mt-40">
+      <div className="mx-auto px-9 pt-24 pb-12">
+        <h2 className="red-hat-display-light text-6xl md:text-7xl tracking-tight leading-[0.95] max-w-4xl">
+          Our Services
+        </h2>
       </div>
 
-      <div className="mx-auto px-10 lg:px-8">
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0">
-          {/* Vertical center divider (starts under the sticky header line) */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+      <div className="border-t border-black/10" />
 
-          {/* Left column: sticky titles */}
-          <div className="relative">
-            <div className="lg:sticky lg:top-44 pt-10 pb-10">
-              <div className="space-y-6">
-                {services.map((s, idx) => (
+      <div className="mx-auto px-9">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[360px_1fr]">
+          <div className="hidden lg:block absolute left-[360px] top-0 bottom-0 w-px bg-black/10" />
+
+          {/* Left: service tabs */}
+          <div className="py-12 lg:py-16 lg:pr-10">
+            <div className="space-y-4">
+              {services.map((s, idx) => {
+                const isActive = idx === activeIndex
+                return (
                   <button
                     key={s.title}
                     type="button"
-                    onClick={() =>
-                      cardRefs.current[idx]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    }
-                    className="text-left w-full"
-                    aria-current={activeIndex === idx ? 'true' : 'false'}
+                    onClick={() => setActiveIndex(idx)}
+                    className={[
+                      'w-full text-left rounded-xl border transition-colors flex items-center justify-between px-5 py-4',
+                      isActive
+                        ? 'bg-[#e7dfd3] border-black/10'
+                        : 'bg-transparent border-transparent hover:bg-black/5',
+                    ].join(' ')}
+                    aria-current={isActive ? 'true' : 'false'}
                   >
-                    <div
-                      className={[
-                        'font-inter text-lg md:text-xl leading-snug transition-colors',
-                        activeIndex === idx
-                          ? 'text-[#1a1a1a]'
-                          : 'text-[#1a1a1a]/55 hover:text-[#1a1a1a]/80',
-                      ].join(' ')}
-                    >
+                    <span className={['font-inter text-lg', isActive ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]/70'].join(' ')}>
                       {s.title}
-                    </div>
+                    </span>
+                    <span className={['text-2xl', isActive ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]/40'].join(' ')}>
+                      ›
+                    </span>
                   </button>
-                ))}
-              </div>
-
-              <div className="mt-10 border-t border-black/10" />
+                )
+              })}
             </div>
           </div>
 
-          {/* Right column: scrollable content (NOT sticky) */}
-          <div className="relative lg:pl-12 py-10 lg:py-16 space-y-10">
-            {services.map((s, idx) => (
-              <article
-                key={s.title}
-                ref={(el) => {
-                  cardRefs.current[idx] = el
-                }}
-                data-index={idx}
-                className="scroll-mt-56"
-              >
-                <div className="rounded-2xl bg-[#e7dfd3] border border-black/5 p-7 md:p-9 shadow-[0_1px_0_rgba(0,0,0,0.04)]">
-                  <p className="font-inter text-[17px] md:text-[18px] leading-relaxed text-[#1a1a1a]/90">
-                    {s.description}
-                  </p>
+          {/* Right: content */}
+          <div className="py-12 lg:py-16 lg:pl-14">
+            <div key={active.title} className="animate-in fade-in slide-in-from-bottom-2 duration-200">
+              <div className="grid grid-cols-1 xl:grid-cols-[520px_1fr] gap-10 xl:gap-14 items-start">
+                <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[3/4]">
+                  <img
+                    src={active.image}
+                    alt={active.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 </div>
-              </article>
-            ))}
+
+                <div>
+                  <p className="red-hat-display-light text-2xl md:text-2xl leading-[1.05] tracking-tight text-[#1a1a1a]">
+                    {active.description}
+                  </p>
+
+                  <div className="mt-10 border-t border-black/10" />
+
+                  <div className="mt-8 space-y-5">
+                    {active.bullets.map((b) => (
+                      <div key={b.title} className="flex items-start gap-4">
+                        <div className="h-11 w-11 rounded-xl border border-black/15 bg-[#f7f5ef] flex items-center justify-center text-[#1a1a1a]/70">
+                          ✦
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-inter text-base text-[#1a1a1a]">{b.title}</div>
+                          <div className="mt-1 font-inter text-sm text-[#1a1a1a]/65 leading-relaxed">
+                            {b.description}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
