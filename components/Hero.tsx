@@ -16,18 +16,18 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="min-h-screen pt-20 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 h-[calc(100vh-5rem)] relative">
-        <motion.div style={{ y: sphereY }} className="absolute inset-x-0 top-24 md:top-28 lg:top-32 pointer-events-none opacity-90">
+      <div className="mx-auto h-[calc(100vh-5rem)] relative">
+        {/* <motion.div style={{ y: sphereY }} className="absolute inset-x-0 top-24 md:top-28 lg:top-32 pointer-events-none opacity-90">
           <div className="mx-auto w-[420px] h-[420px] md:w-[520px] md:h-[520px] lg:w-[620px] lg:h-[620px] relative">
             <Sphere />
           </div>
-        </motion.div>
+        </motion.div> */}
 
         <div className="h-full flex flex-col">
           <div className="pt-10 md:pt-14 lg:pt-20">
             <motion.h1
               style={{ y: h1Y }}
-              className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl font-normal text-gray-900 leading-[0.95] tracking-tight max-w-4xl"
+              className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl font-normal text-gray-900 leading-[0.95] tracking-tight max-w-4xl px-10"
             >
               Your partner in better healthcare.
             </motion.h1>
@@ -55,6 +55,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+          <div className=" border-t border-black/10" />
         </div>
       </div>
     </section>
