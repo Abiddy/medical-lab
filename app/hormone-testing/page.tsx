@@ -2,30 +2,32 @@ export default function HormoneTestingPage() {
   return (
     <main className="bg-[#f7f5ef] text-[#1a1a1a]">
       {/* Hero (image 1 layout) */}
-      <section className="pt-40">
+      <section className="pt-30">
         <div className="mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="relative grid grid-cols-1 lg:grid-cols-2">
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
             {/* Left */}
-            <div className="lg:pr-12 pb-12 lg:pb-0">
-              <div className="manrope-regular text-sm text-black/60 tracking-wide uppercase">
-                Saliva Testing
-              </div>
-              <h1 className="red-hat-display-light text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mt-4">
-                Hormone
-                <br />
-                Testing
+            <div className="lg:pr-12 pb-12 lg:pb-0 pt-40">
+              <h1 className="red-hat-display-light pb-10 text-6xl md:text-6xl lg:text-6xl tracking-tight leading-[0.95] mt-4 mb-7">
+                Saliva Testing   
               </h1>
 
-              <div className="mt-10 relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[16/10]" />
+              <div className="mt-10 relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[16/10]">
+                <img
+                  src="/saliva1.jpg"
+                  alt="Saliva hormone testing sample kit"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
 
             {/* Right */}
-            <div className="lg:pl-12 flex flex-col justify-between">
-              <p className="red-hat-display-light text-4xl md:text-5xl leading-[1.08] tracking-tight text-black/90">
+            <div className="lg:pl-12 flex flex-col justify-end pb-2">
+              <p className="red-hat-display-light text-3xl md:text-4xl leading-[1.15] tracking-tight text-black/85 max-w-xl">
                 Non-Invasive, Accurate Hormone Insight for Clinical Decision-Making
               </p>
 
-              <div className="mt-10">
+              <div className="mt-8">
                 <a
                   href="/#get-started"
                   className="inline-flex items-center justify-center rounded-md bg-[#1F271B] hover:bg-[#273222] text-white px-10 py-4 manrope-regular text-sm transition-colors"
