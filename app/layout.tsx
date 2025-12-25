@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Red_Hat_Display, Manrope } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 const redHatDisplay = Red_Hat_Display({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body>
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   )

@@ -64,7 +64,7 @@ export default function Navigation() {
                 <div className="w-[400px] rounded-2xl bg-white border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { label: 'Wound Care Program', href: '#wound-care', span: 'col-span-1' },
+                      { label: 'Wound Care Program', href: '/wound-care', span: 'col-span-1' },
                       { label: 'Respiratory Care Program', href: '#respiratory-care', span: 'col-span-1' },
                       { label: 'Sexual Health', href: '#sexual-health', comingSoon: true, span: 'col-span-2' },
                     ].map((item) => {
