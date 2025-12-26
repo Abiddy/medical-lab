@@ -1,8 +1,10 @@
 export default function WoundCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a]">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-28">
+      <SubNav />
+
       {/* Hero */}
-      <section className="pt-40">
+      <section className="pt-16 lg:pt-20">
         <div className="mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left */}
@@ -20,7 +22,7 @@ export default function WoundCareProgramPage() {
 
             {/* Right (image placeholder) */}
             <div className="lg:pl-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]">
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[3/4]">
                 <img 
                   src="wound1.jpg" 
                   alt="Wound Care Program" 
@@ -33,13 +35,13 @@ export default function WoundCareProgramPage() {
       </section>
 
       {/* Overview */}
-      <section className="mt-16">
-        <div className="border-t border-black/10" />
+      <section id="overview" className="mt-16 scroll-mt-44">
+        <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
@@ -48,11 +50,11 @@ export default function WoundCareProgramPage() {
           </div>
         </div>
 
-        <div className="border-t border-black/10" />
+        <div className="border-t border-black/5" />
 
         <div className="mx-auto px-6 lg:px-8">
           <div className="relative grid grid-cols-1 lg:grid-cols-2">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
             <div className="py-14 lg:py-16 lg:pr-12">
@@ -121,7 +123,7 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder to match layout */}
             <div className="py-14 lg:py-16 lg:pl-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
               <div className="mt-10">
                 <h3 className="red-hat-display-medium text-2xl text-[#1a1a1a]">Contact details</h3>
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -149,13 +151,13 @@ export default function WoundCareProgramPage() {
       </section>
 
       {/* Mobile / On-Site Support */}
-      <section className="mt-16">
-        <div className="border-t border-black/10" />
+      <section id="mobile-support" className="mt-16 scroll-mt-44">
+        <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
@@ -164,11 +166,11 @@ export default function WoundCareProgramPage() {
           </div>
         </div>
 
-        <div className="border-t border-black/10" />
+        <div className="border-t border-black/5" />
 
         <div className="mx-auto px-6 lg:px-8">
           <div className="relative grid grid-cols-1 lg:grid-cols-2">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
             <div className="py-14 lg:py-16 lg:pr-12">
@@ -240,20 +242,20 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder */}
             <div className="py-14 lg:py-16 lg:pl-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
             </div>
           </div>
         </div>
       </section>
 
       {/* PCR Diagnostics */}
-      <section className="mt-16">
-        <div className="border-t border-black/10" />
+      <section id="pcr-diagnostics" className="mt-16 scroll-mt-44">
+        <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
@@ -262,11 +264,11 @@ export default function WoundCareProgramPage() {
           </div>
         </div>
 
-        <div className="border-t border-black/10" />
+        <div className="border-t border-black/5" />
 
         <div className="mx-auto px-6 lg:px-8">
           <div className="relative grid grid-cols-1 lg:grid-cols-2">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
             <div className="py-14 lg:py-16 lg:pr-12">
@@ -337,20 +339,20 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder */}
             <div className="py-14 lg:py-16 lg:pl-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Clinical Workflow */}
-      <section className="mt-16">
-        <div className="border-t border-black/10" />
+      <section id="clinical-workflow" className="mt-16 scroll-mt-44">
+        <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
@@ -359,11 +361,11 @@ export default function WoundCareProgramPage() {
           </div>
         </div>
 
-        <div className="border-t border-black/10" />
+        <div className="border-t border-black/5" />
 
         <div className="mx-auto px-6 lg:px-8">
           <div className="relative grid grid-cols-1 lg:grid-cols-2">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
             <div className="py-14 lg:py-16 lg:pr-12">
@@ -466,12 +468,39 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder */}
             <div className="py-14 lg:py-16 lg:pl-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
             </div>
           </div>
         </div>
       </section>
     </main>
+  )
+}
+
+function SubNav() {
+  const navItems = [
+    { label: 'Overview', href: '#overview' },
+    { label: 'Mobile Support', href: '#mobile-support' },
+    { label: 'PCR Diagnostics', href: '#pcr-diagnostics' },
+    { label: 'Clinical Workflow', href: '#clinical-workflow' },
+  ]
+
+  return (
+    <div className="fixed top-28 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-r border-black/5">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex items-center justify-start gap-12 h-14">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
