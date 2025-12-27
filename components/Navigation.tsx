@@ -153,7 +153,7 @@ export default function Navigation() {
               </div>
             </div>
 
-            <a href="#medical-billing" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
+            <a href="/medical-billing" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
               Medical Billing
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -224,7 +224,7 @@ export default function Navigation() {
               Saliva & Genetic Testing
             </a>
             <a
-              href="#medical-billing"
+              href="/medical-billing"
               className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

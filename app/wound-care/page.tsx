@@ -486,9 +486,15 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-28 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-r border-black/5">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex items-center justify-start gap-12 h-14">
+    <div className="fixed top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5">
+      <div className="mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-start gap-10 h-14">
+          <div className="flex items-center gap-4">
+            <span className="text-xs tracking-widest uppercase manrope-bold text-black/80">
+              Wound Care Program
+            </span>
+            <span className="text-[20px] text-black/30 font-light">&gt;</span>
+          </div>
           {navItems.map((item) => (
             <a
               key={item.href}

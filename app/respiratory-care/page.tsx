@@ -1,8 +1,10 @@
 export default function RespiratoryCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a]">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-28">
+      <SubNav />
+
       {/* Hero */}
-      <section className="pt-40">
+      <section className="pt-16 lg:pt-20">
         <div className="mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left (image placeholder) */}
@@ -34,7 +36,7 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* Overview (light section) */}
-      <section className="mt-16">
+      <section id="overview" className="mt-16 scroll-mt-44">
         <div className="border-t border-black/10" />
 
         {/* Pill row */}
@@ -83,7 +85,7 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* Mobile Collection Support (dark section) */}
-      <section className="mt-16 bg-[#1F271B] text-white">
+      <section id="collection-support" className="mt-16 bg-[#1F271B] text-white scroll-mt-44">
         <div className="border-t border-white/15" />
 
         <div className="mx-auto px-6 lg:px-8 py-4">
@@ -149,7 +151,7 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* PCR Diagnostics (light section) */}
-      <section className="mt-16">
+      <section id="pcr-diagnostics" className="mt-16 scroll-mt-44">
         <div className="border-t border-black/10" />
 
         <div className="mx-auto px-6 lg:px-8 py-4">
@@ -215,7 +217,7 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* Clinical Workflow (numbered list matches image 3 style) */}
-      <section className="mt-16">
+      <section id="clinical-workflow" className="mt-16 scroll-mt-44">
         <div className="border-t border-black/10" />
 
         <div className="mx-auto px-6 lg:px-8 py-4">
@@ -300,6 +302,39 @@ export default function RespiratoryCareProgramPage() {
         </div>
       </section>
     </main>
+  )
+}
+
+function SubNav() {
+  const navItems = [
+    { label: 'Overview', href: '#overview' },
+    { label: 'Collection Support', href: '#collection-support' },
+    { label: 'PCR Diagnostics', href: '#pcr-diagnostics' },
+    { label: 'Clinical Workflow', href: '#clinical-workflow' },
+  ]
+
+  return (
+    <div className="fixed top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5">
+      <div className="mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-start gap-10 h-14">
+          <div className="flex items-center gap-4">
+            <span className="text-xs tracking-widest uppercase manrope-bold text-black/80">
+              Respiratory Care Program
+            </span>
+            <span className="text-[20px] text-black/30 font-light">&gt;</span>
+          </div>
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
