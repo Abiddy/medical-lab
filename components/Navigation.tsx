@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<null | 'specializedCare' | 'salivaTesting'>(null)
+  const [activeDropdown, setActiveDropdown] = useState<null | 'specializedCare' | 'salivaTesting' | 'medicalBilling'>(null)
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -61,7 +61,7 @@ export default function Navigation() {
                     : "opacity-0 translate-y-2 pointer-events-none",
                 ].join(" ")}
               >
-                <div className="w-[400px] rounded-2xl bg-white border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
+                <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
                   <div className="grid grid-cols-2 gap-3">
                     {[
                       { label: 'Wound Care Program', href: '/wound-care', span: 'col-span-1' },
@@ -131,7 +131,7 @@ export default function Navigation() {
                     : "opacity-0 translate-y-2 pointer-events-none",
                 ].join(" ")}
               >
-                <div className="w-[400px] rounded-2xl bg-white border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
+                <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
                   <div className="grid grid-cols-2 gap-3">
                     {[
                       { label: 'Hormone Testing', href: '/hormone-testing', span: 'col-span-1' as const },
@@ -153,14 +153,46 @@ export default function Navigation() {
               </div>
             </div>
 
-            <a href="/medical-billing" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
-              Medical Billing
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
+            <div className="relative" onMouseEnter={() => setActiveDropdown('medicalBilling')}>
+              <a href="/medical-billing" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
+                Medical Billing
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
 
-            <a href="#providers" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
+              <div
+                className={[
+                  "absolute left-0 top-[calc(100%+16px)]",
+                  "transition-all duration-200 ease-out",
+                  activeDropdown === 'medicalBilling'
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 translate-y-2 pointer-events-none",
+                ].join(" ")}
+              >
+                <div className="w-[320px] rounded-2xl bg-[#f7f5ef] border border-black/10 p-2">
+                  {[
+                    { label: 'Revenue Cycle Management', href: '/medical-billing/revenue-cycle' },
+                    { label: 'Medical Billing & Coding', href: '/medical-billing/coding-billing' },
+                    { label: 'Prior Authorization', href: '/medical-billing/prior-authorization' },
+                    { label: 'Eligibility Verification', href: '/medical-billing/eligibility-verification' },
+                    { label: 'Accounts Receivable', href: '/medical-billing/accounts-receivable' },
+                    { label: 'Denial Management', href: '/medical-billing/denial-management' },
+                    { label: 'Credentialing', href: '/medical-billing/credentialing' },
+                  ].map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="block px-5 py-4 text-base manrope-medium text-black/70 hover:text-black hover:bg-[#f7f5ef] rounded-xl transition-all"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <a href="/providers" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
               For Providers
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -231,7 +263,7 @@ export default function Navigation() {
               Medical Billing
             </a>
             <a
-              href="#providers"
+              href="/providers"
               className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

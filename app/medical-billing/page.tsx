@@ -26,7 +26,7 @@ export default function MedicalBillingPage() {
       category: 'Billing & Coding',
       date: 'Jul 20, 2024',
       image: '/billing2.jpg',
-      href: '#',
+      href: '/medical-billing/coding-billing',
       description: 'Accurate translation of healthcare services into universal medical alphanumeric codes for billing.'
     },
     {
@@ -34,7 +34,7 @@ export default function MedicalBillingPage() {
       category: 'Authorization',
       date: 'Jul 20, 2024',
       image: '/billing3.jpg',
-      href: '#',
+      href: '/medical-billing/prior-authorization',
       description: 'Streamlined process to obtain approval from health insurance providers before services are rendered.'
     },
     {
@@ -42,7 +42,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Jul 20, 2024',
       image: '/billing4.jpg',
-      href: '#',
+      href: '/medical-billing/eligibility-verification',
       description: 'Real-time verification of patient insurance coverage and benefits to prevent claim denials.'
     },
     {
@@ -50,7 +50,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Dec 5, 2024',
       image: '/billing5.jpg',
-      href: '#',
+      href: '/medical-billing/accounts-receivable',
       description: 'Systematic tracking and follow-up on outstanding claims to ensure timely reimbursement.'
     },
     {
@@ -58,7 +58,7 @@ export default function MedicalBillingPage() {
       category: 'Billing & Coding',
       date: 'Jul 20, 2024',
       image: '/billing6.jpg',
-      href: '#',
+      href: '/medical-billing/denial-management',
       description: 'Strategic analysis and resolution of denied claims to maximize revenue recovery.'
     },
     {
@@ -66,7 +66,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Oct 12, 2024',
       image: '/billing7.jpg',
-      href: '#',
+      href: '/medical-billing/credentialing',
       description: 'Expert management of provider enrollment and primary source verification with insurance payers.'
     },
   ]
