@@ -18,6 +18,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Dec 6, 2024',
       image: '/billing1.jpg',
+      href: '/medical-billing/revenue-cycle',
       description: 'Comprehensive management of the administrative and clinical functions that contribute to patient revenue.'
     },
     {
@@ -25,6 +26,7 @@ export default function MedicalBillingPage() {
       category: 'Billing & Coding',
       date: 'Jul 20, 2024',
       image: '/billing2.jpg',
+      href: '#',
       description: 'Accurate translation of healthcare services into universal medical alphanumeric codes for billing.'
     },
     {
@@ -32,6 +34,7 @@ export default function MedicalBillingPage() {
       category: 'Authorization',
       date: 'Jul 20, 2024',
       image: '/billing3.jpg',
+      href: '#',
       description: 'Streamlined process to obtain approval from health insurance providers before services are rendered.'
     },
     {
@@ -39,6 +42,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Jul 20, 2024',
       image: '/billing4.jpg',
+      href: '#',
       description: 'Real-time verification of patient insurance coverage and benefits to prevent claim denials.'
     },
     {
@@ -46,6 +50,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Dec 5, 2024',
       image: '/billing5.jpg',
+      href: '#',
       description: 'Systematic tracking and follow-up on outstanding claims to ensure timely reimbursement.'
     },
     {
@@ -53,6 +58,7 @@ export default function MedicalBillingPage() {
       category: 'Billing & Coding',
       date: 'Jul 20, 2024',
       image: '/billing6.jpg',
+      href: '#',
       description: 'Strategic analysis and resolution of denied claims to maximize revenue recovery.'
     },
     {
@@ -60,6 +66,7 @@ export default function MedicalBillingPage() {
       category: 'Revenue Cycle',
       date: 'Oct 12, 2024',
       image: '/billing7.jpg',
+      href: '#',
       description: 'Expert management of provider enrollment and primary source verification with insurance payers.'
     },
   ]
@@ -85,7 +92,7 @@ export default function MedicalBillingPage() {
         <div className="mx-auto px-6 lg:px-8 pt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {filteredServices.map((service, idx) => (
-              <div key={idx} className="group cursor-pointer">
+              <a key={idx} href={service.href} className="group cursor-pointer block">
                 {/* Image Container */}
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-6">
                   <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
@@ -112,7 +119,7 @@ export default function MedicalBillingPage() {
                 <p className="mt-4 text-sm manrope-regular text-black/60 leading-relaxed max-w-sm">
                   {service.description}
                 </p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
