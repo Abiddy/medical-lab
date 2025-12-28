@@ -29,7 +29,7 @@ export default function GetStarted() {
     <section id="get-started" className="bg-[#f7f5ef] text-[#1a1a1a]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-16">
         <h2 className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight">
-          Contact us
+          Contact Us
         </h2>
       </div>
 
@@ -43,8 +43,7 @@ export default function GetStarted() {
           {/* Left column */}
           <div className="py-14 lg:py-16 lg:pr-12">
             <p className="font-inter text-xl md:text-2xl leading-relaxed text-black/80 max-w-xl">
-              Whether you're a visionary research team seeking support or an investor looking to make a meaningful
-              impact, we're here to facilitate connections that drive the future of healthcare.
+              We're here to facilitate the diagnostics and support your facility needs. Reach out to our team to learn more about our programs.
             </p>
 
             <form onSubmit={onSubmit} className="mt-12 space-y-8 max-w-xl">
@@ -113,29 +112,39 @@ export default function GetStarted() {
 
             <div className="mt-10">
               <h3 className="font-inter text-2xl md:text-3xl font-medium text-[#1a1a1a]">
-                Contact details
+                Contact Us
               </h3>
 
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="font-inter text-sm text-black/60">Address</div>
-                  <div className="mt-2 font-inter text-sm text-black/80 leading-relaxed">
-                    1435 Wellington Road
-                    <br />
-                    Windsor, Vic 3181
-                    <br />
-                    Australia
+              <div className="mt-8 space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <div className="font-inter text-sm text-black/60">Phone</div>
+                    <a
+                      href="tel:5629242299"
+                      className="mt-2 inline-block font-inter text-sm text-black/80 hover:text-black transition-colors"
+                    >
+                      (562) 924-2299
+                    </a>
+                  </div>
+
+                  <div>
+                    <div className="font-inter text-sm text-black/60">Email</div>
+                    <a
+                      href="mailto:connect@bdlusa.com"
+                      className="mt-2 inline-block font-inter text-sm text-black/80 hover:text-black transition-colors"
+                    >
+                      connect@bdlusa.com
+                    </a>
                   </div>
                 </div>
 
-                <div>
-                  <div className="font-inter text-sm text-black/60">Email</div>
-                  <a
-                    href="mailto:hello@bdl.com"
-                    className="mt-2 inline-block font-inter text-sm text-black/70 hover:text-black transition-colors"
-                  >
-                    hello@bdl.com
-                  </a>
+                <div className="pt-8 border-t border-black/5">
+                  <div className="font-inter text-sm text-black/60 mb-2">Availability</div>
+                  <p className="font-inter text-sm text-black/80 leading-relaxed">
+                    Our customer service team is available from 9 am - 5pm PST
+                    <br />
+                    Monday - Friday
+                  </p>
                 </div>
               </div>
             </div>

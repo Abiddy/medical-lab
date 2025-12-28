@@ -20,7 +20,7 @@ export default function RespiratoryCareProgramPage() {
 
             {/* Right */}
             <div className="lg:pl-12 flex flex-col justify-between">
-              <h1 className="red-hat-display-light text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95]">
+              <h1 className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95]">
                 Respiratory
                 <br />
                 Care Program

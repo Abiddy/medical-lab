@@ -9,7 +9,7 @@ export default function WoundCareProgramPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left */}
             <div className="lg:pr-12 pb-12 lg:pb-0">
-              <h1 className="red-hat-display-light text-3xl md:text-7xl lg:text-7xl tracking-tight leading-[0.95]">
+              <h1 className="font-instrument-serif text-3xl md:text-7xl lg:text-7xl tracking-tight leading-[0.95]">
                 Wound Care
                 <br />
                 Program

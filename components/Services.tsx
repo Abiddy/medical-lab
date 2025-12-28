@@ -70,8 +70,8 @@ export default function Services() {
   return (
     <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] mt-40">
       <div className="mx-auto px-9 pt-24 pb-12">
-        <h2 className="red-hat-display-light text-6xl md:text-7xl tracking-tight leading-[0.95] max-w-4xl">
-          Our Services
+        <h2 className="font-instrument-serif text-6xl md:text-7xl tracking-tight leading-[0.95] max-w-4xl">
+          What We Provide
         </h2>
       </div>
 

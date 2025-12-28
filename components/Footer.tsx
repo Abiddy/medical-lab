@@ -111,6 +111,9 @@ export default function Footer() {
               © {new Date().getFullYear()} BioAnalysis Diagnostic Laboratories. All rights reserved.
             </p>
             <div className="flex gap-6">
+              <a href="/faq" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+                FAQ
+              </a>
               <a href="#" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
                 Contact
               </a>

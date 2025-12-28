@@ -11,6 +11,12 @@ export default function ProvidersPage() {
       label: 'Overview',
       headline: 'Support for Modern Clinical Workflows',
       content: 'We partner with skilled nursing facilities, long term acute care settings, assisted living communities, wound care teams, urgent care clinics, and medical practices that depend on fast diagnostics and consistent support. Our services are designed to strengthen clinical decisions, simplify workflows, and improve the patient experience across a wide range of care environments.',
+      highlights: [
+        { title: 'Facility Partnerships', desc: 'Supporting SNFs, LTACs, ALFs, and medical practices.' },
+        { title: 'Clinical Decision Support', desc: 'Fast diagnostics to strengthen medical oversight.' },
+        { title: 'Workflow Simplification', desc: 'Reducing administrative burden for clinical teams.' },
+        { title: 'Improved Patient Experience', desc: 'Enhancing outcomes across care environments.' }
+      ],
       image: '/providers-overview.jpg'
     },
     {
@@ -83,13 +89,13 @@ export default function ProvidersPage() {
             
             {/* Left Column */}
             <div className="lg:pr-12 pb-12 lg:pb-24 pt-20 lg:pt-32 flex flex-col justify-between min-h-[400px] lg:min-h-[700px]">
-              <h1 className="red-hat-display-medium text-7xl md:text-7xl lg:text-7xl tracking-tight leading-[0.85]">
+              <h1 className="font-instrument-serif text-7xl md:text-7xl lg:text-7xl tracking-tight leading-[0.85]">
                 For
                 <br />
                 Providers
               </h1>
               
-              <div className="mt-20">
+              <div className="mt-10">
                 <p className="manrope-regular text-lg md:text-xl text-black/80 max-w-sm leading-relaxed">
                   Seamless Support for Modern Clinical Workflows—empowering providers with reliable logistics, fast PCR reporting, transparent documentation, and hands-on partnership, so you can focus on quality patient care without administrative interruptions.
                 </p>
@@ -104,15 +110,6 @@ export default function ProvidersPage() {
                   alt="Healthcare providers collaborating"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute bottom-6 left-6">
-                  <a
-                    href="/#get-started"
-                    className="bg-white text-black px-6 py-3 rounded-md manrope-medium text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-lg"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-black/20" />
-                    Watch Intro
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -162,15 +159,34 @@ export default function ProvidersPage() {
                     {section.headline}
                   </h2>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-black/5 relative order-2 md:order-1">
-                      <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
-                    </div>
-                    
-                    <div className="order-1 md:order-2 space-y-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+                    <div className="order-1 space-y-12">
                       <p className="manrope-regular text-lg md:text-xl text-black/70 leading-relaxed">
                         {section.content}
                       </p>
+
+                      {section.highlights && (
+                        <div className="mt-12 space-y-8">
+                          <p className="manrope-bold text-xs uppercase tracking-widest text-black/40">
+                            Highlights:
+                          </p>
+                          <div className="border-t border-black/5 divide-y divide-black/5">
+                            {section.highlights.map((h, i) => (
+                              <div key={i} className="py-6 flex gap-6 items-center">
+                                <div className="w-12 h-12 rounded-xl bg-[#e7dfd3] flex items-center justify-center shrink-0 border border-black/5 shadow-sm">
+                                  <svg className="w-5 h-5 text-black/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <h4 className="manrope-bold text-base text-black/90">{h.title}</h4>
+                                  <p className="mt-1 manrope-regular text-sm text-black/60">{h.desc}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                       
                       {section.id === 'diagnostic-partner' && (
                         <div className="pt-8">
@@ -185,6 +201,10 @@ export default function ProvidersPage() {
                           </a>
                         </div>
                       )}
+                    </div>
+
+                    <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-black/5 relative order-2">
+                      <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
                     </div>
                   </div>
                 </div>

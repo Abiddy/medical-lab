@@ -198,6 +198,10 @@ export default function Navigation() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </a>
+
+            <a href="/faq" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
+              FAQ
+            </a>
           </div>
 
           {/* CTA Button */}
@@ -268,6 +272,13 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               For Providers
+            </a>
+            <a
+              href="/faq"
+              className="block text-[#1a1a1a] hover:text-gray-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              FAQ
             </a>
           </div>
         )}
