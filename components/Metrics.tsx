@@ -28,7 +28,10 @@ export default function Metrics() {
   return (
     <section className="relative bg-[#1F271B] text-white">
       <div className="mx-auto px-5 py-20 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-0 relative">
+          {/* Vertical Line */}
+          <div className="hidden lg:block absolute left-[300px] top-0 bottom-0 w-px bg-white/10" />
+
           {/* Left label */}
           <div className="flex items-start">
             <div className="flex items-center gap-3 font-inter text-sm tracking-wide text-white/85">

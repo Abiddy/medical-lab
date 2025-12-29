@@ -137,7 +137,7 @@ export default function FAQ() {
           </div>
 
           {/* Right Column: FAQ Categories and Content */}
-          <div>
+          <div className="lg:pl-24 lg:border-l border-black/10">
             {/* Category Tabs */}
             <div className="flex flex-wrap gap-4 mb-16 border-b border-black/5 pb-8">
               {faqData.map((cat) => (

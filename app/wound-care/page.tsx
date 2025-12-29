@@ -4,7 +4,7 @@ export default function WoundCareProgramPage() {
       <SubNav />
 
       {/* Hero */}
-      <section className="pt-16 lg:pt-20">
+      <section className="pt-20 lg:pt-20">
         <div className="mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left */}
