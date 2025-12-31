@@ -27,8 +27,8 @@ export default function GetStarted() {
 
   return (
     <section id="get-started" className="bg-[#f7f5ef] text-[#1a1a1a]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-16">
-        <h2 className="manrope-light text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 md:pt-24 pb-12 md:pb-16">
+        <h2 className="manrope-light text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight">
           Contact Us
         </h2>
       </div>
@@ -41,15 +41,15 @@ export default function GetStarted() {
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
 
           {/* Left column */}
-          <div className="py-14 lg:py-16 lg:pr-12">
-            <p className="font-inter text-xl md:text-2xl leading-relaxed text-black/80 max-w-xl">
+          <div className="py-12 lg:py-16 lg:pr-12">
+            <p className="font-inter text-lg md:text-2xl leading-relaxed text-black/80 max-w-xl">
               We're here to facilitate the diagnostics and support your facility needs. Reach out to our team to learn more about our programs.
             </p>
 
-            <form onSubmit={onSubmit} className="mt-12 space-y-8 max-w-xl">
+            <form onSubmit={onSubmit} className="mt-10 md:mt-12 space-y-6 md:space-y-8 max-w-xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <label className="block">
-                  <span className="block font-inter text-sm text-black/70 mb-2">Your name</span>
+                  <span className="block font-inter text-xs md:text-sm text-black/70 mb-2 uppercase tracking-wider">Your name</span>
                   <input
                     value={form.name}
                     onChange={(e) => setForm((s) => ({ ...s, name: e.target.value }))}
@@ -58,7 +58,7 @@ export default function GetStarted() {
                 </label>
 
                 <label className="block">
-                  <span className="block font-inter text-sm text-black/70 mb-2">Email address</span>
+                  <span className="block font-inter text-xs md:text-sm text-black/70 mb-2 uppercase tracking-wider">Email address</span>
                   <input
                     type="email"
                     value={form.email}
@@ -69,7 +69,7 @@ export default function GetStarted() {
               </div>
 
               <label className="block">
-                <span className="block font-inter text-sm text-black/70 mb-2">Contact number</span>
+                <span className="block font-inter text-xs md:text-sm text-black/70 mb-2 uppercase tracking-wider">Contact number</span>
                 <input
                   value={form.phone}
                   onChange={(e) => setForm((s) => ({ ...s, phone: e.target.value }))}
@@ -78,7 +78,7 @@ export default function GetStarted() {
               </label>
 
               <label className="block">
-                <span className="block font-inter text-sm text-black/70 mb-2">Company name</span>
+                <span className="block font-inter text-xs md:text-sm text-black/70 mb-2 uppercase tracking-wider">Company name</span>
                 <input
                   value={form.company}
                   onChange={(e) => setForm((s) => ({ ...s, company: e.target.value }))}
@@ -87,18 +87,18 @@ export default function GetStarted() {
               </label>
 
               <label className="block">
-                <span className="block font-inter text-sm text-black/70 mb-2">Message</span>
+                <span className="block font-inter text-xs md:text-sm text-black/70 mb-2 uppercase tracking-wider">Message</span>
                 <textarea
                   value={form.message}
                   onChange={(e) => setForm((s) => ({ ...s, message: e.target.value }))}
-                  rows={7}
+                  rows={5}
                   className="w-full rounded-md border border-black/15 bg-transparent px-4 py-3 font-inter text-sm outline-none focus:border-black/30 resize-none"
                 />
               </label>
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-md bg-[#1F271B] hover:bg-[#273222] text-white px-10 py-4 font-inter text-sm transition-colors"
+                className="w-full md:w-auto inline-flex items-center justify-center rounded-md bg-[#1F271B] hover:bg-[#273222] text-white px-10 py-4 font-inter text-sm transition-colors uppercase tracking-widest"
               >
                 Send message
               </button>
@@ -106,41 +106,41 @@ export default function GetStarted() {
           </div>
 
           {/* Right column */}
-          <div className="py-14 lg:py-16 lg:pl-12">
+          <div className="py-12 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/10">
             {/* Image slot (you'll replace this) */}
-            <div className="rounded-2xl border border-black/10 bg-black/5 aspect-[4/3] w-full" />
+            <div className="rounded-xl md:rounded-2xl border border-black/10 bg-black/5 aspect-[16/10] lg:aspect-[4/3] w-full" />
 
-            <div className="mt-10">
-              <h3 className="font-inter text-2xl md:text-3xl font-medium text-[#1a1a1a]">
-                Contact Us
+            <div className="mt-8 md:mt-10">
+              <h3 className="font-inter text-xl md:text-3xl font-medium text-[#1a1a1a]">
+                Contact Information
               </h3>
 
-              <div className="mt-8 space-y-8">
+              <div className="mt-6 md:mt-8 space-y-6 md:space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <div className="font-inter text-sm text-black/60">Phone</div>
+                    <div className="font-inter text-xs text-black/60 uppercase tracking-widest mb-1">Phone</div>
                     <a
                       href="tel:5629242299"
-                      className="mt-2 inline-block font-inter text-sm text-black/80 hover:text-black transition-colors"
+                      className="inline-block font-inter text-base text-black/80 hover:text-black transition-colors"
                     >
                       (562) 924-2299
                     </a>
                   </div>
 
                   <div>
-                    <div className="font-inter text-sm text-black/60">Email</div>
+                    <div className="font-inter text-xs text-black/60 uppercase tracking-widest mb-1">Email</div>
                     <a
                       href="mailto:connect@bdlusa.com"
-                      className="mt-2 inline-block font-inter text-sm text-black/80 hover:text-black transition-colors"
+                      className="inline-block font-inter text-base text-black/80 hover:text-black transition-colors"
                     >
                       connect@bdlusa.com
                     </a>
                   </div>
                 </div>
 
-                <div className="pt-8 border-t border-black/5">
-                  <div className="font-inter text-sm text-black/60 mb-2">Availability</div>
-                  <p className="font-inter text-sm text-black/80 leading-relaxed">
+                <div className="pt-6 md:pt-8 border-t border-black/5">
+                  <div className="font-inter text-xs text-black/60 uppercase tracking-widest mb-2">Availability</div>
+                  <p className="font-inter text-base text-black/80 leading-relaxed">
                     Our customer service team is available from 9 am - 5pm PST
                     <br />
                     Monday - Friday

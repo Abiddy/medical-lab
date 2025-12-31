@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${redHatDisplay.variable} ${manrope.variable} ${instrumentSerif.variable}`}>
       <body>
-        <Navigation />
+      <Navigation />
         {children}
         <Footer />
       </body>

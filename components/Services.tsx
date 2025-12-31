@@ -47,10 +47,10 @@ export default function Services() {
   const activeService = services[activeIndex]
 
   return (
-    <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] pt-32 pb-40">
-      <div className="px-6 lg:px-12 mb-20">
-        <h2 className="manrope-light text-6xl md:text-8xl tracking-tight leading-[0.9] mb-4">
-          What we <br />deliver
+    <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-32 pb-24 md:pb-40">
+      <div className="px-6 lg:px-12 mb-12 md:mb-20">
+        <h2 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.9] mb-4">
+          What we <br className="hidden md:block" />deliver
         </h2>
       </div>
 
@@ -60,26 +60,26 @@ export default function Services() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Column: Navigation Buttons */}
-          <div className="border-b lg:border-b-0 border-black/10">
-            <div className="flex flex-col">
+          <div className="border-b lg:border-b-0 border-black/10 overflow-x-auto">
+            <div className="flex lg:flex-col min-w-full">
               {services.map((service, index) => (
                 <button
                   key={service.title}
                   onClick={() => setActiveIndex(index)}
                   className={[
-                    "w-full text-left px-6 lg:px-12 py-12 lg:py-20 transition-all border-b border-black/10 last:border-b-0 group",
+                    "flex-1 lg:w-full text-center lg:text-left px-4 md:px-6 lg:px-12 py-6 md:py-12 lg:py-20 transition-all border-r lg:border-r-0 lg:border-b border-black/10 last:border-r-0 lg:last:border-b-0 group whitespace-nowrap lg:whitespace-normal",
                     activeIndex === index ? "bg-black/5" : "hover:bg-black/[0.02]"
                   ].join(" ")}
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-center lg:justify-between">
                     <h3 className={[
-                      "manrope-medium text-4xl md:text-5xl lg:text-6xl tracking-tight transition-all",
-                      activeIndex === index ? "opacity-100 translate-x-4" : "opacity-30 group-hover:opacity-50"
+                      "manrope-medium text-xs md:text-xl lg:text-6xl tracking-tight transition-all",
+                      activeIndex === index ? "opacity-100 lg:translate-x-4" : "opacity-30 group-hover:opacity-50"
                     ].join(" ")}>
                       {service.title}
                     </h3>
                     <div className={[
-                      "w-12 h-12 rounded-full border border-black/10 flex items-center justify-center transition-all",
+                      "hidden lg:flex w-12 h-12 rounded-full border border-black/10 items-center justify-center transition-all",
                       activeIndex === index ? "bg-black text-white" : "opacity-0"
                     ].join(" ")}>
                       →
@@ -95,14 +95,14 @@ export default function Services() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 className="flex flex-col"
               >
                 {/* Image */}
-                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-12">
+                <div className="relative aspect-[16/10] rounded-xl md:rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-8 md:mb-12">
                   <img
                     src={activeService.image}
                     alt={activeService.title}
@@ -111,23 +111,23 @@ export default function Services() {
                 </div>
 
                 {/* Metadata */}
-                <div className="flex items-center gap-8 mb-8">
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-6 md:mb-8">
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                    <span className="manrope-bold text-xs uppercase tracking-widest text-black/40">
+                    <span className="manrope-bold text-[10px] md:text-xs uppercase tracking-widest text-black/40">
                       {activeService.category}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                    <span className="manrope-bold text-xs uppercase tracking-widest text-black/40">
+                    <span className="manrope-bold text-[10px] md:text-xs uppercase tracking-widest text-black/40">
                       {activeService.date}
                     </span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="manrope-regular text-lg md:text-xl text-black/65 leading-relaxed max-w-xl mb-12">
+                <p className="manrope-regular text-base md:text-lg lg:text-xl text-black/65 leading-relaxed max-w-xl mb-10 md:mb-12">
                   {activeService.description}
                 </p>
 
