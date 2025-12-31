@@ -58,7 +58,7 @@ export default function WhoWeSupport() {
           
           {/* Left Column: Sticky Title */}
           <div ref={leftColRef} className="lg:pr-24 pb-20 lg:pb-0">
-            <h2 className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.9] mb-10">
+            <h2 className="manrope-light text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.9] mb-10">
               Who we <br />support
             </h2>
             <p className="manrope-regular text-lg md:text-xl text-black/60 max-w-md leading-relaxed">

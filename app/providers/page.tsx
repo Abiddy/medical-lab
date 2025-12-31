@@ -89,7 +89,7 @@ export default function ProvidersPage() {
             
             {/* Left Column */}
             <div className="lg:pr-12 pb-12 lg:pb-24 pt-20 lg:pt-32 flex flex-col justify-between min-h-[400px] lg:min-h-[700px]">
-              <h1 className="font-instrument-serif text-7xl md:text-7xl lg:text-7xl tracking-tight leading-[0.85]">
+              <h1 className="manrope-light text-7xl md:text-7xl lg:text-7xl tracking-tight leading-[0.85]">
                 For
                 <br />
                 Providers
@@ -228,7 +228,7 @@ export default function ProvidersPage() {
               </p>
               
               <div className="bg-[#e7dfd3] p-10 rounded-2xl inline-block pr-24">
-                <span className="block text-7xl font-instrument-serif tracking-tight mb-4">$500m+</span>
+                <span className="block text-7xl manrope-light tracking-tight mb-4">$500m+</span>
                 <p className="manrope-medium text-sm text-black/40 uppercase tracking-widest">
                   Funding secured for development
                 </p>

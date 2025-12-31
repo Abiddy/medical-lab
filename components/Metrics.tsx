@@ -52,7 +52,7 @@ export default function Metrics() {
                   key={index}
                   className="pt-16 mb-10 md:pt-20 pb-24 md:pb-10"
                 >
-                  <div className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl font-light tracking-tight">
+                  <div className="manrope-light text-6xl md:text-7xl lg:text-8xl font-light tracking-tight">
                     {metric.number}
                   </div>
                   <p className="mt-6 font-inter font-extralight text-base md:text-lg leading-relaxed text-white/40 max-w-3xl">

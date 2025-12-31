@@ -81,7 +81,7 @@ export default function MedicalBillingPage() {
       {/* Hero Section */}
       <section className="pt-20 lg:pt-32 pb-16">
         <div className="mx-auto px-6 lg:px-8">
-          <h1 className="font-instrument-serif text-6xl md:text-6xl lg:text-6xl tracking-tight leading-none text-black/90">
+          <h1 className="manrope-light text-6xl md:text-6xl lg:text-6xl tracking-tight leading-none text-black/90">
             Medical Billing
           </h1>
         </div>

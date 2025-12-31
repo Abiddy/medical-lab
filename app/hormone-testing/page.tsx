@@ -8,7 +8,7 @@ export default function HormoneTestingPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
             {/* Left */}
             <div className="lg:pr-12 pb-12 lg:pb-0 pt-40">
-              <h1 className="font-instrument-serif pb-10 text-6xl md:text-6xl lg:text-6xl tracking-tight leading-[0.95] mt-4 mb-7">
+              <h1 className="manrope-light pb-10 text-6xl md:text-6xl lg:text-6xl tracking-tight leading-[0.95] mt-4 mb-7">
                 Saliva Testing   
               </h1>
 

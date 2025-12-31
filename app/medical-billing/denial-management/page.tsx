@@ -12,7 +12,7 @@ export default function DenialManagementPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
-              <h1 className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none text-black/90 mb-8">
+              <h1 className="manrope-light text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none text-black/90 mb-8">
                 Denial Management
               </h1>
               <p className="manrope-light text-xl md:text-2xl text-black/60 max-w-xl leading-relaxed">
@@ -143,7 +143,7 @@ export default function DenialManagementPage() {
               }
             ].map((item, i) => (
               <div key={i} className="group p-8 rounded-2xl bg-white border border-black/5 hover:border-black/10 transition-all duration-300">
-                <span className="block text-3xl font-instrument-serif text-black/10 group-hover:text-black/20 transition-colors mb-6">{item.step}</span>
+                <span className="block text-3xl manrope-light text-black/10 group-hover:text-black/20 transition-colors mb-6">{item.step}</span>
                 <h3 className="manrope-bold text-lg text-black/90 mb-4">{item.title}</h3>
                 <p className="manrope-light text-sm text-black/60 leading-relaxed">{item.desc}</p>
               </div>

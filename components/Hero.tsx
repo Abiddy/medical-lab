@@ -27,7 +27,7 @@ export default function Hero() {
           <div className="pt-10 md:pt-14 lg:pt-20">
             <motion.h1
               style={{ y: h1Y }}
-              className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl font-normal text-gray-900 leading-[0.95] tracking-tight max-w-4xl px-10"
+              className="manrope-light text-6xl md:text-7xl lg:text-8xl font-normal text-gray-900 leading-[0.95] tracking-tight max-w-4xl px-10"
             >
               Your partner in better healthcare.
             </motion.h1>

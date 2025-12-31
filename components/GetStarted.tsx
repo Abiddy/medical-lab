@@ -28,7 +28,7 @@ export default function GetStarted() {
   return (
     <section id="get-started" className="bg-[#f7f5ef] text-[#1a1a1a]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-16">
-        <h2 className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight">
+        <h2 className="manrope-light text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight">
           Contact Us
         </h2>
       </div>

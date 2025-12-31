@@ -119,7 +119,7 @@ export default function FAQ() {
           
           {/* Left Column: Title & Contact */}
           <div className="flex flex-col h-full lg:sticky lg:top-40 h-fit">
-            <h2 className="font-instrument-serif text-6xl md:text-7xl lg:text-8xl tracking-tight mb-12">
+            <h2 className="manrope-light text-6xl md:text-7xl lg:text-8xl tracking-tight mb-12">
               Frequently Asked Questions
             </h2>
             

@@ -1,7 +1,7 @@
 'use client'
 
-import { useMemo } from 'react'
-import { motion } from 'motion/react'
+import { useMemo, useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 
 interface Service {
   title: string
@@ -12,6 +12,8 @@ interface Service {
 }
 
 export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(0)
+
   const services = useMemo<Service[]>(
     () => [
       {
@@ -42,87 +44,109 @@ export default function Services() {
     []
   )
 
+  const activeService = services[activeIndex]
+
   return (
     <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] pt-32 pb-40">
       <div className="px-6 lg:px-12 mb-20">
-        <h2 className="font-instrument-serif text-6xl md:text-8xl tracking-tight leading-[0.9] mb-4">
+        <h2 className="manrope-light text-6xl md:text-8xl tracking-tight leading-[0.9] mb-4">
           What we <br />deliver
         </h2>
       </div>
 
-      <div className="border-t border-black/10">
-        {services.map((service, index) => {
-          const isEven = index % 2 === 1
-          return (
-            <div key={service.title} className="border-b border-black/10 relative">
-              {/* Vertical Line */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+      <div className="border-t border-black/10 relative">
+        {/* Vertical Line */}
+        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
 
-              <div className="px-6 lg:px-12 py-20 lg:py-32">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                  
-                  {/* Image Column */}
-                  <div className={[
-                    "relative aspect-[4/3] rounded-2xl overflow-hidden bg-black/5 border border-black/5",
-                    isEven ? "lg:order-2" : "lg:order-1"
-                  ].join(" ")}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Content Column */}
-                  <div className={[
-                    "flex flex-col",
-                    isEven ? "lg:order-1 lg:pr-12" : "lg:order-2 lg:pl-12"
-                  ].join(" ")}>
-                    {/* Metadata */}
-                    <div className="flex items-center gap-8 mb-12">
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                        <span className="manrope-bold text-xs uppercase tracking-widest text-black/40">
-                          {service.category}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                        <span className="manrope-bold text-xs uppercase tracking-widest text-black/40">
-                          {service.date}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Headline */}
-                    <h3 className="manrope-medium text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Left Column: Navigation Buttons */}
+          <div className="border-b lg:border-b-0 border-black/10">
+            <div className="flex flex-col">
+              {services.map((service, index) => (
+                <button
+                  key={service.title}
+                  onClick={() => setActiveIndex(index)}
+                  className={[
+                    "w-full text-left px-6 lg:px-12 py-12 lg:py-20 transition-all border-b border-black/10 last:border-b-0 group",
+                    activeIndex === index ? "bg-black/5" : "hover:bg-black/[0.02]"
+                  ].join(" ")}
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className={[
+                      "manrope-medium text-4xl md:text-5xl lg:text-6xl tracking-tight transition-all",
+                      activeIndex === index ? "opacity-100 translate-x-4" : "opacity-30 group-hover:opacity-50"
+                    ].join(" ")}>
                       {service.title}
                     </h3>
-
-                    {/* Description */}
-                    <p className="manrope-regular text-lg md:text-xl text-black/65 leading-relaxed max-w-xl">
-                      {service.description}
-                    </p>
-
-                    {/* Call to Action */}
-                    <div className="mt-12">
-                      <a 
-                        href={`/${service.title.toLowerCase().replace(' ', '-')}`}
-                        className="inline-flex items-center gap-4 group"
-                      >
-                        <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                          <span className="text-xl group-hover:text-white transition-colors">→</span>
-                        </span>
-                        <span className="manrope-bold text-lg tracking-tight">Learn more</span>
-                      </a>
+                    <div className={[
+                      "w-12 h-12 rounded-full border border-black/10 flex items-center justify-center transition-all",
+                      activeIndex === index ? "bg-black text-white rotate-45" : "opacity-0"
+                    ].join(" ")}>
+                      →
                     </div>
                   </div>
-
-                </div>
-              </div>
+                </button>
+              ))}
             </div>
-          )
-        })}
+          </div>
+
+          {/* Right Column: Content Display */}
+          <div className="px-6 lg:px-12 py-12 lg:py-20">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                className="flex flex-col"
+              >
+                {/* Image */}
+                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-12">
+                  <img
+                    src={activeService.image}
+                    alt={activeService.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Metadata */}
+                <div className="flex items-center gap-8 mb-8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
+                    <span className="manrope-bold text-xs uppercase tracking-widest text-black/40">
+                      {activeService.category}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
+                    <span className="manrope-bold text-xs uppercase tracking-widest text-black/40">
+                      {activeService.date}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="manrope-regular text-lg md:text-xl text-black/65 leading-relaxed max-w-xl mb-12">
+                  {activeService.description}
+                </p>
+
+                {/* Call to Action */}
+                <div>
+                  <a 
+                    href={`/${activeService.title.toLowerCase().replace(' ', '-')}`}
+                    className="inline-flex items-center gap-4 group"
+                  >
+                    <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
+                      <span className="text-xl group-hover:text-white transition-colors">→</span>
+                    </span>
+                    <span className="manrope-bold text-lg tracking-tight">Learn more</span>
+                  </a>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   )
