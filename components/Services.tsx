@@ -80,7 +80,7 @@ export default function Services() {
                     </h3>
                     <div className={[
                       "w-12 h-12 rounded-full border border-black/10 flex items-center justify-center transition-all",
-                      activeIndex === index ? "bg-black text-white rotate-45" : "opacity-0"
+                      activeIndex === index ? "bg-black text-white" : "opacity-0"
                     ].join(" ")}>
                       →
                     </div>

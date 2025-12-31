@@ -11,8 +11,9 @@ export default function Hero() {
     offset: ["start start", "end start"]
   })
 
-  const h1Y = useTransform(scrollYProgress, [0, 1], [0, -160])
-  const sphereY = useTransform(scrollYProgress, [0, 1], [0, -80])
+  const h1Y = useTransform(scrollYProgress, [0, 1], [0, -320])
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -240])
+  const sphereY = useTransform(scrollYProgress, [0, 1], [0, -120])
 
   return (
     <section ref={containerRef} className="min-h-screen pt-20 relative overflow-hidden bg-[#f7f5ef]">
@@ -42,7 +43,10 @@ export default function Hero() {
               <div className="hidden lg:block" />
 
               <div className="flex items-center justify-center py-12 lg:py-0">
-                <div className="text-center lg:text-left max-w-md px-6">
+                <motion.div 
+                  style={{ y: contentY }}
+                  className="text-center lg:text-left max-w-md px-6"
+                >
                   <p className="text-gray-700 text-2xl md:text-3xl font-light leading-snug">
                     Connecting the systems that matter most.
                   </p>
@@ -51,7 +55,7 @@ export default function Hero() {
                       Get Started
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
