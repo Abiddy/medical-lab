@@ -241,7 +241,6 @@ function SubNav() {
             <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
               Genetic Testing
             </span>
-            <span className="text-[16px] md:text-[20px] text-black/30 font-light">&gt;</span>
           </div>
           {navItems.map((item) => (
             <a
@@ -252,9 +251,6 @@ function SubNav() {
               {item.label}
             </a>
           ))}
-        </div>
-        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
-          <span className="text-lg">›</span>
         </div>
       </div>
     </div>
