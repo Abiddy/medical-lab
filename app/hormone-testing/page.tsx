@@ -2,12 +2,12 @@ export default function HormoneTestingPage() {
   return (
     <main className="bg-[#f7f5ef] text-[#1a1a1a]">
       {/* Hero (image 1 layout) */}
-      <section className="pt-30">
+      <section className="pt-20 md:pt-30">
         <div className="mx-auto px-6 lg:px-8">
           <div className="relative grid grid-cols-1 lg:grid-cols-2">
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
             {/* Left */}
-            <div className="lg:pr-12 pb-12 lg:pb-0 pt-40">
+            <div className="lg:pr-12 pb-12 lg:pb-0 pt-20 md:pt-40">
               <h1 className="manrope-light pb-10 text-6xl md:text-6xl lg:text-6xl tracking-tight leading-[0.95] mt-4 mb-7">
                 Saliva Testing   
               </h1>

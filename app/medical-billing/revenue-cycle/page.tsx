@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function RevenueCyclePage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-28">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
       
       {/* Hero Section */}
@@ -212,24 +212,28 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex items-center justify-start gap-10 h-14">
-          <div className="flex items-center gap-4">
-            <span className="text-xs tracking-widest uppercase manrope-bold text-black/80">
+    <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 min-w-max md:min-w-0 relative">
+        <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
               Revenue Cycle Management
             </span>
-            <span className="text-[20px] text-black/30 font-light">&gt;</span>
+            <span className="text-[16px] md:text-[20px] text-black/30 font-light">&gt;</span>
           </div>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors"
+              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
           ))}
+        </div>
+        {/* Mobile scroll indicator */}
+        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
+          <span className="text-lg">›</span>
         </div>
       </div>
     </div>

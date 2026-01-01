@@ -113,17 +113,50 @@ export default function FAQ() {
   }
 
   return (
-    <section className="bg-[#f7f5ef] text-[#1a1a1a] py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24">
+    <section className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-32 pb-24 md:pb-40">
+      {/* SubNav for FAQ Categories */}
+      <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
+        <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
+          <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
+            <div className="flex items-center gap-2 md:gap-4 shrink-0">
+              <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
+                FAQ Categories
+              </span>
+              <span className="text-[16px] md:text-[20px] text-black/30 font-light">&gt;</span>
+            </div>
+            {faqData.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => {
+                  setActiveSection(cat.id)
+                  setOpenItem(null)
+                }}
+                className={[
+                  "text-[10px] md:text-xs tracking-widest uppercase manrope-medium transition-all whitespace-nowrap",
+                  activeCategory === cat.id ? "text-black" : "text-black/40 hover:text-black/60"
+                ].join(" ")}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+          {/* Mobile scroll indicator */}
+          <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
+            <span className="text-lg">›</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 md:mt-24">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24">
           
           {/* Left Column: Title & Contact */}
-          <div className="flex flex-col h-full lg:sticky lg:top-40 h-fit">
-            <h2 className="manrope-light text-6xl md:text-7xl lg:text-8xl tracking-tight mb-12">
+          <div className="flex flex-col h-full lg:sticky lg:top-44 h-fit">
+            <h2 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.9] mb-8 md:mb-12">
               Frequently Asked Questions
             </h2>
             
-            <div className="mt-auto">
+            <div className="hidden lg:block mt-auto">
               <p className="manrope-regular text-base text-black/60 mb-8 max-w-xs">
                 If you have further questions, please reach out via our Contact page.
               </p>
@@ -136,72 +169,81 @@ export default function FAQ() {
             </div>
           </div>
 
-          {/* Right Column: FAQ Categories and Content */}
+          {/* Right Column: Content Area */}
           <div className="lg:pl-24 lg:border-l border-black/10">
-            {/* Category Tabs */}
-            <div className="flex flex-wrap gap-4 mb-16 border-b border-black/5 pb-8">
-              {faqData.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => {
-                    setActiveSection(cat.id)
-                    setOpenItem(null)
-                  }}
-                  className={[
-                    "px-6 py-3 rounded-full text-sm manrope-medium transition-all duration-300",
-                    activeCategory === cat.id
-                      ? "bg-black text-white"
-                      : "bg-[#e7dfd3] text-black/60 hover:text-black"
-                  ].join(" ")}
-                >
-                  {cat.label} FAQS
-                </button>
-              ))}
+            {/* Header for Mobile only */}
+            <div className="lg:hidden mb-12 flex items-center justify-between border-b border-black/5 pb-6">
+              <span className="manrope-bold text-xs uppercase tracking-[0.2em] text-black/40">
+                {faqData.find(c => c.id === activeCategory)?.label} FAQS
+              </span>
             </div>
 
             {/* Accordion List */}
             <div className="divide-y divide-black/10">
-              {faqData.find(c => c.id === activeCategory)?.items.map((item, i) => (
-                <div key={i} className="py-8">
-                  <button
-                    onClick={() => toggleItem(item.question)}
-                    className="flex w-full items-center justify-between text-left group"
-                  >
-                    <span className="manrope-regular text-lg md:text-xl lg:text-2xl text-black/90 group-hover:text-black transition-colors pr-8">
-                      {item.question}
-                    </span>
-                    <div className={[
-                      "w-12 h-12 rounded-full border border-black/10 flex items-center justify-center shrink-0 transition-all duration-500",
-                      openItem === item.question ? "bg-[#e7dfd3] rotate-180" : "bg-transparent"
-                    ].join(" ")}>
-                      <ArrowDown 
-                        size={20} 
-                        strokeWidth={1.5}
-                        className={[
-                          "text-black/60 transition-transform duration-500",
-                          openItem === item.question ? "text-black" : ""
-                        ].join(" ")} 
-                      />
-                    </div>
-                  </button>
-                  
-                  <AnimatePresence>
-                    {openItem === item.question && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                        className="overflow-hidden"
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeCategory}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {faqData.find(c => c.id === activeCategory)?.items.map((item, i) => (
+                    <div key={i} className="py-6 md:py-8">
+                      <button
+                        onClick={() => toggleItem(item.question)}
+                        className="flex w-full items-center justify-between text-left group"
                       >
-                        <p className="mt-8 manrope-regular text-sm md:text-base text-black/65 leading-relaxed max-w-3xl">
-                          {item.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
+                        <span className="manrope-regular text-lg md:text-xl lg:text-2xl text-black/90 group-hover:text-black transition-colors pr-8 leading-tight">
+                          {item.question}
+                        </span>
+                        <div className={[
+                          "w-10 h-10 md:w-12 md:h-12 rounded-full border border-black/10 flex items-center justify-center shrink-0 transition-all duration-500",
+                          openItem === item.question ? "bg-[#e7dfd3] rotate-180" : "bg-transparent"
+                        ].join(" ")}>
+                          <ArrowDown 
+                            size={18} 
+                            strokeWidth={1.5}
+                            className={[
+                              "text-black/60 transition-transform duration-500",
+                              openItem === item.question ? "text-black" : ""
+                            ].join(" ")} 
+                          />
+                        </div>
+                      </button>
+                      
+                      <AnimatePresence>
+                        {openItem === item.question && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                            className="overflow-hidden"
+                          >
+                            <p className="mt-6 md:mt-8 manrope-regular text-sm md:text-base text-black/65 leading-relaxed max-w-3xl">
+                              {item.answer}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Mobile Contact Link */}
+            <div className="lg:hidden mt-16 pt-12 border-t border-black/10">
+              <p className="manrope-regular text-base text-black/60 mb-6">
+                Still have questions?
+              </p>
+              <a
+                href="/#get-started"
+                className="inline-block w-full text-center px-10 py-5 bg-[#1F271B] text-white manrope-medium rounded-xl hover:bg-black transition-all"
+              >
+                Contact our Team
+              </a>
             </div>
           </div>
         </div>

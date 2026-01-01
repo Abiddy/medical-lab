@@ -76,7 +76,7 @@ export default function MedicalBillingPage() {
     : services.filter(s => s.category.toLowerCase().includes(activeCategory.toLowerCase()) || activeCategory === 'all')
 
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-28">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
 
       {/* Hero Section */}
       <section className="pt-20 lg:pt-32 pb-16">

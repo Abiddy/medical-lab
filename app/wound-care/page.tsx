@@ -1,21 +1,21 @@
 export default function WoundCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-28">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
 
       {/* Hero */}
-      <section className="pt-20 lg:pt-20">
+      <section className="pt-16 md:pt-20">
         <div className="mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left */}
-            <div className="lg:pr-12 pb-12 lg:pb-0">
-              <h1 className="manrope-light text-3xl md:text-7xl lg:text-7xl tracking-tight leading-[0.95]">
+            <div className="lg:pr-12 pb-8 md:pb-12 lg:pb-0">
+              <h1 className="manrope-light text-5xl md:text-7xl lg:text-7xl tracking-tight leading-[1.1] md:leading-[0.95]">
                 Wound Care
                 <br />
                 Program
               </h1>
 
-              <p className="mt-20 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
+              <p className="mt-8 md:mt-20 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 We combine the option of on-site clinical support, coordinated biopsy services, designated courier pickup, and same day PCR diagnostics to help providers make timely and effective treatment decisions.
               </p>
             </div>
@@ -35,16 +35,16 @@ export default function WoundCareProgramPage() {
       </section>
 
       {/* Overview */}
-      <section id="overview" className="mt-16 scroll-mt-44">
+      <section id="overview" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               Overview
             </div>
           </div>
@@ -57,12 +57,12 @@ export default function WoundCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
-            <div className="py-14 lg:py-16 lg:pr-12">
-              <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight">
+            <div className="py-10 lg:py-16 lg:pr-12">
+              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
                 Comprehensive Support for Facility-Based Wound Management
               </h2>
 
-              <div className="mt-10 space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-6 md:space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 <p>
                   Our Wound Care Program provides an integrated solution for facilities managing complex or chronic
                   wounds. We combine the option of on-site clinical support, coordinated biopsy services, designated
@@ -122,13 +122,13 @@ export default function WoundCareProgramPage() {
             </div>
 
             {/* Right column placeholder to match layout */}
-            <div className="py-14 lg:py-16 lg:pl-12">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
-              <div className="mt-10">
-                <h3 className="red-hat-display-medium text-2xl text-[#1a1a1a]">Contact details</h3>
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="mt-8 md:mt-10">
+                <h3 className="red-hat-display-medium text-xl md:text-2xl text-[#1a1a1a]">Contact details</h3>
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div>
-                    <div className="manrope-regular text-sm text-black/60">Address</div>
+                    <div className="manrope-regular text-xs md:text-sm text-black/60 uppercase tracking-widest">Address</div>
                     <div className="mt-2 manrope-regular text-sm text-black/75 leading-relaxed">
                       1435 Wellington Road
                       <br />
@@ -138,7 +138,7 @@ export default function WoundCareProgramPage() {
                     </div>
                   </div>
                   <div>
-                    <div className="manrope-regular text-sm text-black/60">Email</div>
+                    <div className="manrope-regular text-xs md:text-sm text-black/60 uppercase tracking-widest">Email</div>
                     <a className="mt-2 inline-block manrope-regular text-sm text-black/70 hover:text-black transition-colors" href="mailto:hello@bdl.com">
                       hello@bdl.com
                     </a>
@@ -151,16 +151,16 @@ export default function WoundCareProgramPage() {
       </section>
 
       {/* Mobile / On-Site Support */}
-      <section id="mobile-support" className="mt-16 scroll-mt-44">
+      <section id="mobile-support" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               Mobile / On-Site Support
             </div>
           </div>
@@ -173,12 +173,12 @@ export default function WoundCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
-            <div className="py-14 lg:py-16 lg:pr-12">
-              <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight">
+            <div className="py-10 lg:py-16 lg:pr-12">
+              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
                 Integrated Support at the Facility Level
               </h2>
 
-              <div className="mt-10 space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-6 md:space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 <p>
                   Our Mobile / On-Site Support is designed to help facilities manage wound cases more efficiently by
                   providing hands-on assistance where it matters most. Facilities may choose to work with our partnered
@@ -241,7 +241,7 @@ export default function WoundCareProgramPage() {
             </div>
 
             {/* Right column placeholder */}
-            <div className="py-14 lg:py-16 lg:pl-12">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
             </div>
           </div>
@@ -249,16 +249,16 @@ export default function WoundCareProgramPage() {
       </section>
 
       {/* PCR Diagnostics */}
-      <section id="pcr-diagnostics" className="mt-16 scroll-mt-44">
+      <section id="pcr-diagnostics" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               PCR Diagnostics
             </div>
           </div>
@@ -271,12 +271,12 @@ export default function WoundCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
-            <div className="py-14 lg:py-16 lg:pr-12">
-              <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight">
+            <div className="py-10 lg:py-16 lg:pr-12">
+              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
                 Rapid Molecular Testing for Faster, More Informed Care
               </h2>
 
-              <div className="mt-10 space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-6 md:space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 <p>
                   Our wound PCR diagnostics identify 19 clinically significant bacterial, fungal, and viral pathogens
                   using a rapid, extraction-free molecular workflow. This provides clinical teams with fast, actionable
@@ -338,7 +338,7 @@ export default function WoundCareProgramPage() {
             </div>
 
             {/* Right column placeholder */}
-            <div className="py-14 lg:py-16 lg:pl-12">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
             </div>
           </div>
@@ -346,16 +346,16 @@ export default function WoundCareProgramPage() {
       </section>
 
       {/* Clinical Workflow */}
-      <section id="clinical-workflow" className="mt-16 scroll-mt-44">
+      <section id="clinical-workflow" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/5" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               Clinical Workflow
             </div>
           </div>
@@ -368,12 +368,12 @@ export default function WoundCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
 
             {/* Left content */}
-            <div className="py-14 lg:py-16 lg:pr-12">
-              <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight">
+            <div className="py-10 lg:py-16 lg:pr-12">
+              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
                 A Structured Process Designed for Facility Operations
               </h2>
 
-              <div className="mt-10 space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-6 md:space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 <p>
                   Our clinical workflow ensures predictable, efficient wound care support across a variety of
                   post-acute environments. Each step is designed to reduce administrative burden, support timely
@@ -467,7 +467,7 @@ export default function WoundCareProgramPage() {
             </div>
 
             {/* Right column placeholder */}
-            <div className="py-14 lg:py-16 lg:pl-12">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
             </div>
           </div>
@@ -486,24 +486,28 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5">
-      <div className="mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-start gap-10 h-14">
-          <div className="flex items-center gap-4">
-            <span className="text-xs tracking-widest uppercase manrope-bold text-black/80">
+    <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
+      <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
+        <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
               Wound Care Program
             </span>
-            <span className="text-[20px] text-black/30 font-light">&gt;</span>
+            <span className="text-[16px] md:text-[20px] text-black/30 font-light">&gt;</span>
           </div>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors"
+              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
           ))}
+        </div>
+        {/* Mobile scroll indicator */}
+        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
+          <span className="text-lg">›</span>
         </div>
       </div>
     </div>

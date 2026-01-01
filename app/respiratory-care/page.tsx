@@ -1,14 +1,14 @@
 export default function RespiratoryCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-28">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
 
       {/* Hero */}
-      <section className="pt-16 lg:pt-20">
+      <section className="pt-16 md:pt-20">
         <div className="mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left (image placeholder) */}
-            <div className="lg:pr-12 pb-12 lg:pb-0">
+            <div className="lg:pr-12 pb-8 md:pb-12 lg:pb-0">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]">
                 <img
                   src="/resp1.jpg"
@@ -20,13 +20,13 @@ export default function RespiratoryCareProgramPage() {
 
             {/* Right */}
             <div className="lg:pl-12 flex flex-col justify-between">
-              <h1 className="manrope-light text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95]">
+              <h1 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.95]">
                 Respiratory
                 <br />
                 Care Program
               </h1>
 
-              <p className="mt-10 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
+              <p className="mt-8 md:mt-10 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 The Respiratory Care Program provides facilities with a simple, efficient solution for identifying
                 common respiratory infections using PCR technology.
               </p>
@@ -36,16 +36,16 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* Overview (light section) */}
-      <section id="overview" className="mt-16 scroll-mt-44">
+      <section id="overview" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/10" />
 
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               Overview
             </div>
           </div>
@@ -58,17 +58,17 @@ export default function RespiratoryCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
 
             {/* Left (image) */}
-            <div className="py-14 lg:py-16 lg:pr-12">
+            <div className="py-10 lg:py-16 lg:pr-12">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
             </div>
 
             {/* Right (text) */}
-            <div className="py-14 lg:py-16 lg:pl-12">
-              <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/10">
+              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
                 Built for Fast, Facility-Based Testing
               </h2>
 
-              <div className="mt-10 space-y-6 manrope-light text-sm md:text-base text-black/65 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-4 md:space-y-6 manrope-light text-sm md:text-base text-black/65 leading-relaxed max-w-xl">
                 <p>
                   Designed for skilled nursing facilities, assisted living communities, LTACs, and post-acute settings,
                   the program delivers same-day results through streamlined logistics and an easy collection process
@@ -85,16 +85,16 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* Mobile Collection Support (dark section) */}
-      <section id="collection-support" className="mt-16 bg-[#1F271B] text-white scroll-mt-44">
+      <section id="collection-support" className="mt-12 md:mt-16 bg-[#1F271B] text-white scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-white/15" />
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-white/25 flex items-center justify-center text-white/80">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-white/25 flex items-center justify-center text-white/80">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-transparent text-white/85 px-5 py-2 text-sm manrope-light border border-white/25">
-              Mobile Collection Support
+            <div className="inline-flex items-center rounded-full bg-transparent text-white/85 px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-light border border-white/25 uppercase tracking-wider">
+              Collection Support
             </div>
           </div>
         </div>
@@ -106,12 +106,12 @@ export default function RespiratoryCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-white/15" />
 
             {/* Left (text) */}
-            <div className="py-14 lg:py-16 lg:pr-12">
-              <h2 className="red-hat-display-light text-2xl md:text-5xl leading-[1.05] tracking-tight text-white my-15">
+            <div className="py-10 lg:py-16 lg:pr-12">
+              <h2 className="red-hat-display-light text-4xl md:text-5xl leading-[1.1] md:leading-[1.05] tracking-tight text-white mb-8 md:mb-15">
                 Easy, Facility-Driven Sample Collection
               </h2>
 
-              <div className="mt-10 space-y-6 manrope-light text-sm md:text-base text-white/75 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-4 md:space-y-6 manrope-light text-sm md:text-base text-white/75 leading-relaxed max-w-xl">
                 <p>
                   Respiratory samples can be collected quickly by your nursing staff using our provided materials and
                   instructions. The process is straightforward and requires no additional on-site personnel. We supply:
@@ -137,7 +137,7 @@ export default function RespiratoryCareProgramPage() {
             </div>
 
             {/* Right (image) */}
-            <div className="py-14 lg:py-16 lg:pl-12 mt-15">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-white/10">
               <div className="relative w-full rounded-2xl overflow-hidden aspect-[4/3]">
                 <img 
                   src="/resp2.jpg" 
@@ -151,15 +151,15 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* PCR Diagnostics (light section) */}
-      <section id="pcr-diagnostics" className="mt-16 scroll-mt-44">
+      <section id="pcr-diagnostics" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/10" />
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               PCR Diagnostics
             </div>
           </div>
@@ -172,17 +172,17 @@ export default function RespiratoryCareProgramPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
 
             {/* Left (image) */}
-            <div className="py-14 lg:py-16 lg:pr-12">
+            <div className="py-10 lg:py-16 lg:pr-12">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
             </div>
 
             {/* Right (text) */}
-            <div className="py-14 lg:py-16 lg:pl-12">
-              <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight">
+            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/10">
+              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
                 Laboratory-Based PCR for Respiratory Infections
               </h2>
 
-              <div className="mt-10 space-y-6 manrope-light text-sm md:text-base text-black/65 leading-relaxed max-w-xl">
+              <div className="mt-8 md:mt-10 space-y-4 md:space-y-6 manrope-light text-sm md:text-base text-black/65 leading-relaxed max-w-xl">
                 <p>
                   Our respiratory PCR diagnostics identify common respiratory pathogens with high sensitivity and fast
                   turnaround times. Panels include testing options for:
@@ -217,15 +217,15 @@ export default function RespiratoryCareProgramPage() {
       </section>
 
       {/* Clinical Workflow (numbered list matches image 3 style) */}
-      <section id="clinical-workflow" className="mt-16 scroll-mt-44">
+      <section id="clinical-workflow" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
         <div className="border-t border-black/10" />
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
               ↓
             </div>
-            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-5 py-2 text-sm manrope-regular">
+            <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
               Clinical Workflow
             </div>
           </div>
@@ -234,8 +234,8 @@ export default function RespiratoryCareProgramPage() {
         <div className="border-t border-black/10" />
 
         <div className="mx-auto px-6 lg:px-8">
-          <div className="py-16">
-            <h2 className="red-hat-display-light text-5xl md:text-6xl leading-[1.05] tracking-tight max-w-4xl">
+          <div className="py-10 md:py-16">
+            <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight max-w-4xl">
               A Unified Respiratory Testing Solution for Your Facility
             </h2>
           </div>
@@ -281,12 +281,12 @@ export default function RespiratoryCareProgramPage() {
                   'While no clinical team is required for this program, our staff remains available for logistical questions, reporting inquiries, and coordination needs. We ensure the respiratory workflow remains smooth, predictable, and aligned with your operational requirements.',
               },
             ].map((step) => (
-              <div key={step.n} className="py-14">
+              <div key={step.n} className="py-10 md:py-14">
                 <div className="grid grid-cols-1 lg:grid-cols-[120px_420px_1fr] gap-6 lg:gap-10 items-start">
-                  <div className="text-3xl md:text-4xl red-hat-display-light text-black/80">
+                  <div className="text-2xl md:text-4xl red-hat-display-light text-black/80">
                     {step.n}
                   </div>
-                  <div className="red-hat-display-medium text-2xl md:text-3xl text-[#1a1a1a]">
+                  <div className="red-hat-display-medium text-xl md:text-3xl text-[#1a1a1a]">
                     {step.title}
                   </div>
                   <p className="manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-3xl">
@@ -314,24 +314,28 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5">
-      <div className="mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-start gap-10 h-14">
-          <div className="flex items-center gap-4">
-            <span className="text-xs tracking-widest uppercase manrope-bold text-black/80">
+    <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
+      <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
+        <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
               Respiratory Care Program
             </span>
-            <span className="text-[20px] text-black/30 font-light">&gt;</span>
+            <span className="text-[16px] md:text-[20px] text-black/30 font-light">&gt;</span>
           </div>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors"
+              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
           ))}
+        </div>
+        {/* Mobile scroll indicator */}
+        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
+          <span className="text-lg">›</span>
         </div>
       </div>
     </div>
