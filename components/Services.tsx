@@ -3,12 +3,18 @@
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 
+interface ServiceLink {
+  label: string
+  href: string
+}
+
 interface Service {
   title: string
   description: string
   image: string
   category: string
   date: string
+  links: ServiceLink[]
 }
 
 export default function Services() {
@@ -23,6 +29,10 @@ export default function Services() {
         description:
           'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care. By partnering with an experienced clinical team, your facility gains support with patient evaluation, treatment planning, biopsy coordination, and ongoing case oversight.',
         image: '/spec1.jpg',
+        links: [
+          { label: 'Wound Care Program', href: '/wound-care' },
+          { label: 'Respiratory Care Program', href: '/respiratory-care' }
+        ]
       },
       {
         title: 'Diagnostics',
@@ -31,6 +41,10 @@ export default function Services() {
         description:
           'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels.',
         image: '/w1.png',
+        links: [
+          { label: 'Saliva Testing', href: '/hormone-testing' },
+          { label: 'Genetic Testing', href: '/genetic-testing' }
+        ]
       },
       {
         title: 'Medical Billing',
@@ -39,6 +53,9 @@ export default function Services() {
         description:
           'Our Medical Billing services give facilities complete revenue cycle support across all specialties. We handle claims submission, denial management, A/R follow-up, and payer communication—ensuring every encounter is processed accurately and without administrative burden.',
         image: '/m1.jpg',
+        links: [
+          { label: 'Overview', href: '/medical-billing' }
+        ]
       },
     ],
     []
@@ -82,7 +99,7 @@ export default function Services() {
                       "hidden lg:flex w-12 h-12 rounded-full border border-black/10 items-center justify-center transition-all",
                       activeIndex === index ? "bg-black text-white" : "opacity-0"
                     ].join(" ")}>
-                      →
+                      <span className="text-xl font-light">›</span>
                     </div>
                   </div>
                 </button>
@@ -132,16 +149,18 @@ export default function Services() {
                 </p>
 
                 {/* Call to Action */}
-                <div>
-                  <a 
-                    href={`/${activeService.title.toLowerCase().replace(' ', '-')}`}
-                    className="inline-flex items-center gap-4 group"
-                  >
-                    <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                      <span className="text-xl group-hover:text-white transition-colors">→</span>
-                    </span>
-                    <span className="manrope-bold text-lg tracking-tight">Learn more</span>
-                  </a>
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
+                  {activeService.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="group inline-flex items-center text-[#1a1a1a]"
+                    >
+                      <span className="manrope-medium text-lg md:text-xl tracking-tight border-b border-transparent group-hover:border-black/30 transition-all pb-0.5">
+                        {link.label}
+                      </span>
+                    </a>
+                  ))}
                 </div>
               </motion.div>
             </AnimatePresence>

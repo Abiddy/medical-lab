@@ -77,7 +77,6 @@ export default function Navigation() {
                       ) : (
                         <a key={item.label} href={item.href} className="flex items-center justify-between rounded-xl bg-[#e7dfd3] border border-black/5 px-5 py-6 text-[#1a1a1a] hover:bg-[#e2d8ca] transition-colors">
                           <span className="text-base font-inter">{item.label}</span>
-                          <span className="text-xl opacity-70">→</span>
                         </a>
                       )
                     ))}
@@ -89,10 +88,10 @@ export default function Navigation() {
             {/* Saliva Testing Dropdown */}
             <div className="relative" onMouseEnter={() => setActiveDropdown('salivaTesting')}>
               <button type="button" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
-                Saliva & Genetic Testing
+              Saliva & Genetic Testing
                 <svg className={`w-3 h-3 transition-transform ${activeDropdown === 'salivaTesting' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+              </svg>
               </button>
               <div className={["absolute left-0 top-[calc(100%+16px)] transition-all duration-200 ease-out", activeDropdown === 'salivaTesting' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}>
                 <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
@@ -100,7 +99,6 @@ export default function Navigation() {
                     {menuItems.salivaTesting.map((item) => (
                       <a key={item.label} href={item.href} className="flex items-center justify-between rounded-xl bg-[#e7dfd3] border border-black/5 px-5 py-6 text-[#1a1a1a] hover:bg-[#e2d8ca] transition-colors">
                         <span className="text-base font-inter">{item.label}</span>
-                        <span className="text-xl opacity-70">→</span>
                       </a>
                     ))}
                   </div>
@@ -111,11 +109,11 @@ export default function Navigation() {
             {/* Medical Billing Dropdown */}
             <div className="relative" onMouseEnter={() => setActiveDropdown('medicalBilling')}>
               <a href="/medical-billing" className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1">
-                Medical Billing
+              Medical Billing
                 <svg className={`w-3 h-3 transition-transform ${activeDropdown === 'medicalBilling' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
+              </svg>
+            </a>
               <div className={["absolute left-0 top-[calc(100%+16px)] transition-all duration-200 ease-out", activeDropdown === 'medicalBilling' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}>
                 <div className="w-[320px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-2">
                   {menuItems.medicalBilling.map((item) => (
@@ -154,7 +152,7 @@ export default function Navigation() {
 
         {/* Mobile Menu Overlay */}
         <AnimatePresence>
-          {isMenuOpen && (
+        {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, x: '100%' }}
               animate={{ opacity: 1, x: 0 }}
@@ -273,9 +271,9 @@ export default function Navigation() {
                     Book a Call
                   </button>
                 </div>
-              </div>
+          </div>
             </motion.div>
-          )}
+        )}
         </AnimatePresence>
       </div>
     </nav>

@@ -195,7 +195,7 @@ export default function ProvidersPage() {
                             className="inline-flex items-center gap-4 group"
                           >
                             <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                              <span className="text-xl group-hover:text-white transition-colors">→</span>
+                              <span className="text-xl group-hover:text-white transition-colors">›</span>
                             </span>
                             <span className="manrope-bold text-lg tracking-tight">Become a Provider</span>
                           </a>
@@ -275,7 +275,7 @@ export default function ProvidersPage() {
               Become a Provider
             </h2>
             <div className="w-20 h-20 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-              <span className="text-3xl group-hover:text-white transition-colors">→</span>
+              <span className="text-3xl group-hover:text-white transition-colors">›</span>
             </div>
           </a>
         </div>
