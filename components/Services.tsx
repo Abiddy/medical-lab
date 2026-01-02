@@ -90,16 +90,16 @@ export default function Services() {
                 >
                   <div className="flex items-center justify-center lg:justify-between">
                     <h3 className={[
-                      "manrope-medium text-xs md:text-xl lg:text-6xl tracking-tight transition-all",
+                      "manrope-medium text-xs md:text-lg lg:text-4xl tracking-tight transition-all",
                       activeIndex === index ? "opacity-100 lg:translate-x-4" : "opacity-30 group-hover:opacity-50"
                     ].join(" ")}>
                       {service.title}
                     </h3>
                     <div className={[
-                      "hidden lg:flex w-12 h-12 rounded-full border border-black/10 items-center justify-center transition-all",
+                      "hidden lg:flex w-10 h-10 rounded-full border border-black/10 items-center justify-center transition-all",
                       activeIndex === index ? "bg-black text-white" : "opacity-0"
                     ].join(" ")}>
-                      <span className="text-xl font-light">›</span>
+                      <span className="text-lg font-light">›</span>
                     </div>
                   </div>
                 </button>
@@ -156,7 +156,7 @@ export default function Services() {
                       href={link.href}
                       className="group inline-flex items-center text-[#1a1a1a]"
                     >
-                      <span className="manrope-medium text-lg md:text-xl tracking-tight border-b border-transparent group-hover:border-black/30 transition-all pb-0.5">
+                      <span className="manrope-medium text-base md:text-lg tracking-tight border-b border-transparent group-hover:border-black/30 transition-all pb-0.5">
                         {link.label}
                       </span>
                     </a>

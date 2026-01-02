@@ -48,7 +48,7 @@ export default function Hero() {
               style={{ y: h1Y }}
               className="manrope-light text-5xl md:text-7xl lg:text-8xl font-normal text-gray-900 leading-[1.1] md:leading-[0.95] tracking-tight max-w-4xl px-6 md:px-10"
             >
-              Your partner in better healthcare.
+              Your partner in better healthcare
             </motion.h1>
           </div>
 
