@@ -131,9 +131,12 @@ export default function Navigation() {
 
           {/* CTA Button (Desktop Only) */}
           <div className="hidden md:flex items-center ml-auto">
-            <button className="px-12 py-5 rounded-md transition-colors text-base font-normal bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white">
-              Book a Call
-            </button>
+            <a 
+              href="/get-started"
+              className="px-12 py-5 rounded-md transition-colors text-base font-normal bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white whitespace-nowrap"
+            >
+              Get Started
+            </a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -267,11 +270,15 @@ export default function Navigation() {
                 <a href="/faq" className="text-2xl manrope-medium border-b border-black/5 pb-4" onClick={() => setIsMenuOpen(false)}>FAQ</a>
 
                 <div className="pt-10">
-                  <button className="w-full py-6 rounded-xl bg-[#1a1a1a] text-white text-xl manrope-medium shadow-xl">
-                    Book a Call
-                  </button>
+                  <a 
+                    href="/get-started"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex w-full py-6 rounded-xl bg-[#1a1a1a] text-white text-xl manrope-medium shadow-xl items-center justify-center"
+                  >
+                    Get Started
+                  </a>
                 </div>
-          </div>
+              </div>
             </motion.div>
         )}
         </AnimatePresence>
@@ -279,6 +286,3 @@ export default function Navigation() {
     </nav>
   )
 }
-
-
-

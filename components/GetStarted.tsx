@@ -43,7 +43,7 @@ export default function GetStarted() {
           {/* Left column */}
           <div className="py-12 lg:py-16 lg:pr-12">
             <p className="font-inter text-lg md:text-2xl leading-relaxed text-black/80 max-w-xl">
-              We're here to facilitate the diagnostics and support your facility needs. Reach out to our team to learn more about our programs.
+              We're here to facilitate the diagnostics and support your facility needs. Reach out to our team to learn more about our services.
             </p>
 
             <form onSubmit={onSubmit} className="mt-10 md:mt-12 space-y-6 md:space-y-8 max-w-xl">

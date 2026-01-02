@@ -156,7 +156,7 @@ export default function FAQ() {
                 If you have further questions, please reach out via our Contact page.
               </p>
               <a
-                href="/#get-started"
+                href="/get-started"
                 className="inline-block px-10 py-4 bg-[#1F271B] text-white manrope-medium rounded-md hover:bg-black transition-all"
               >
                 Contact us
@@ -234,7 +234,7 @@ export default function FAQ() {
                 Still have questions?
               </p>
               <a
-                href="/#get-started"
+                href="/get-started"
                 className="inline-block w-full text-center px-10 py-5 bg-[#1F271B] text-white manrope-medium rounded-xl hover:bg-black transition-all"
               >
                 Contact our Team

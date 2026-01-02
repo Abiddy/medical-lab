@@ -217,7 +217,7 @@ export default function PriorAuthorizationPage() {
                 ))}
               </div>
               <a
-                href="/#contact"
+                href="/get-started"
                 className="inline-block px-12 py-5 rounded-md bg-[#1a1a1a] text-white manrope-medium hover:bg-black transition-all"
               >
                 Get Started Today

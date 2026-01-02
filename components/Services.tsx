@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import { ArrowUpRight } from 'lucide-react'
 
 interface ServiceLink {
   label: string
@@ -12,8 +13,6 @@ interface Service {
   title: string
   description: string
   image: string
-  category: string
-  date: string
   links: ServiceLink[]
 }
 
@@ -24,8 +23,6 @@ export default function Services() {
     () => [
       {
         title: 'Specialized Care',
-        category: 'Program',
-        date: 'Integrated Clinical Support',
         description:
           'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care. By partnering with an experienced clinical team, your facility gains support with patient evaluation, treatment planning, biopsy coordination, and ongoing case oversight.',
         image: '/spec1.jpg',
@@ -36,8 +33,6 @@ export default function Services() {
       },
       {
         title: 'Diagnostics',
-        category: 'Laboratory',
-        date: 'Rapid Molecular Testing',
         description:
           'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels.',
         image: '/w1.png',
@@ -48,8 +43,6 @@ export default function Services() {
       },
       {
         title: 'Medical Billing',
-        category: 'Revenue Cycle',
-        date: 'Complete Billing Solutions',
         description:
           'Our Medical Billing services give facilities complete revenue cycle support across all specialties. We handle claims submission, denial management, A/R follow-up, and payer communication—ensuring every encounter is processed accurately and without administrative burden.',
         image: '/m1.jpg',
@@ -127,41 +120,26 @@ export default function Services() {
                   />
                 </div>
 
-                {/* Metadata */}
+                {/* Metadata / Links Area */}
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-6 md:mb-8">
-                  <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                    <span className="manrope-bold text-[10px] md:text-xs uppercase tracking-widest text-black/40">
-                      {activeService.category}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                    <span className="manrope-bold text-[10px] md:text-xs uppercase tracking-widest text-black/40">
-                      {activeService.date}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="manrope-regular text-base md:text-lg lg:text-xl text-black/65 leading-relaxed max-w-xl mb-10 md:mb-12">
-                  {activeService.description}
-                </p>
-
-                {/* Call to Action */}
-                <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
                   {activeService.links.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
-                      className="group inline-flex items-center text-[#1a1a1a]"
+                      className="flex items-center gap-2 group/link"
                     >
-                      <span className="manrope-medium text-base md:text-lg tracking-tight border-b border-transparent group-hover:border-black/30 transition-all pb-0.5">
+                      <span className="manrope-bold text-[10px] md:text-xs uppercase tracking-widest text-[#1a1a1a] group-hover/link:opacity-60 transition-all">
                         {link.label}
                       </span>
+                      <ArrowUpRight size={14} className="text-[#1a1a1a] group-hover/link:opacity-60 transition-all" />
                     </a>
                   ))}
                 </div>
+
+                {/* Description */}
+                <p className="manrope-regular text-base md:text-lg lg:text-xl text-black/65 leading-relaxed max-w-xl">
+                  {activeService.description}
+                </p>
               </motion.div>
             </AnimatePresence>
           </div>

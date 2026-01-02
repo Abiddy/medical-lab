@@ -26,7 +26,7 @@ export default function HormoneTestingPage() {
                 </p>
                 <div className="mt-8 lg:hidden">
                   <a
-                    href="/#get-started"
+                    href="/get-started"
                     className="inline-flex items-center justify-center rounded-md bg-[#1F271B] text-white px-10 py-4 manrope-medium text-sm transition-colors hover:bg-black uppercase tracking-widest"
                   >
                     Request Pricing

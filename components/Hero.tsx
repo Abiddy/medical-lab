@@ -68,11 +68,14 @@ export default function Hero() {
                   <p className="text-gray-700 text-xl md:text-2xl lg:text-3xl font-light leading-snug">
                     Connecting the systems that matter most.
                   </p>
-                  <div className="mt-8 flex justify-center lg:justify-start">
-                    <button className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors font-medium text-base md:text-lg relative z-10">
-                      Get Started
-                    </button>
-                  </div>
+                      <div className="mt-8 flex justify-center lg:justify-start">
+                        <a 
+                          href="/get-started"
+                          className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors font-medium text-base md:text-lg relative z-10"
+                        >
+                          Get Started
+                        </a>
+                      </div>
                 </motion.div>
               </div>
             </div>
