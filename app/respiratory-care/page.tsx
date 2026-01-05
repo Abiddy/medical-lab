@@ -59,7 +59,13 @@ export default function RespiratoryCareProgramPage() {
 
             {/* Left (image) */}
             <div className="py-10 lg:py-16 lg:pr-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z4.jpg"
+                  alt="Respiratory Care Program Overview"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
 
             {/* Right (text) */}
@@ -173,7 +179,13 @@ export default function RespiratoryCareProgramPage() {
 
             {/* Left (image) */}
             <div className="py-10 lg:py-16 lg:pr-12">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z5.jpg"
+                  alt="PCR Diagnostics for Respiratory Infections"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
 
             {/* Right (text) */}

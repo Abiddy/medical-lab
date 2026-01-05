@@ -88,7 +88,13 @@ export default function HormoneTestingPage() {
 
             {/* Right image/info */}
             <div className="py-12 md:py-20 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z3.jpg"
+                  alt="Hormone testing laboratory precision"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
               <div className="mt-10">
                 <h3 className="red-hat-display-medium text-xl md:text-2xl text-[#1a1a1a]">Clinical Advantage</h3>
                 <p className="mt-4 manrope-regular text-sm text-black/60 leading-relaxed max-w-md">

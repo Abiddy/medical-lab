@@ -37,8 +37,11 @@ export default function GeneticTestingPage() {
             {/* Right */}
             <div className="lg:pl-12 order-first lg:order-last mb-12 lg:mb-0">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[16/10] md:aspect-[21/9] lg:aspect-[4/3]">
-                <div className="absolute inset-0 bg-gray-200/50 animate-pulse" />
-                {/* Image placeholder */}
+                <img
+                  src="/z1.jpg"
+                  alt="Genetic testing laboratory analysis"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -84,7 +87,13 @@ export default function GeneticTestingPage() {
 
             {/* Right column placeholder */}
             <div className="py-12 md:py-20 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z2.jpg"
+                  alt="Clinical significance of genetic testing"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
               <div className="mt-10">
                 <h3 className="red-hat-display-medium text-xl md:text-2xl text-[#1a1a1a]">Clinical Significance</h3>
                 <p className="mt-4 manrope-regular text-sm text-black/60 leading-relaxed max-w-md">

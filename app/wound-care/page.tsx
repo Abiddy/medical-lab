@@ -123,7 +123,13 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder to match layout */}
             <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z6.jpg"
+                  alt="Wound care program clinical overview"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
               <div className="mt-8 md:mt-10">
                 <h3 className="red-hat-display-medium text-xl md:text-2xl text-[#1a1a1a]">Contact details</h3>
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -242,7 +248,13 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder */}
             <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z7.jpg"
+                  alt="On-site wound care support"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
