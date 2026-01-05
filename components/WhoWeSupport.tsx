@@ -63,11 +63,11 @@ export default function WhoWeSupport() {
           <div ref={leftColRef} className="lg:pr-24 pb-12 lg:pb-0">
             <h2 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.9] mb-6 md:mb-10">
               Who we <br className="hidden md:block" />support
-            </h2>
+          </h2>
             <p className="manrope-regular text-base md:text-xl text-black/60 max-w-md leading-relaxed">
               We provide tailored clinical and diagnostic solutions to a wide range of healthcare partners, ensuring accuracy and efficiency across every care setting.
-            </p>
-          </div>
+          </p>
+        </div>
 
           {/* Right Column: List with Vertical Line */}
           <div className="relative lg:pl-24 border-t lg:border-t-0 lg:border-l border-black/10">
@@ -91,7 +91,7 @@ export default function WhoWeSupport() {
                     {partner.name}
                   </h3>
                 </motion.div>
-              ))}
+          ))}
             </div>
           </div>
 
