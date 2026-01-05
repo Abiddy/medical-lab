@@ -60,7 +60,7 @@ export default function Hero() {
                           href="/get-started"
                           className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors font-medium text-base md:text-lg relative z-10"
                         >
-                          Get Started
+                          Schedule Consultation
                         </a>
                       </div>
                 </motion.div>
