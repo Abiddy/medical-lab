@@ -1,6 +1,4 @@
 'use client'
-
-import { Sphere } from "./ui/sphere"
 import { useRef, useEffect, useState } from 'react'
 import { useScroll, useTransform, motion } from 'motion/react'
 
@@ -24,22 +22,11 @@ export default function Hero() {
 
   const h1Y = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -100 : -320])
   const contentY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -60 : -240])
-  const sphereY = useTransform(scrollYProgress, [0, 1], [0, -120])
 
   return (
     <section ref={containerRef} className="min-h-0 md:min-h-[90vh] lg:min-h-screen pt-20 relative overflow-hidden bg-[#f7f5ef]">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.8]">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/b4.mp4" type="video/mp4" />
-        </video>
-      </div>
+
+
 
       <div className="mx-auto h-auto md:h-[calc(100vh-5rem)] relative z-10">
         <div className="h-full flex flex-col md:justify-between">

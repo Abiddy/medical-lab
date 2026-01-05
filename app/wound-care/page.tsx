@@ -351,7 +351,13 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder */}
             <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z8.jpg"
+                  alt="PCR Diagnostics for Wound Care"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -480,7 +486,13 @@ export default function WoundCareProgramPage() {
 
             {/* Right column placeholder */}
             <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
+                <img
+                  src="/z9.jpg"
+                  alt="Wound care clinical workflow"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

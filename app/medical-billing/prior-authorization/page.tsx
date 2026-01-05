@@ -21,7 +21,11 @@ export default function PriorAuthorizationPage() {
             </div>
             <div className="hidden lg:block border-l border-black/5 pl-12">
               <div className="aspect-[4/3] bg-black/5 rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
+                <img
+                  src="/z20.jpg"
+                  alt="Prior Authorization Hero"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -191,7 +195,11 @@ export default function PriorAuthorizationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="aspect-square bg-black/5 rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
+                <img
+                  src="/z21.jpg"
+                  alt="BDL Prior Authorization Support"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="order-1 lg:order-2">

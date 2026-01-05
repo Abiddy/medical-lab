@@ -20,7 +20,7 @@ export default function Footer() {
           
           {/* Company Info */}
           <div className="space-y-6">
-            <h3 className="red-hat-display-bold text-2xl text-black">BDL</h3>
+            <h3 className="text-xl text-black aldrich">BioAnalysis Diagnostic Laboratories</h3>
             <p className="manrope-regular text-sm text-gray-600 leading-relaxed">
               Your partner in better healthcare. We provide comprehensive diagnostic and billing solutions to healthcare facilities nationwide.
             </p>
@@ -114,7 +114,7 @@ export default function Footer() {
               <a href="/faq" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
                 FAQ
               </a>
-              <a href="#" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+              <a href="/get-started" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
                 Contact
               </a>
               <a href="#" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">

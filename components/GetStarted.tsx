@@ -107,8 +107,14 @@ export default function GetStarted() {
 
           {/* Right column */}
           <div className="py-12 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/10">
-            {/* Image slot (you'll replace this) */}
-            <div className="rounded-xl md:rounded-2xl border border-black/10 bg-black/5 aspect-[16/10] lg:aspect-[4/3] w-full" />
+            {/* Image slot */}
+            <div className="rounded-xl md:rounded-2xl border border-black/10 bg-black/5 aspect-[16/10] lg:aspect-[4/3] w-full overflow-hidden">
+              <img
+                src="/z28.jpg"
+                alt="Contact BDL Support"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <div className="mt-8 md:mt-10">
               <h3 className="font-inter text-xl md:text-3xl font-medium text-[#1a1a1a]">

@@ -21,7 +21,11 @@ export default function RevenueCyclePage() {
             </div>
             <div className="hidden lg:block border-l border-black/5 pl-12">
               <div className="aspect-[4/3] bg-black/5 rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
+                <img
+                  src="/z10.jpg"
+                  alt="Revenue Cycle Management Hero"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -175,7 +179,11 @@ export default function RevenueCyclePage() {
             </div>
             <div>
               <div className="aspect-square bg-black/5 rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
+                <img
+                  src="/z11.jpg"
+                  alt="BDL Strengthening Revenue Cycle"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

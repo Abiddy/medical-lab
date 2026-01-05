@@ -64,10 +64,6 @@ export default function Metrics() {
                 </div>
               ))}
             </div>
-
-            <p className="mt-10 pt-10 border-t-[0.5px] border-white/15 font-inter text-xs md:text-sm text-white/65 ml-auto max-w-[820px]">
-              * Add any required disclaimer text for the claims made above using this small fine-print text.
-            </p>
           </div>
         </div>
       </div>

@@ -95,7 +95,11 @@ export default function MedicalBillingPage() {
               <a key={idx} href={service.href} className="group cursor-pointer block">
                 {/* Image Container */}
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-6">
-                  <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
+                  <img
+                    src="/z15.jpg"
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 

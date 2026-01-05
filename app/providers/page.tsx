@@ -1,51 +1,43 @@
 'use client'
 
 import { useState } from 'react'
+import { Check } from 'lucide-react'
 
 export default function ProvidersPage() {
-  const [activeSection, setActiveSection] = useState('overview')
+  const [activeSection, setActiveSection] = useState('partnerships')
 
   const sections = [
     {
-      id: 'overview',
-      label: 'Overview',
+      id: 'partnerships',
+      label: 'Facility Partnerships',
+      description: 'Supporting SNFs, LTACs, ALFs, and medical practices.',
       headline: 'Support for Modern Clinical Workflows',
       content: 'We partner with skilled nursing facilities, long term acute care settings, assisted living communities, wound care teams, urgent care clinics, and medical practices that depend on fast diagnostics and consistent support. Our services are designed to strengthen clinical decisions, simplify workflows, and improve the patient experience across a wide range of care environments.',
-      highlights: [
-        { title: 'Facility Partnerships', desc: 'Supporting SNFs, LTACs, ALFs, and medical practices.' },
-        { title: 'Clinical Decision Support', desc: 'Fast diagnostics to strengthen medical oversight.' },
-        { title: 'Workflow Simplification', desc: 'Reducing administrative burden for clinical teams.' },
-        { title: 'Improved Patient Experience', desc: 'Enhancing outcomes across care environments.' }
-      ],
-      image: '/providers-overview.jpg'
+      image: '/pr1.jpg'
     },
     {
-      id: 'specialized-care',
-      label: 'Specialized Care',
+      id: 'decision-support',
+      label: 'Clinical Decision Support',
+      description: 'Fast diagnostics to strengthen medical oversight.',
       headline: 'Specialized Care for Facilities',
       content: 'Our Specialized Care programs provide same day wound and respiratory PCR results, coordinated logistics, and continuous communication with facility teams. These programs are built specifically for SNFs, LTACs, ALFs and similar care environments that require rapid diagnostics and reliable workflow integration.',
-      image: '/specialized-care.jpg'
+      image: '/spec1.jpg'
     },
     {
-      id: 'saliva-genetic',
-      label: 'Saliva & Genetic Testing',
-      headline: 'Saliva and Genetic Testing',
-      content: 'We also offer saliva hormone testing and genetic analysis for providers who require focused endocrine or genetic insights. These tests are available to any organization that chooses to incorporate them into their patient evaluation process and operate separately from our facility-based Specialized Care programs.',
-      image: '/saliva-genetic.jpg'
-    },
-    {
-      id: 'dedicated-support',
-      label: 'Dedicated Support',
+      id: 'workflow',
+      label: 'Workflow Simplification',
+      description: 'Reducing administrative burden for clinical teams.',
       headline: 'Dedicated Provider Support',
       content: 'Our team is available to assist with ordering, sample collection guidance, logistics coordination, reporting questions, and ongoing case needs. Providers can expect fast, reliable communication throughout the entire process.',
-      image: '/dedicated-support.jpg'
+      image: '/m1.jpg'
     },
     {
-      id: 'diagnostic-partner',
-      label: 'Diagnostic Partner',
+      id: 'patient-experience',
+      label: 'Improved Patient Experience',
+      description: 'Enhancing outcomes across care environments.',
       headline: 'A Dependable Diagnostic Partner',
       content: 'Whether supporting a facility through our integrated Specialized Care programs or providing additional testing options for other healthcare groups, our focus remains on accuracy, efficiency and dependable communication. We work to make diagnostics predictable, fast and clinically meaningful for every provider we serve.',
-      image: '/diagnostic-partner.jpg'
+      image: '/saliva1.jpg'
     }
   ]
 
@@ -80,7 +72,7 @@ export default function ProvidersPage() {
     <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
       
-      {/* Hero Section (Image 2 Style) */}
+      {/* Hero Section */}
       <section id="overview" className="relative scroll-mt-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="relative grid grid-cols-1 lg:grid-cols-2">
@@ -88,14 +80,14 @@ export default function ProvidersPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
             
             {/* Left Column */}
-            <div className="lg:pr-12 pb-12 lg:pb-24 pt-20 lg:pt-32 flex flex-col justify-between min-h-[400px] lg:min-h-[700px]">
-              <h1 className="manrope-light text-7xl md:text-7xl lg:text-7xl tracking-tight leading-[0.85]">
-                For
-                <br />
+            <div className="lg:pr-12 pb-12 lg:pb-24 pt-16 md:pt-20 lg:pt-32 flex flex-col justify-between min-h-0 lg:min-h-[700px]">
+              <h1 className="manrope-light text-5xl md:text-7xl lg:text-7xl tracking-tight leading-[1.1] md:leading-[0.85]">
+                For{" "}
+                <br className="hidden md:block" />
                 Providers
               </h1>
               
-              <div className="mt-10">
+              <div className="mt-8 md:mt-10">
                 <p className="manrope-regular text-lg md:text-xl text-black/80 max-w-sm leading-relaxed">
                   Seamless Support for Modern Clinical Workflows—empowering providers with reliable logistics, fast PCR reporting, transparent documentation, and hands-on partnership, so you can focus on quality patient care without administrative interruptions.
                 </p>
@@ -103,10 +95,10 @@ export default function ProvidersPage() {
             </div>
 
             {/* Right Column */}
-            <div className="lg:pl-12 flex flex-col justify-end pb-24 pt-12 lg:pt-32">
-              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-black/5 group border border-black/5">
+            <div className="lg:pl-12 flex flex-col justify-end pb-16 md:pb-24 pt-8 md:pt-12 lg:pt-32">
+              <div className="relative aspect-[4/5] md:aspect-[16/10] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden bg-black/5 group border border-black/5">
                 <img
-                  src="/pr1.jpg"
+                  src="/z41.jpg"
                   alt="Healthcare providers collaborating"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -116,35 +108,90 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      {/* Side-Nav Content Section (Image 2/3 Style) */}
-      <section id="services" className="py-24 border-t border-black/10 scroll-mt-44">
+      {/* Services Section */}
+      <section id="services" className="py-16 md:py-24 border-t border-black/10 scroll-mt-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-16 lg:gap-24">
+          {/* Mobile View: Vertical List */}
+          <div className="lg:hidden space-y-16">
+            {sections.map((section) => (
+              <div key={section.id} className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center shrink-0">
+                    <Check size={16} className="text-black" />
+                  </div>
+                  <div>
+                    <h3 className="manrope-bold text-xl text-[#1a1a1a] mb-1">{section.label}</h3>
+                    <p className="manrope-light text-xs text-black/50 uppercase tracking-widest">
+                      {section.description}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <h2 className="red-hat-display-light text-4xl leading-tight tracking-tight text-[#1a1a1a]">
+                    {section.headline}
+                  </h2>
+                  <p className="manrope-regular text-base text-black/70 leading-relaxed">
+                    {section.content}
+                  </p>
+                  
+                  {section.id === 'patient-experience' && (
+                    <div className="pt-4">
+                      <a
+                        href="/get-started"
+                        className="inline-flex items-center gap-3 group"
+                      >
+                        <span className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
+                          <span className="text-lg">›</span>
+                        </span>
+                        <span className="manrope-bold text-base tracking-tight">Become a Provider</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
+                {section.id !== sections[sections.length - 1].id && (
+                  <div className="border-b border-black/5 pt-8" />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View: Side-Nav Style */}
+          <div className="hidden lg:grid lg:grid-cols-[400px_1fr] gap-24">
             {/* Sticky Left Nav */}
             <div className="lg:sticky lg:top-44 h-fit">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col divide-y divide-black/10">
                 {sections.map((section) => (
                   <button
                     key={section.id}
                     onClick={() => setActiveSection(section.id)}
                     className={[
-                      "flex items-center justify-between px-6 py-5 rounded-xl text-left transition-all duration-300",
-                      activeSection === section.id
-                        ? "bg-[#e7dfd3] text-black shadow-sm"
-                        : "text-black/40 hover:text-black/60 hover:bg-black/5"
+                      "group flex items-start gap-6 py-8 transition-all duration-300 text-left",
+                      activeSection === section.id ? "opacity-100" : "opacity-40 hover:opacity-100"
                     ].join(" ")}
                   >
-                    <span className="manrope-medium text-base">{section.label}</span>
-                    {activeSection === section.id && (
-                      <span className="text-xl">›</span>
-                    )}
+                    <div className={[
+                      "w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-colors",
+                      activeSection === section.id ? "bg-[#ede9df]" : "bg-black/5 group-hover:bg-black/10"
+                    ].join(" ")}>
+                      <Check 
+                        size={20} 
+                        className={activeSection === section.id ? "text-black" : "text-black/40"} 
+                      />
+                    </div>
+                    <div>
+                      <h3 className="manrope-bold text-xl text-[#1a1a1a] mb-2">{section.label}</h3>
+                      <p className="manrope-light text-sm text-black/60 leading-relaxed">
+                        {section.description}
+                      </p>
+                    </div>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Right Content Area */}
-            <div className="min-h-[600px] flex flex-col">
+            <div className="min-h-[600px] flex flex-col pt-8 lg:pt-0">
               {sections.map((section) => (
                 <div
                   key={section.id}
@@ -159,53 +206,24 @@ export default function ProvidersPage() {
                     {section.headline}
                   </h2>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
-                    <div className="order-1 space-y-12">
-                      <p className="manrope-regular text-lg md:text-xl text-black/70 leading-relaxed">
-                        {section.content}
-                      </p>
-
-                      {section.highlights && (
-                        <div className="mt-12 space-y-8">
-                          <p className="manrope-bold text-xs uppercase tracking-widest text-black/40">
-                            Highlights:
-                          </p>
-                          <div className="border-t border-black/5 divide-y divide-black/5">
-                            {section.highlights.map((h, i) => (
-                              <div key={i} className="py-6 flex gap-6 items-center">
-                                <div className="w-12 h-12 rounded-xl bg-[#e7dfd3] flex items-center justify-center shrink-0 border border-black/5 shadow-sm">
-                                  <svg className="w-5 h-5 text-black/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="manrope-bold text-base text-black/90">{h.title}</h4>
-                                  <p className="mt-1 manrope-regular text-sm text-black/60">{h.desc}</p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      
-                      {section.id === 'diagnostic-partner' && (
-                        <div className="pt-8">
-                          <a
-                            href="/get-started"
-                            className="inline-flex items-center gap-4 group"
-                          >
-                            <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                              <span className="text-xl group-hover:text-white transition-colors">›</span>
-                            </span>
-                            <span className="manrope-bold text-lg tracking-tight">Become a Provider</span>
-                          </a>
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-black/5 relative order-2">
-                      <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
-                    </div>
+                  <div className="max-w-2xl space-y-12">
+                    <p className="manrope-regular text-lg md:text-xl text-black/70 leading-relaxed">
+                      {section.content}
+                    </p>
+                    
+                    {activeSection === 'patient-experience' && section.id === 'patient-experience' && (
+                      <div className="pt-8">
+                        <a
+                          href="/get-started"
+                          className="inline-flex items-center gap-4 group"
+                        >
+                          <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
+                            <span className="text-xl group-hover:text-white transition-colors">›</span>
+                          </span>
+                          <span className="manrope-bold text-lg tracking-tight">Become a Provider</span>
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -214,44 +232,33 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      {/* Program Benefits Header (Image 4 Style) */}
-      <section id="framework" className="py-24 border-t border-black/10 bg-[#f7f5ef] scroll-mt-44">
+      {/* Program Benefits Header */}
+      <section id="framework" className="py-16 md:py-24 border-t border-black/10 bg-[#f7f5ef] scroll-mt-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="red-hat-display-light text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight max-w-4xl mb-16">
+          <h2 className="red-hat-display-light text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight max-w-4xl mb-12 md:mb-16">
             A Unified Framework That Supports All Provider Workflows
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div className="space-y-8">
-              <p className="manrope-regular text-lg text-black/60 max-w-xl">
+              <p className="manrope-regular text-lg text-black/60 max-w-xl leading-relaxed">
                 Our integrated model provides a stable diagnostic infrastructure that facilities can rely on each day, strengthening both clinical outcomes and overall operational performance.
               </p>
-              
-              <div className="bg-[#e7dfd3] p-10 rounded-2xl inline-block pr-24">
-                <span className="block text-7xl manrope-light tracking-tight mb-4">$500m+</span>
-                <p className="manrope-medium text-sm text-black/40 uppercase tracking-widest">
-                  Funding secured for development
-                </p>
-              </div>
-            </div>
-            
-            <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 relative">
-              <div className="absolute inset-0 bg-gray-200" /> {/* Placeholder */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why partner with BDL? (Image 5 Style) */}
-      <section id="benefits" className="py-32 bg-[#1F271B] text-white scroll-mt-44">
+      {/* Program Benefits Grid */}
+      <section id="benefits" className="py-20 md:py-32 bg-[#1F271B] text-white scroll-mt-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="red-hat-display-light text-5xl md:text-6xl mb-24">
+          <h2 className="red-hat-display-light text-4xl md:text-6xl mb-16 md:mb-24">
             Program Benefits
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 md:gap-y-24">
             {benefits.map((benefit, i) => (
-              <div key={i} className="space-y-8 border-t border-white/10 pt-12">
+              <div key={i} className="space-y-6 md:space-y-8 border-t border-white/10 pt-8 md:pt-12">
                 <h3 className="red-hat-display-medium text-2xl lg:text-3xl leading-tight">
                   {benefit.title}
                 </h3>
@@ -265,17 +272,17 @@ export default function ProvidersPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-[#f7f5ef]">
+      <section className="py-20 md:py-32 bg-[#f7f5ef]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <a
-            href="/#get-started"
-            className="inline-flex items-center gap-6 group"
+            href="/get-started"
+            className="inline-flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 group"
           >
-            <h2 className="red-hat-display-light text-6xl md:text-7xl lg:text-8xl tracking-tighter hover:text-black/60 transition-colors">
+            <h2 className="red-hat-display-light text-4xl md:text-7xl lg:text-8xl tracking-tighter hover:text-black/60 transition-colors">
               Become a Provider
             </h2>
-            <div className="w-20 h-20 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-              <span className="text-3xl group-hover:text-white transition-colors">›</span>
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
+              <span className="text-2xl md:text-3xl group-hover:text-white transition-colors">›</span>
             </div>
           </a>
         </div>

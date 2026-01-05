@@ -35,7 +35,7 @@ export default function Services() {
         title: 'Diagnostics',
         description:
           'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels.',
-        image: '/w1.png',
+        image: '/z32.jpg',
         links: [
           { label: 'Saliva Testing', href: '/hormone-testing' },
           { label: 'Genetic Testing', href: '/genetic-testing' }

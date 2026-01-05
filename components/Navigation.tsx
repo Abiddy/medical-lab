@@ -48,7 +48,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between md:justify-start h-20 md:h-28">
           {/* Logo */}
           <div className="flex-shrink-0 z-50">
-            <a href="/" className="text-3xl md:text-4xl font-normal tracking-tight text-[#1a1a1a]">
+            <a href="/" className="text-3xl md:text-4xl font-normal tracking-tight text-[#1a1a1a] aldrich">
               BDL
             </a>
           </div>
@@ -272,12 +272,12 @@ export default function Navigation() {
                 <div className="pt-10">
                   <a 
                     href="/get-started"
-                    onClick={() => setIsMenuOpen(false)}
+              onClick={() => setIsMenuOpen(false)}
                     className="flex w-full py-6 rounded-xl bg-[#1a1a1a] text-white text-xl manrope-medium shadow-xl items-center justify-center"
-                  >
-                    Get Started
-                  </a>
-                </div>
+            >
+              Get Started
+            </a>
+          </div>
               </div>
             </motion.div>
         )}
