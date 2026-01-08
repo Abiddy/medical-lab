@@ -211,10 +211,12 @@ export default function Navigation() {
                   id="medical-billing-dropdown"
                   className={["absolute left-0 top-[calc(100%+0px)] pt-4 transition-all duration-200 ease-out", activeDropdown === 'medicalBilling' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}
                 >
-                  <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
-                    <div className="flex flex-col gap-3" role="menu">
+                  <div className="w-[320px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-2">
+                    <div role="menu">
                       {menuItems.medicalBilling.map((item) => (
-                        <DropdownItem key={item.label} item={item} />
+                        <a key={item.label} href={item.href} className="block px-5 py-3 text-base manrope-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-all focus:bg-black/5 focus:outline-none" role="menuitem">
+                          {item.label}
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -347,14 +349,14 @@ export default function Navigation() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="flex flex-col gap-3 pt-6">
-                          <a href="/medical-billing" className="text-sm uppercase tracking-widest manrope-bold text-black/40 mb-2 px-2" onClick={() => setIsMenuOpen(false)}>
+                        <div className="flex flex-col gap-4 pt-6 pl-4">
+                          <a href="/medical-billing" className="text-lg text-black font-semibold manrope-medium border-b border-black/5 pb-2" onClick={() => setIsMenuOpen(false)}>
                             Overview
                           </a>
                           {menuItems.medicalBilling.map((item) => (
-                            <div key={item.label} onClick={() => setIsMenuOpen(false)}>
-                              <DropdownItem item={item} isFullWidth />
-                            </div>
+                            <a key={item.label} href={item.href} className="text-lg text-black/70 hover:text-black manrope-light" onClick={() => setIsMenuOpen(false)}>
+                              {item.label}
+                            </a>
                           ))}
                         </div>
                       </motion.div>
