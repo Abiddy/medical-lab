@@ -24,6 +24,14 @@ export default function Footer() {
             <p className="manrope-regular text-sm text-gray-600 leading-relaxed">
               Your partner in better healthcare. We provide comprehensive diagnostic and billing solutions to healthcare facilities nationwide.
             </p>
+            <div className="space-y-2 pt-2">
+              <a href="tel:5629242299" className="block manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+                Phone: (562) 924-2299
+              </a>
+              <a href="mailto:connect@bdlusa.com" className="block manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+                Email: connect@bdlusa.com
+              </a>
+            </div>
           </div>
 
           {/* Services */}

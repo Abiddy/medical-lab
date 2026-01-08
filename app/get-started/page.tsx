@@ -72,6 +72,48 @@ export default function GetStartedPage() {
             alt="Get Started" 
             className="absolute inset-0 w-full h-full object-cover"
           />
+          
+          {/* Contact Info Overlay */}
+          <div className="absolute inset-0 bg-black/40 flex items-end p-8 md:p-16 lg:p-24">
+            <div className="text-white space-y-8 max-w-sm">
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0">
+                    <Phone size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-widest text-white/50 manrope-bold mb-1">Phone</span>
+                    <a href="tel:5629242299" className="text-xl md:text-2xl manrope-light hover:opacity-70 transition-opacity">(562) 924-2299</a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0">
+                    <Mail size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-widest text-white/50 manrope-bold mb-1">Email</span>
+                    <a href="mailto:connect@bdlusa.com" className="text-xl md:text-2xl manrope-light hover:opacity-70 transition-opacity underline underline-offset-4">connect@bdlusa.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8 border-t border-white/20">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0">
+                    <Clock size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-widest text-white/50 manrope-bold mb-1">Availability</span>
+                    <p className="manrope-regular text-sm md:text-base text-white/80 leading-relaxed">
+                      Our customer service team is available from 9 am - 5pm PST <br className="hidden md:block" />
+                      Monday - Friday
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right Column: Content & Form */}

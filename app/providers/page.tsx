@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Check } from 'lucide-react'
+import BecomePartner from '@/components/BecomeProvider'
 
 export default function ProvidersPage() {
   const [activeSection, setActiveSection] = useState('partnerships')
@@ -144,7 +145,7 @@ export default function ProvidersPage() {
                         <span className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
                           <span className="text-lg">›</span>
                         </span>
-                        <span className="manrope-bold text-base tracking-tight">Become a Provider</span>
+                        <span className="manrope-bold text-base tracking-tight">Become a Partner</span>
                       </a>
                     </div>
                   )}
@@ -220,7 +221,7 @@ export default function ProvidersPage() {
                           <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
                             <span className="text-xl group-hover:text-white transition-colors">›</span>
                           </span>
-                          <span className="manrope-bold text-lg tracking-tight">Become a Provider</span>
+                          <span className="manrope-bold text-lg tracking-tight">Become a Partner</span>
                         </a>
                       </div>
                     )}
@@ -271,22 +272,7 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 md:py-32 bg-[#f7f5ef]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <a
-            href="/get-started"
-            className="inline-flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 group"
-          >
-            <h2 className="red-hat-display-light text-4xl md:text-7xl lg:text-8xl tracking-tighter hover:text-black/60 transition-colors">
-              Become a Provider
-            </h2>
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-              <span className="text-2xl md:text-3xl group-hover:text-white transition-colors">›</span>
-            </div>
-          </a>
-        </div>
-      </section>
+      <BecomePartner />
     </main>
   )
 }

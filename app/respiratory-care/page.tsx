@@ -1,6 +1,8 @@
+import BecomePartner from '@/components/BecomeProvider'
+
 export default function RespiratoryCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
+    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-40 md:pt-56">
       <SubNav />
 
       {/* Hero */}
@@ -20,7 +22,7 @@ export default function RespiratoryCareProgramPage() {
 
             {/* Right */}
             <div className="lg:pl-12 flex flex-col justify-between">
-              <h1 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.95]">
+              <h1 className="manrope-light text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] md:leading-[1.05]">
                 Respiratory
                 <br />
                 Care Program
@@ -61,7 +63,7 @@ export default function RespiratoryCareProgramPage() {
             <div className="py-10 lg:py-16 lg:pr-12">
               <div className="relative w-full rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[4/3]">
                 <img
-                  src="/z4.jpg"
+                  src="/z9.jpg"
                   alt="Respiratory Care Program Overview"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -313,6 +315,7 @@ export default function RespiratoryCareProgramPage() {
           <div className="pb-24" />
         </div>
       </section>
+      <BecomePartner />
     </main>
   )
 }
@@ -330,7 +333,7 @@ function SubNav() {
       <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
         <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
           <div className="flex items-center gap-2 md:gap-4 shrink-0">
-                <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
+                <span className="text-[9px] md:text-[11px] tracking-widest uppercase manrope-bold text-black/80">
                   Respiratory Care Program
                 </span>
               </div>

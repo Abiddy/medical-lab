@@ -1,3 +1,5 @@
+import BecomePartner from '@/components/BecomeProvider'
+
 export default function WoundCareProgramPage() {
   return (
     <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
@@ -447,6 +449,7 @@ export default function WoundCareProgramPage() {
           <div className="pb-24" />
         </div>
       </section>
+      <BecomePartner />
     </main>
   )
 }

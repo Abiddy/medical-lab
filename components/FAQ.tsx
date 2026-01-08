@@ -113,36 +113,29 @@ export default function FAQ() {
   }
 
   return (
-    <section className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-32 pb-24 md:pb-40">
-      {/* SubNav for FAQ Categories */}
-      <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
-        <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
-          <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
-            <div className="flex items-center gap-2 md:gap-4 shrink-0">
-              <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
-                FAQ Categories
-              </span>
-            </div>
-            {faqData.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  setActiveSection(cat.id)
-                  setOpenItem(null)
-                }}
-                className={[
-                  "text-[10px] md:text-xs tracking-widest uppercase manrope-medium transition-all whitespace-nowrap",
-                  activeCategory === cat.id ? "text-black" : "text-black/40 hover:text-black/60"
-                ].join(" ")}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
+    <section className="bg-[#f7f5ef] text-[#1a1a1a] pt-24 md:pt-40 pb-24 md:pb-40">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Category Bubbles */}
+        <div className="flex flex-wrap gap-3 mb-12 md:mb-16">
+          {faqData.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => {
+                setActiveSection(cat.id)
+                setOpenItem(null)
+              }}
+              className={[
+                "px-6 py-2.5 rounded-full border transition-all text-xs md:text-sm manrope-medium tracking-wide uppercase",
+                activeCategory === cat.id 
+                  ? "bg-black text-white border-black" 
+                  : "bg-transparent text-black/50 border-black/10 hover:border-black/30 hover:text-black"
+              ].join(" ")}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
-      </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 md:mt-24">
         <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24">
           
           {/* Left Column: Title & Contact */}
