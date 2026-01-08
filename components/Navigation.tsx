@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight, ArrowDown } from 'lucide-react'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -52,6 +52,27 @@ export default function Navigation() {
       </motion.a>
     )
   }
+
+  const NavArrow = ({ isActive }: { isActive: boolean }) => (
+    <div className="relative overflow-hidden w-3 h-3 ml-1">
+      <motion.div
+        initial={false}
+        animate={isActive ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="flex items-center justify-center w-full h-full"
+      >
+        <ArrowDown size={12} strokeWidth={2.5} />
+      </motion.div>
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={isActive ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="absolute inset-0 flex items-center justify-center w-full h-full"
+      >
+        <ArrowDown size={12} strokeWidth={2.5} />
+      </motion.div>
+    </div>
+  )
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -116,16 +137,16 @@ export default function Navigation() {
                 onMouseEnter={() => setActiveDropdown('specializedCare')}
                 onFocus={() => setActiveDropdown('specializedCare')}
               >
-                <button 
-                  type="button" 
-                  className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1 h-full py-4 focus:outline-none focus:underline"
-                  aria-expanded={activeDropdown === 'specializedCare'}
-                  aria-haspopup="true"
-                  aria-controls="specialized-care-dropdown"
-                >
-                  Specialized Care
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === 'specializedCare' ? 'rotate-180' : ''}`} aria-hidden="true" />
-                </button>
+                  <button 
+                    type="button" 
+                    className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center h-full py-4 focus:outline-none focus:underline"
+                    aria-expanded={activeDropdown === 'specializedCare'}
+                    aria-haspopup="true"
+                    aria-controls="specialized-care-dropdown"
+                  >
+                    Specialized Care
+                    <NavArrow isActive={activeDropdown === 'specializedCare'} />
+                  </button>
                 <div 
                   id="specialized-care-dropdown"
                   className={["absolute left-0 top-[calc(100%+0px)] pt-4 transition-all duration-200 ease-out", activeDropdown === 'specializedCare' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}
@@ -148,13 +169,13 @@ export default function Navigation() {
               >
                 <button 
                   type="button" 
-                  className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1 h-full py-4 focus:outline-none focus:underline"
+                  className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center h-full py-4 focus:outline-none focus:underline"
                   aria-expanded={activeDropdown === 'salivaTesting'}
                   aria-haspopup="true"
                   aria-controls="saliva-testing-dropdown"
-                >
-                Saliva & Genetic Testing
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === 'salivaTesting' ? 'rotate-180' : ''}`} aria-hidden="true" />
+            >
+              Saliva & Genetic Testing
+                  <NavArrow isActive={activeDropdown === 'salivaTesting'} />
                 </button>
                 <div 
                   id="saliva-testing-dropdown"
@@ -178,13 +199,13 @@ export default function Navigation() {
               >
                 <a 
                   href="/medical-billing" 
-                  className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center gap-1 h-full py-4 focus:outline-none focus:underline"
+                  className="text-[#1a1a1a] hover:text-gray-600 transition-colors flex items-center h-full py-4 focus:outline-none focus:underline"
                   aria-expanded={activeDropdown === 'medicalBilling'}
                   aria-haspopup="true"
                   aria-controls="medical-billing-dropdown"
-                >
-                Medical Billing
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === 'medicalBilling' ? 'rotate-180' : ''}`} aria-hidden="true" />
+            >
+              Medical Billing
+                  <NavArrow isActive={activeDropdown === 'medicalBilling'} />
               </a>
                 <div 
                   id="medical-billing-dropdown"
