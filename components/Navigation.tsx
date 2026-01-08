@@ -2,11 +2,56 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<null | 'specializedCare' | 'salivaTesting' | 'medicalBilling'>(null)
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<null | 'specializedCare' | 'salivaTesting' | 'medicalBilling'>(null)
+
+  const DropdownItem = ({ item, isFullWidth = false }: { item: { label: string, href: string, comingSoon?: boolean }, isFullWidth?: boolean }) => {
+    if (item.comingSoon) {
+      return (
+        <div className={`${isFullWidth ? 'col-span-2' : ''} flex items-center justify-between rounded-xl bg-[#ede9df]/50 border border-black/5 px-6 py-8 text-[#1a1a1a] opacity-70 cursor-not-allowed`} role="menuitem" aria-disabled="true">
+          <span className="text-base manrope-medium">{item.label} <span className="ml-2 text-[10px] opacity-50 uppercase tracking-widest">(Coming Soon)</span></span>
+        </div>
+      )
+    }
+
+    return (
+      <motion.a 
+        href={item.href}
+        initial="initial"
+        whileHover="hover"
+        className={`${isFullWidth ? 'col-span-2' : ''} group relative flex items-center justify-between rounded-xl bg-[#ede9df] border border-black/5 px-6 py-8 text-[#1a1a1a] transition-all hover:bg-[#e2d8ca] focus:outline-none`} 
+        role="menuitem"
+      >
+        <span className="text-base manrope-medium">{item.label}</span>
+        <div className="relative overflow-hidden w-5 h-5 flex items-center justify-center">
+          <motion.div
+            className="flex items-center justify-center w-full h-full"
+            variants={{
+              initial: { x: 0, opacity: 1 },
+              hover: { x: 30, opacity: 0 }
+            }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <ArrowRight size={18} strokeWidth={1.5} />
+          </motion.div>
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center w-full h-full"
+            variants={{
+              initial: { x: -30, opacity: 0 },
+              hover: { x: 0, opacity: 1 }
+            }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <ArrowRight size={18} strokeWidth={1.5} />
+          </motion.div>
+        </div>
+      </motion.a>
+    )
+  }
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -53,17 +98,17 @@ export default function Navigation() {
       >
         <div className="mx-auto px-6 lg:px-8 relative">
           <div className="flex items-center justify-between md:justify-start h-20 md:h-28">
-            {/* Logo */}
+          {/* Logo */}
             <div className="flex-shrink-0 z-50">
               <a href="/" className="text-3xl md:text-4xl font-normal tracking-tight text-[#1a1a1a] aldrich" aria-label="BDL Home">
-                BDL
-              </a>
-            </div>
+              BDL
+            </a>
+          </div>
 
             {/* Vertical Divider (Desktop Only) */}
             <div className="hidden md:block self-stretch w-px bg-black/10 mx-8 lg:mx-14" aria-hidden="true" />
 
-            {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links */}
             <div className="font-inter hidden md:flex items-center gap-6 lg:gap-12 flex-1 text-base">
               {/* Specialized Care Dropdown */}
               <div 
@@ -79,26 +124,16 @@ export default function Navigation() {
                   aria-controls="specialized-care-dropdown"
                 >
                   Specialized Care
-                  <svg className={`w-3 h-3 transition-transform ${activeDropdown === 'specializedCare' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === 'specializedCare' ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </button>
                 <div 
                   id="specialized-care-dropdown"
                   className={["absolute left-0 top-[calc(100%+0px)] pt-4 transition-all duration-200 ease-out", activeDropdown === 'specializedCare' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}
                 >
-                  <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
+                  <div className="w-[500px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
                     <div className="grid grid-cols-2 gap-3" role="menu">
                       {menuItems.specializedCare.map((item) => (
-                        item.comingSoon ? (
-                          <div key={item.label} className="col-span-2 flex items-center justify-between rounded-xl bg-[#e7dfd3] border border-black/5 px-5 py-6 text-[#1a1a1a] opacity-70 cursor-not-allowed" role="menuitem" aria-disabled="true">
-                            <span className="text-base font-inter">{item.label} <span className="ml-2 text-xs opacity-50">(Coming Soon)</span></span>
-                          </div>
-                        ) : (
-                          <a key={item.label} href={item.href} className="flex items-center justify-between rounded-xl bg-[#e7dfd3] border border-black/5 px-5 py-6 text-[#1a1a1a] hover:bg-[#e2d8ca] transition-colors focus:bg-[#e2d8ca] focus:outline-none" role="menuitem">
-                            <span className="text-base font-inter">{item.label}</span>
-                          </a>
-                        )
+                        <DropdownItem key={item.label} item={item} />
                       ))}
                     </div>
                   </div>
@@ -119,20 +154,16 @@ export default function Navigation() {
                   aria-controls="saliva-testing-dropdown"
                 >
                 Saliva & Genetic Testing
-                  <svg className={`w-3 h-3 transition-transform ${activeDropdown === 'salivaTesting' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === 'salivaTesting' ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </button>
                 <div 
                   id="saliva-testing-dropdown"
                   className={["absolute left-0 top-[calc(100%+0px)] pt-4 transition-all duration-200 ease-out", activeDropdown === 'salivaTesting' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}
                 >
-                  <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
+                  <div className="w-[500px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
                     <div className="grid grid-cols-2 gap-3" role="menu">
                       {menuItems.salivaTesting.map((item) => (
-                        <a key={item.label} href={item.href} className="flex items-center justify-between rounded-xl bg-[#e7dfd3] border border-black/5 px-5 py-6 text-[#1a1a1a] hover:bg-[#e2d8ca] transition-colors focus:bg-[#e2d8ca] focus:outline-none" role="menuitem">
-                          <span className="text-base font-inter">{item.label}</span>
-                        </a>
+                        <DropdownItem key={item.label} item={item} />
                       ))}
                     </div>
                   </div>
@@ -153,20 +184,16 @@ export default function Navigation() {
                   aria-controls="medical-billing-dropdown"
                 >
                 Medical Billing
-                  <svg className={`w-3 h-3 transition-transform ${activeDropdown === 'medicalBilling' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === 'medicalBilling' ? 'rotate-180' : ''}`} aria-hidden="true" />
               </a>
                 <div 
                   id="medical-billing-dropdown"
                   className={["absolute left-0 top-[calc(100%+0px)] pt-4 transition-all duration-200 ease-out", activeDropdown === 'medicalBilling' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"].join(" ")}
                 >
-                  <div className="w-[320px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-2">
-                    <div role="menu">
+                  <div className="w-[400px] rounded-2xl bg-[#f7f5ef] border border-black/10 shadow-[0_30px_80px_rgba(0,0,0,0.15)] p-4">
+                    <div className="flex flex-col gap-3" role="menu">
                       {menuItems.medicalBilling.map((item) => (
-                        <a key={item.label} href={item.href} className="block px-5 py-3 text-base manrope-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-all focus:bg-black/5 focus:outline-none" role="menuitem">
-                          {item.label}
-                        </a>
+                        <DropdownItem key={item.label} item={item} />
                       ))}
                     </div>
                   </div>
@@ -184,8 +211,8 @@ export default function Navigation() {
                 className="px-12 py-5 rounded-md transition-colors text-base font-normal bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white whitespace-nowrap focus:ring-2 focus:ring-black focus:ring-offset-2 focus:outline-none"
               >
                 Get Started
-              </a>
-            </div>
+            </a>
+          </div>
 
             {/* Mobile Menu Toggle Button */}
             <button
@@ -220,7 +247,7 @@ export default function Navigation() {
               <div className="flex flex-col pt-28 pb-10 px-6 space-y-6">
                 {/* Specialized Care Accordion */}
                 <div className="border-b border-black/5 pb-4">
-                  <button
+          <button
                     onClick={() => setMobileActiveDropdown(mobileActiveDropdown === 'specializedCare' ? null : 'specializedCare')}
                     className="flex items-center justify-between w-full text-2xl manrope-medium"
                   >
@@ -237,17 +264,11 @@ export default function Navigation() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="flex flex-col gap-4 pt-6 pl-4">
+                        <div className="flex flex-col gap-3 pt-6">
                           {menuItems.specializedCare.map((item) => (
-                            item.comingSoon ? (
-                              <div key={item.label} className="text-lg text-black/40 manrope-light">
-                                {item.label} <span className="text-xs">(Coming Soon)</span>
-                              </div>
-                            ) : (
-                              <a key={item.label} href={item.href} className="text-lg text-black/70 hover:text-black manrope-light" onClick={() => setIsMenuOpen(false)}>
-                                {item.label}
-                              </a>
-                            )
+                            <div key={item.label} onClick={() => setIsMenuOpen(false)}>
+                              <DropdownItem item={item} isFullWidth />
+                            </div>
                           ))}
                         </div>
                       </motion.div>
@@ -264,8 +285,8 @@ export default function Navigation() {
                     Saliva & Genetic Testing
                     <svg className={`w-5 h-5 transition-transform ${mobileActiveDropdown === 'salivaTesting' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+            </svg>
+          </button>
                   <AnimatePresence>
                     {mobileActiveDropdown === 'salivaTesting' && (
                       <motion.div
@@ -274,17 +295,17 @@ export default function Navigation() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="flex flex-col gap-4 pt-6 pl-4">
+                        <div className="flex flex-col gap-3 pt-6">
                           {menuItems.salivaTesting.map((item) => (
-                            <a key={item.label} href={item.href} className="text-lg text-black/70 hover:text-black manrope-light" onClick={() => setIsMenuOpen(false)}>
-                              {item.label}
-                            </a>
+                            <div key={item.label} onClick={() => setIsMenuOpen(false)}>
+                              <DropdownItem item={item} isFullWidth />
+                            </div>
                           ))}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+        </div>
 
                 {/* Medical Billing Accordion */}
                 <div className="border-b border-black/5 pb-4">
@@ -305,14 +326,14 @@ export default function Navigation() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="flex flex-col gap-4 pt-6 pl-4">
-                          <a href="/medical-billing" className="text-lg text-black font-semibold manrope-medium border-b border-black/5 pb-2" onClick={() => setIsMenuOpen(false)}>
+                        <div className="flex flex-col gap-3 pt-6">
+                          <a href="/medical-billing" className="text-sm uppercase tracking-widest manrope-bold text-black/40 mb-2 px-2" onClick={() => setIsMenuOpen(false)}>
                             Overview
                           </a>
                           {menuItems.medicalBilling.map((item) => (
-                            <a key={item.label} href={item.href} className="text-lg text-black/70 hover:text-black manrope-light" onClick={() => setIsMenuOpen(false)}>
-                              {item.label}
-                            </a>
+                            <div key={item.label} onClick={() => setIsMenuOpen(false)}>
+                              <DropdownItem item={item} isFullWidth />
+                            </div>
                           ))}
                         </div>
                       </motion.div>
