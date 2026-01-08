@@ -365,12 +365,11 @@ export default function WoundCareProgramPage() {
 
       {/* Clinical Workflow */}
       <section id="clinical-workflow" className="mt-12 md:mt-16 scroll-mt-32 md:scroll-mt-44">
-        <div className="border-t border-black/5" />
+        <div className="border-t border-black/10" />
 
-        {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -379,122 +378,73 @@ export default function WoundCareProgramPage() {
           </div>
         </div>
 
-        <div className="border-t border-black/5" />
+        <div className="border-t border-black/10" />
 
         <div className="mx-auto px-6 lg:px-8">
-          <div className="relative grid grid-cols-1 lg:grid-cols-2">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5" />
-
-            {/* Left content */}
-            <div className="py-10 lg:py-16 lg:pr-12">
-              <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight">
-                A Structured Process Designed for Facility Operations
-              </h2>
-
-              <div className="mt-8 md:mt-10 space-y-6 md:space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
-                <p>
-                  Our clinical workflow ensures predictable, efficient wound care support across a variety of
-                  post-acute environments. Each step is designed to reduce administrative burden, support timely
-                  intervention, and keep communication clear between your staff, our team, and the laboratory.
-                </p>
-
-                <ol className="space-y-8">
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      1. Facility Enrollment and Setup
-                    </div>
-                    <p className="mt-3">
-                      Once enrolled into the Wound Care Program, we confirm your facility details, establish courier
-                      scheduling, provide testing materials, and align our workflow with your current protocols. This
-                      ensures a smooth, organized start for your team.
-                    </p>
-                  </li>
-
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      2. Wound Evaluation and Sample Collection
-                    </div>
-                    <p className="mt-3">Wound assessments and sample collections may be completed by:</p>
-                    <ul className="mt-3 list-disc pl-6 space-y-2">
-                      <li>Our partnered wound care team, or</li>
-                      <li>Your facility’s existing wound care provider</li>
-                    </ul>
-                    <p className="mt-3">
-                      Both models follow a standardized protocol for swabbing, labeling, and documentation to ensure
-                      consistency and sample integrity.
-                    </p>
-                  </li>
-
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      3. Designated Courier Pickup
-                    </div>
-                    <p className="mt-3">
-                      Collected samples are transferred to our designated courier for same-day pickup. This controlled
-                      chain-of-custody process maintains timing reliability and ensures that samples reach the lab
-                      without delay.
-                    </p>
-                  </li>
-
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      4. Same-Day PCR Processing
-                    </div>
-                    <p className="mt-3">
-                      Once received, samples are processed through our rapid PCR platform. Most facilities receive
-                      results the same evening, allowing providers to update care plans promptly and proceed with
-                      greater confidence.
-                    </p>
-                  </li>
-
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      5. Digital Result Delivery
-                    </div>
-                    <p className="mt-3">
-                      Reports are delivered electronically in a clean, structured format. Findings are presented
-                      clearly and are optimized for fast clinical interpretation and smooth documentation within
-                      facility workflows.
-                    </p>
-                  </li>
-
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      6. Communication and Case Support
-                    </div>
-                    <p className="mt-3">
-                      Throughout the process, our team remains in contact with facility staff and clinical partners,
-                      providing updates at every stage from pickup to result delivery. We remain available for
-                      questions related to workflow, reporting, and logistics.
-                    </p>
-                  </li>
-
-                  <li>
-                    <div className="red-hat-display-bold text-xl text-[#1a1a1a]">
-                      7. Ongoing Program Optimization
-                    </div>
-                    <p className="mt-3">
-                      As your facility continues with the program, we assess efficiency, adjust courier timing as
-                      needed, and support communication between your nursing staff and our partnered wound care team.
-                      The goal is a stable, predictable workflow that supports improved care and stronger facility
-                      operations.
-                    </p>
-                  </li>
-                </ol>
-              </div>
-            </div>
-
-            {/* Right column placeholder */}
-            <div className="py-10 lg:py-16 lg:pl-12 border-t lg:border-t-0 border-black/5">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-black/5 bg-black/5 aspect-[4/3]">
-                <img
-                  src="/z9.jpg"
-                  alt="Wound care clinical workflow"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          <div className="py-10 md:py-16">
+            <h2 className="red-hat-display-light text-4xl md:text-6xl leading-[1.1] md:leading-[1.05] tracking-tight max-w-4xl">
+              A Structured Process Designed for Facility Operations
+            </h2>
           </div>
+
+          <div className="border-t border-black/10" />
+
+          <div className="divide-y divide-black/10">
+            {[
+              {
+                step: '01',
+                title: 'Facility Enrollment and Setup',
+                desc: 'Once enrolled into the Wound Care Program, we confirm your facility details, establish courier scheduling, provide testing materials, and align our workflow with your current protocols. This ensures a smooth, organized start for your team.'
+              },
+              {
+                step: '02',
+                title: 'Wound Evaluation & Collection',
+                desc: 'Wound assessments and sample collections may be completed by our partnered wound care team or your facility’s existing provider. Both models follow a standardized protocol for swabbing, labeling, and documentation to ensure consistency and sample integrity.'
+              },
+              {
+                step: '03',
+                title: 'Designated Courier Pickup',
+                desc: 'Collected samples are transferred to our designated courier for same-day pickup. This controlled chain-of-custody process maintains timing reliability and ensures that samples reach the lab without delay.'
+              },
+              {
+                step: '04',
+                title: 'Same-Day PCR Processing',
+                desc: 'Once received, samples are processed through our rapid PCR platform. Most facilities receive results the same evening, allowing providers to update care plans promptly and proceed with greater confidence.'
+              },
+              {
+                step: '05',
+                title: 'Digital Result Delivery',
+                desc: 'Reports are delivered electronically in a clean, structured format. Findings are presented clearly and are optimized for fast clinical interpretation and smooth documentation within facility workflows.'
+              },
+              {
+                step: '06',
+                title: 'Communication and Case Support',
+                desc: 'Throughout the process, our team remains in contact with facility staff and clinical partners, providing updates at every stage from pickup to result delivery. We remain available for questions related to workflow, reporting, and logistics.'
+              },
+              {
+                step: '07',
+                title: 'Ongoing Program Optimization',
+                desc: 'As your facility continues with the program, we assess efficiency, adjust courier timing as needed, and support communication between your nursing staff and our partnered wound care team. The goal is a stable, predictable workflow that supports improved care.'
+              }
+            ].map((item) => (
+              <div key={item.step} className="py-10 md:py-14">
+                <div className="grid grid-cols-1 lg:grid-cols-[120px_420px_1fr] gap-6 lg:gap-10 items-start">
+                  <div className="text-2xl md:text-4xl red-hat-display-light text-black/80">
+                    {item.step}
+                  </div>
+                  <div className="red-hat-display-medium text-xl md:text-3xl text-[#1a1a1a]">
+                    {item.title}
+                  </div>
+                  <p className="manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-3xl">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-t border-black/10" />
+          <div className="pb-24" />
         </div>
       </section>
     </main>

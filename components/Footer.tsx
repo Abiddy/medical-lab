@@ -20,7 +20,7 @@ export default function Footer() {
           
           {/* Company Info */}
           <div className="space-y-6">
-            <h3 className="text-xl text-black aldrich">BioAnalysis Diagnostic Laboratories</h3>
+            <h3 className="text-xl text-black manrope-medium">Bioanalysis Diagnostic Laboratories</h3>
             <p className="manrope-regular text-sm text-gray-600 leading-relaxed">
               Your partner in better healthcare. We provide comprehensive diagnostic and billing solutions to healthcare facilities nationwide.
             </p>
@@ -108,7 +108,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="manrope-regular text-sm text-gray-600">
-              © {new Date().getFullYear()} BioAnalysis Diagnostic Laboratories. All rights reserved.
+              © {new Date().getFullYear()} Bioanalysis Diagnostic Laboratories. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="/faq" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">

@@ -2,18 +2,18 @@
 
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { ArrowUpRight } from 'lucide-react'
+import { FlaskConical, Globe, ClipboardCheck, Activity, Users, FileText, PieChart, Headset, ShieldCheck } from 'lucide-react'
 
-interface ServiceLink {
-  label: string
-  href: string
+interface Feature {
+  description: string
+  icon: any
 }
 
 interface Service {
   title: string
   description: string
   image: string
-  links: ServiceLink[]
+  features: Feature[]
 }
 
 export default function Services() {
@@ -24,30 +24,61 @@ export default function Services() {
       {
         title: 'Specialized Care',
         description:
-          'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care. By partnering with an experienced clinical team, your facility gains support with patient evaluation, treatment planning, biopsy coordination, and ongoing case oversight.',
+          'Our Specialized Care programs provide facilities with a fully integrated clinical solution across wound care and respiratory care.',
         image: '/spec1.jpg',
-        links: [
-          { label: 'Wound Care Program', href: '/wound-care' },
-          { label: 'Respiratory Care Program', href: '/respiratory-care' }
+        features: [
+          {
+            description: 'Patient evaluation and treatment planning with experienced clinical teams.',
+            icon: Activity
+          },
+          {
+            description: 'Biopsy coordination and ongoing case oversight for complex wound care.',
+            icon: Users
+          },
+          {
+            description: 'Full integration with facility staff to deliver higher quality care.',
+            icon: ClipboardCheck
+          }
         ]
       },
       {
         title: 'Diagnostics',
         description:
-          'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory/virology testing. We also support broader clinical needs with saliva and genetic panels.',
+          'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory testing.',
         image: '/z32.jpg',
-        links: [
-          { label: 'Saliva Testing', href: '/hormone-testing' },
-          { label: 'Genetic Testing', href: '/genetic-testing' }
+        features: [
+          {
+            description: 'High-value wound care PCR and respiratory/virology testing solutions.',
+            icon: FlaskConical
+          },
+          {
+            description: 'Support for broader clinical needs with saliva and genetic panels.',
+            icon: Globe
+          },
+          {
+            description: 'Accurate, timely results to inform critical clinical decisions.',
+            icon: ShieldCheck
+          }
         ]
       },
       {
         title: 'Medical Billing',
         description:
-          'Our Medical Billing services give facilities complete revenue cycle support across all specialties. We handle claims submission, denial management, A/R follow-up, and payer communication—ensuring every encounter is processed accurately and without administrative burden.',
+          'Our Medical Billing services give facilities complete revenue cycle support across all specialties.',
         image: '/m1.jpg',
-        links: [
-          { label: 'Overview', href: '/medical-billing' }
+        features: [
+          {
+            description: 'Complete revenue cycle support from claims submission to payment.',
+            icon: FileText
+          },
+          {
+            description: 'Expert denial management and A/R follow-up to maximize recovery.',
+            icon: PieChart
+          },
+          {
+            description: 'Dedicated support team for payer communication and administrative tasks.',
+            icon: Headset
+          }
         ]
       },
     ],
@@ -57,92 +88,90 @@ export default function Services() {
   const activeService = services[activeIndex]
 
   return (
-    <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-32 pb-24 md:pb-40">
-      <div className="px-6 lg:px-12 mb-12 md:mb-20">
-        <h2 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.9] mb-4">
+    <section id="services" className="bg-[#f7f5ef] text-[#1a1a1a] pt-24 md:pt-32">
+      <div className="px-6 lg:px-12 mb-12 md:mb-16">
+        <h2 className="manrope-light text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] md:leading-[0.9]">
           What we <br className="hidden md:block" />deliver
         </h2>
       </div>
 
-      <div className="border-t border-black/10 relative">
-        {/* Vertical Line */}
-        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* Left Column: Navigation Buttons */}
-          <div className="border-b lg:border-b-0 border-black/10 overflow-x-auto">
-            <div className="flex lg:flex-col min-w-full">
-              {services.map((service, index) => (
-                <button
-                  key={service.title}
-                  onClick={() => setActiveIndex(index)}
-                  className={[
-                    "flex-1 lg:w-full text-center lg:text-left px-4 md:px-6 lg:px-12 py-6 md:py-12 lg:py-20 transition-all border-r lg:border-r-0 lg:border-b border-black/10 last:border-r-0 lg:last:border-b-0 group whitespace-nowrap lg:whitespace-normal",
-                    activeIndex === index ? "bg-black/5" : "hover:bg-black/[0.02]"
-                  ].join(" ")}
-                >
-                  <div className="flex items-center justify-center lg:justify-between">
-                    <h3 className={[
-                      "manrope-medium text-xs md:text-lg lg:text-4xl tracking-tight transition-all",
-                      activeIndex === index ? "opacity-100 lg:translate-x-4" : "opacity-30 group-hover:opacity-50"
-                    ].join(" ")}>
-                      {service.title}
-                    </h3>
-                    <div className={[
-                      "hidden lg:flex w-10 h-10 rounded-full border border-black/10 items-center justify-center transition-all",
-                      activeIndex === index ? "bg-black text-white" : "opacity-0"
-                    ].join(" ")}>
-                      <span className="text-lg font-light">›</span>
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column: Content Display */}
-          <div className="px-6 lg:px-12 py-12 lg:py-20">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                className="flex flex-col"
+      <div className="flex flex-col lg:flex-row min-h-[800px] border-t border-black/10">
+        {/* Sidebar */}
+        <div className="w-full lg:w-[400px] border-b lg:border-b-0 lg:border-r border-black/10 bg-[#f7f5ef]">
+          <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar p-6 lg:p-10 space-y-3">
+            {services.map((service, index) => (
+              <button
+                key={service.title}
+                onClick={() => setActiveIndex(index)}
+                className={[
+                  "flex-1 lg:w-full flex items-center justify-between px-6 lg:px-10 py-5 lg:py-6 transition-all whitespace-nowrap lg:whitespace-normal group rounded-xl",
+                  activeIndex === index ? "bg-[#ede9e1]" : "hover:bg-[#ede9e1]/30 text-black/40"
+                ].join(" ")}
               >
-                {/* Image */}
-                <div className="relative aspect-[16/10] rounded-xl md:rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-8 md:mb-12">
+                <span className="manrope-medium text-lg lg:text-xl tracking-tight transition-all">
+                  {service.title}
+                </span>
+                <span className={[
+                  "hidden lg:block text-black text-2xl transition-all duration-300",
+                  activeIndex === index ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                ].join(" ")}>
+                  ›
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Content Area */}
+        <div className="flex-1 bg-[#f7f5ef]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 xl:grid-cols-12 h-full"
+            >
+              {/* Image Section */}
+              <div className="xl:col-span-6 p-8 lg:p-12 xl:p-16 flex items-start justify-center">
+                <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden ring-1 ring-black/5">
                   <img
                     src={activeService.image}
                     alt={activeService.title}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
+              </div>
 
-                {/* Metadata / Links Area */}
-                <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-6 md:mb-8">
-                  {activeService.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="flex items-center gap-2 group/link"
-                    >
-                      <span className="manrope-bold text-[10px] md:text-xs uppercase tracking-widest text-[#1a1a1a] group-hover/link:opacity-60 transition-all">
-                        {link.label}
-                      </span>
-                      <ArrowUpRight size={14} className="text-[#1a1a1a] group-hover/link:opacity-60 transition-all" />
-                    </a>
-                  ))}
+              {/* Text Section */}
+              <div className="xl:col-span-6 flex flex-col">
+                <div className="p-8 lg:p-12 xl:p-16 pb-8 md:pb-12 xl:pb-16">
+                  <h3 className="manrope-medium text-2xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight text-black/90 mb-12 lg:mb-16">
+                    {activeService.description}
+                  </h3>
+
+                  <div className="space-y-0 -mx-8 lg:-mx-12 xl:-mx-16 border-b border-black/10">
+                    {activeService.features.map((feature, idx) => (
+                      <div 
+                        key={idx} 
+                        className="flex gap-4 px-8 py-4 lg:px-12 lg:py-5 xl:px-16 xl:py-5 border-t border-black/10 group hover:bg-black/[0.01] transition-colors"
+                      >
+                        <div className="flex-shrink-0 w-9 h-9 rounded-lg border border-black/10 bg-white flex items-center justify-center shadow-sm group-hover:border-black/20 transition-all">
+                          <feature.icon size={16} strokeWidth={1.5} className="text-black/80" />
+                        </div>
+                        <div className="pt-1">
+                          <p className="manrope-regular text-sm md:text-base text-black/65 leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-
-                {/* Description */}
-                <p className="manrope-regular text-base md:text-lg lg:text-xl text-black/65 leading-relaxed max-w-xl">
-                  {activeService.description}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

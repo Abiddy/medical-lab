@@ -81,48 +81,47 @@ export default function MedicalBillingPage() {
       {/* Hero Section */}
       <section className="pt-20 lg:pt-32 pb-16">
         <div className="mx-auto px-6 lg:px-8">
-          <h1 className="manrope-light text-6xl md:text-6xl lg:text-6xl tracking-tight leading-none text-black/90">
+          <h1 className="manrope-light text-5xl md:text-6xl lg:text-7xl tracking-tight leading-none text-black/90">
             Medical Billing
           </h1>
+          <p className="mt-8 manrope-light text-xl text-black/50 max-w-2xl">
+            Comprehensive revenue cycle solutions designed to protect your practice and support patient care.
+          </p>
         </div>
       </section>
 
       {/* Cards Grid */}
-      <section className="border-t border-black/5 pb-32">
-        <div className="mx-auto px-6 lg:px-8 pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+      <section className="border-t border-black/10 pb-32">
+        <div className="mx-auto px-6 lg:px-8 pt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredServices.map((service, idx) => (
-              <a key={idx} href={service.href} className="group cursor-pointer block">
-                {/* Image Container */}
-                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 border border-black/5 mb-6">
-                  <img
-                    src="/z15.jpg"
-                    alt={service.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-
+              <a 
+                key={idx} 
+                href={service.href} 
+                className="group cursor-pointer block p-8 md:p-10 rounded-2xl bg-white border border-black/5 hover:border-black/10 transition-all duration-300 hover:shadow-sm"
+              >
                 {/* Meta */}
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-8">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                    <span className="text-[11px] tracking-widest uppercase manrope-bold text-black/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-black/20" />
+                    <span className="text-[10px] tracking-widest uppercase manrope-bold text-black/40">
                       {service.category}
                     </span>
                   </div>
-                  <span className="text-[11px] tracking-widest uppercase manrope-medium text-black/30">
-                    &bull; {service.date}
-                  </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl md:text-2xl manrope-medium text-black/90 leading-tight group-hover:text-black transition-colors">
+                <h3 className="text-2xl md:text-3xl manrope-medium text-black/90 leading-tight mb-4 group-hover:text-black transition-colors">
                   {service.title}
                 </h3>
-                <p className="mt-4 text-sm manrope-regular text-black/60 leading-relaxed max-w-sm">
+                <p className="text-base manrope-light text-black/60 leading-relaxed">
                   {service.description}
                 </p>
+
+                <div className="mt-12 flex items-center gap-2 text-[11px] manrope-bold uppercase tracking-widest text-black/40 group-hover:text-black transition-colors">
+                  View Service
+                  <span className="text-lg transition-transform group-hover:translate-x-1">›</span>
+                </div>
               </a>
             ))}
           </div>
