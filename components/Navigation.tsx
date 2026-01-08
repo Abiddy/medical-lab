@@ -223,6 +223,7 @@ export default function Navigation() {
                 </div>
               </div>
 
+              <a href="/about" className="text-[#1a1a1a] hover:text-gray-600 transition-colors focus:underline focus:outline-none">About</a>
               <a href="/providers" className="text-[#1a1a1a] hover:text-gray-600 transition-colors focus:underline focus:outline-none">For Providers</a>
               <a href="/faq" className="text-[#1a1a1a] hover:text-gray-600 transition-colors focus:underline focus:outline-none">FAQ</a>
             </div>
@@ -364,6 +365,7 @@ export default function Navigation() {
                   </AnimatePresence>
                 </div>
 
+                <a href="/about" className="text-2xl manrope-medium border-b border-black/5 pb-4" onClick={() => setIsMenuOpen(false)}>About</a>
                 <a href="/providers" className="text-2xl manrope-medium border-b border-black/5 pb-4" onClick={() => setIsMenuOpen(false)}>For Providers</a>
                 <a href="/faq" className="text-2xl manrope-medium border-b border-black/5 pb-4" onClick={() => setIsMenuOpen(false)}>FAQ</a>
 
