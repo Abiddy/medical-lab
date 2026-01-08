@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 
 export default function HormoneTestingPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
+    <main id="main-content" className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
 
       {/* Hero */}
@@ -55,7 +55,7 @@ export default function HormoneTestingPage() {
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -112,7 +112,7 @@ export default function HormoneTestingPage() {
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-white/20 flex items-center justify-center text-white/80">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-white/20 flex items-center justify-center text-white/80" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-white/10 text-white/85 px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-light border border-white/10 uppercase tracking-wider">
@@ -243,8 +243,8 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
-      <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
+    <nav className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth" aria-label="Page sub-navigation">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 min-w-max md:min-w-0 relative">
         <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
           <div className="flex items-center gap-2 md:gap-4 shrink-0">
             <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
@@ -255,13 +255,13 @@ function SubNav() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-all whitespace-nowrap"
+              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-all whitespace-nowrap outline-none focus-visible:underline focus-visible:text-black"
             >
               {item.label}
             </a>
           ))}
         </div>
       </div>
-    </div>
+    </nav>
   )
 }

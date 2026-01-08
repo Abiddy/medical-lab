@@ -30,12 +30,12 @@ export default function Metrics() {
       <div className="mx-auto px-6 py-20 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-12 lg:gap-0 relative">
           {/* Vertical Line */}
-          <div className="hidden lg:block absolute left-[300px] top-0 bottom-0 w-px bg-white/10" />
+          <div className="hidden lg:block absolute left-[300px] top-0 bottom-0 w-px bg-white/10" aria-hidden="true" />
 
           {/* Left label */}
           <div className="flex items-start">
             <div className="flex items-center gap-3 font-inter text-sm tracking-wide text-white/85">
-              <span className="w-1.5 h-1.5 rounded-full bg-white/90" />
+              <span className="w-1.5 h-1.5 rounded-full bg-white/90" aria-hidden="true" />
               <span>Impressive metrics</span>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function Metrics() {
                     {metric.description}
                   </p>
                   {index !== metrics.length - 1 && (
-                    <div className="mt-10 md:mt-12 border-b-[0.2px] border-white/10" />
+                    <div className="mt-10 md:mt-12 border-b-[0.2px] border-white/10" aria-hidden="true" />
                   )}
                 </div>
               ))}

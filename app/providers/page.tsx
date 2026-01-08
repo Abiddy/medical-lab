@@ -70,7 +70,7 @@ export default function ProvidersPage() {
   ]
 
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
+    <main id="main-content" className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
       
       {/* Hero Section */}
@@ -118,7 +118,7 @@ export default function ProvidersPage() {
               <div key={section.id} className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center shrink-0">
-                    <Check size={16} className="text-black" />
+                    <Check size={16} className="text-black" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="manrope-bold text-xl text-[#1a1a1a] mb-1">{section.label}</h3>
@@ -140,10 +140,11 @@ export default function ProvidersPage() {
                     <div className="pt-4">
                       <a
                         href="/get-started"
-                        className="inline-flex items-center gap-3 group"
+                        className="inline-flex items-center gap-3 group outline-none focus-visible:underline"
+                        aria-label="Become a Partner"
                       >
-                        <span className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
-                          <span className="text-lg">›</span>
+                        <span className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all group-focus-visible:bg-black group-focus-visible:border-black">
+                          <span className="text-lg group-hover:text-white group-focus-visible:text-white transition-colors" aria-hidden="true">›</span>
                         </span>
                         <span className="manrope-bold text-base tracking-tight">Become a Partner</span>
                       </a>
@@ -161,13 +162,30 @@ export default function ProvidersPage() {
           <div className="hidden lg:grid lg:grid-cols-[400px_1fr] gap-24">
             {/* Sticky Left Nav */}
             <div className="lg:sticky lg:top-44 h-fit">
-              <div className="flex flex-col divide-y divide-black/10">
-                {sections.map((section) => (
+              <div className="flex flex-col divide-y divide-black/10" role="tablist" aria-label="Provider services">
+                {sections.map((section, index) => (
                   <button
                     key={section.id}
+                    id={`tab-${section.id}`}
+                    role="tab"
+                    aria-selected={activeSection === section.id}
+                    aria-controls={`panel-${section.id}`}
                     onClick={() => setActiveSection(section.id)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        const nextIndex = (index + 1) % sections.length;
+                        setActiveSection(sections[nextIndex].id);
+                        document.getElementById(`tab-${sections[nextIndex].id}`)?.focus();
+                      } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        const prevIndex = (index - 1 + sections.length) % sections.length;
+                        setActiveSection(sections[prevIndex].id);
+                        document.getElementById(`tab-${sections[prevIndex].id}`)?.focus();
+                      }
+                    }}
                     className={[
-                      "group flex items-start gap-6 py-8 transition-all duration-300 text-left",
+                      "group flex items-start gap-6 py-8 transition-all duration-300 text-left outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 rounded-xl",
                       activeSection === section.id ? "opacity-100" : "opacity-40 hover:opacity-100"
                     ].join(" ")}
                   >
@@ -178,6 +196,7 @@ export default function ProvidersPage() {
                       <Check 
                         size={20} 
                         className={activeSection === section.id ? "text-black" : "text-black/40"} 
+                        aria-hidden="true"
                       />
                     </div>
                     <div>
@@ -196,6 +215,9 @@ export default function ProvidersPage() {
               {sections.map((section) => (
                 <div
                   key={section.id}
+                  id={`panel-${section.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${section.id}`}
                   className={[
                     "transition-all duration-500 flex flex-col",
                     activeSection === section.id
@@ -216,10 +238,11 @@ export default function ProvidersPage() {
                       <div className="pt-8">
                         <a
                           href="/get-started"
-                          className="inline-flex items-center gap-4 group"
+                          className="inline-flex items-center gap-4 group outline-none focus-visible:underline"
+                          aria-label="Become a Partner"
                         >
-                          <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                            <span className="text-xl group-hover:text-white transition-colors">›</span>
+                          <span className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all group-focus-visible:bg-black group-focus-visible:border-black">
+                            <span className="text-xl group-hover:text-white group-focus-visible:text-white transition-colors" aria-hidden="true">›</span>
                           </span>
                           <span className="manrope-bold text-lg tracking-tight">Become a Partner</span>
                         </a>
@@ -286,26 +309,26 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
+    <nav className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth" aria-label="Page sub-navigation">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 min-w-max md:min-w-0 relative">
         <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
           <div className="flex items-center gap-2 md:gap-4 shrink-0">
-                <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
-                  For Providers
-                </span>
-              </div>
+            <span className="text-[10px] md:text-xs tracking-widest uppercase manrope-bold text-black/80">
+              For Providers
+            </span>
+          </div>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap"
+              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap outline-none focus-visible:underline focus-visible:text-black"
             >
               {item.label}
-              </a>
-            ))}
-          </div>
+            </a>
+          ))}
         </div>
       </div>
+    </nav>
   )
 }
 

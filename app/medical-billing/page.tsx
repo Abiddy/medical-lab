@@ -76,7 +76,7 @@ export default function MedicalBillingPage() {
     : services.filter(s => s.category.toLowerCase().includes(activeCategory.toLowerCase()) || activeCategory === 'all')
 
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
+    <main id="main-content" className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
 
       {/* Hero Section */}
       <section className="pt-20 lg:pt-32 pb-16">
@@ -98,12 +98,13 @@ export default function MedicalBillingPage() {
               <a 
                 key={idx} 
                 href={service.href} 
-                className="group cursor-pointer block p-8 md:p-10 rounded-2xl bg-white border border-black/5 hover:border-black/10 transition-all duration-300 hover:shadow-sm"
+                className="group cursor-pointer block p-8 md:p-10 rounded-2xl bg-white border border-black/5 hover:border-black/10 transition-all duration-300 hover:shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4"
+                aria-label={`View details for ${service.title}`}
               >
                 {/* Meta */}
                 <div className="flex items-center gap-3 mb-8">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-black/20" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-black/20" aria-hidden="true" />
                     <span className="text-[10px] tracking-widest uppercase manrope-bold text-black/40">
                       {service.category}
                     </span>
@@ -120,7 +121,7 @@ export default function MedicalBillingPage() {
 
                 <div className="mt-12 flex items-center gap-2 text-[11px] manrope-bold uppercase tracking-widest text-black/40 group-hover:text-black transition-colors">
                   View Service
-                  <span className="text-lg transition-transform group-hover:translate-x-1">›</span>
+                  <span className="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true">›</span>
                 </div>
               </a>
             ))}

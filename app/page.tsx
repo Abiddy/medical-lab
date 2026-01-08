@@ -8,7 +8,7 @@ import LenisProvider from '@/components/LenisProvider'
 
 export default function Home() {
   return (
-    <main className="bg-[#f7f5ef]">
+    <main id="main-content" className="bg-[#f7f5ef]">
       <LenisProvider>
       <Hero />
       <Services />

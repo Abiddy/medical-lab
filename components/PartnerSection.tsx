@@ -21,21 +21,21 @@ export default function PartnerSection() {
             <div className="mt-12 md:mt-16 flex flex-col sm:flex-row gap-8 md:gap-12">
               <a 
                 href="/get-started" 
-                className="group flex items-center gap-4 manrope-medium text-base md:text-lg tracking-tight hover:opacity-60 transition-all"
+                className="group flex items-center gap-4 manrope-medium text-base md:text-lg tracking-tight hover:opacity-60 transition-all outline-none focus:underline"
               >
                 Schedule a Consultation
-                <span className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                  <span className="text-xl group-hover:text-white transition-colors">›</span>
+                <span className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all group-focus:bg-black group-focus:border-black">
+                  <span className="text-xl group-hover:text-white group-focus:text-white transition-colors" aria-hidden="true">›</span>
                 </span>
               </a>
 
               <a 
                 href="/get-started" 
-                className="group flex items-center gap-4 manrope-medium text-base md:text-lg tracking-tight hover:opacity-60 transition-all"
+                className="group flex items-center gap-4 manrope-medium text-base md:text-lg tracking-tight hover:opacity-60 transition-all outline-none focus:underline"
               >
                 Get Started
-                <span className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all">
-                  <span className="text-xl group-hover:text-white transition-colors">›</span>
+                <span className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all group-focus:bg-black group-focus:border-black">
+                  <span className="text-xl group-hover:text-white group-focus:text-white transition-colors" aria-hidden="true">›</span>
                 </span>
               </a>
             </div>

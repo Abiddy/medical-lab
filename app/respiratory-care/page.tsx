@@ -2,7 +2,7 @@ import BecomePartner from '@/components/BecomeProvider'
 
 export default function RespiratoryCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-40 md:pt-56">
+    <main id="main-content" className="bg-[#f7f5ef] text-[#1a1a1a] pt-40 md:pt-56">
       <SubNav />
 
       {/* Hero */}
@@ -44,7 +44,7 @@ export default function RespiratoryCareProgramPage() {
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -98,7 +98,7 @@ export default function RespiratoryCareProgramPage() {
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-white/25 flex items-center justify-center text-white/80">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-white/25 flex items-center justify-center text-white/80" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-transparent text-white/85 px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-light border border-white/25 uppercase tracking-wider">
@@ -164,7 +164,7 @@ export default function RespiratoryCareProgramPage() {
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -236,7 +236,7 @@ export default function RespiratoryCareProgramPage() {
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -329,26 +329,26 @@ function SubNav() {
   ]
 
   return (
-    <div className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth">
+    <nav className="fixed top-20 md:top-28 left-0 right-0 z-40 bg-[#f7f5ef]/80 backdrop-blur-md border-b border-black/5 overflow-x-auto no-scrollbar scroll-smooth" aria-label="Page sub-navigation">
       <div className="mx-auto px-6 lg:px-8 min-w-max md:min-w-0 relative">
         <div className="flex items-center justify-start gap-6 md:gap-10 h-14">
           <div className="flex items-center gap-2 md:gap-4 shrink-0">
-                <span className="text-[9px] md:text-[11px] tracking-widest uppercase manrope-bold text-black/80">
-                  Respiratory Care Program
-                </span>
-              </div>
+            <span className="text-[9px] md:text-[11px] tracking-widest uppercase manrope-bold text-black/80">
+              Respiratory Care Program
+            </span>
+          </div>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap"
+              className="text-[10px] md:text-xs tracking-widest uppercase manrope-medium text-black/60 hover:text-black transition-colors whitespace-nowrap outline-none focus-visible:underline focus-visible:text-black"
             >
               {item.label}
-              </a>
-            ))}
-          </div>
+            </a>
+          ))}
         </div>
       </div>
+    </nav>
   )
 }
 

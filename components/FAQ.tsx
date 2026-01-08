@@ -180,9 +180,11 @@ export default function FAQ() {
                     <div key={i} className="py-6 md:py-8">
                       <button
                         onClick={() => toggleItem(item.question)}
-                        className="flex w-full items-center justify-between text-left group"
+                        className="flex w-full items-center justify-between text-left group outline-none"
+                        aria-expanded={openItem === item.question}
+                        aria-controls={`faq-answer-${i}`}
                       >
-                        <span className="manrope-regular text-lg md:text-xl lg:text-2xl text-black/90 group-hover:text-black transition-colors pr-8 leading-tight">
+                        <span className="manrope-regular text-lg md:text-xl lg:text-2xl text-black/90 group-hover:text-black group-focus:underline transition-colors pr-8 leading-tight">
                           {item.question}
                         </span>
                         <div className={[
@@ -196,6 +198,7 @@ export default function FAQ() {
                               "text-black/60 transition-transform duration-500",
                               openItem === item.question ? "text-black" : ""
                             ].join(" ")} 
+                            aria-hidden="true"
                           />
                         </div>
                       </button>
@@ -203,6 +206,7 @@ export default function FAQ() {
                       <AnimatePresence>
                         {openItem === item.question && (
                           <motion.div
+                            id={`faq-answer-${i}`}
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}

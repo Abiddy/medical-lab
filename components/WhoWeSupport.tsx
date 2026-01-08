@@ -83,7 +83,7 @@ export default function WhoWeSupport() {
                 >
                   {/* Icon Container */}
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-transparent border border-black/5 flex items-center justify-center shrink-0 shadow-sm group-hover:bg-black group-hover:text-white transition-all duration-500">
-                    <partner.icon size={20} className="md:w-[22px] md:h-[22px]" strokeWidth={1.5} />
+                    <partner.icon size={20} className="md:w-[22px] md:h-[22px]" strokeWidth={1.5} aria-hidden="true" />
                   </div>
                   
                   {/* Partner Name */}

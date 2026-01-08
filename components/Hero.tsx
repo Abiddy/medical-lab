@@ -25,8 +25,15 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="min-h-0 md:min-h-[90vh] lg:min-h-screen pt-20 relative overflow-hidden bg-[#f7f5ef]">
-
-
+      {/* Background Image
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/f5.jpg" 
+          alt="Healthcare background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#f7f5ef]/10" />
+      </div> */}
 
       <div className="mx-auto h-auto md:h-[calc(100vh-5rem)] relative z-10">
         <div className="h-full flex flex-col md:justify-between">
@@ -39,10 +46,10 @@ export default function Hero() {
             </motion.h1>
           </div>
 
-          <div className="mt-8 md:mt-10 border-t border-black/10" />
+          <div className="mt-8 md:mt-10 border-t border-black/10" aria-hidden="true" />
 
           <div className="relative md:flex-1 flex flex-col">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" />
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black/10" aria-hidden="true" />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 md:h-full md:flex-1">
               <div className="hidden lg:block" />
@@ -58,7 +65,7 @@ export default function Hero() {
                       <div className="mt-8 flex justify-center lg:justify-start">
                         <a 
                           href="/get-started"
-                          className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors font-medium text-base md:text-lg relative z-10"
+                          className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors font-medium text-base md:text-lg relative z-10 outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                         >
                           Schedule Consultation
                         </a>
@@ -67,7 +74,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="border-t border-black/10" />
+          <div className="border-t border-black/10" aria-hidden="true" />
         </div>
       </div>
     </section>

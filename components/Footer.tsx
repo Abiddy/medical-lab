@@ -74,29 +74,35 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="space-y-6">
-            <h4 className="red-hat-display-medium text-lg text-black">Newsletter</h4>
+            <h4 id="newsletter-heading" className="red-hat-display-medium text-lg text-black">Newsletter</h4>
             <p className="manrope-regular text-sm text-gray-600">
               Discover new offers and stay up to date
             </p>
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm manrope-regular focus:outline-none focus:border-gray-400 transition-colors"
-                required
-              />
+            <form onSubmit={handleSubmit} className="flex gap-2" aria-labelledby="newsletter-heading">
+              <div className="flex-1 flex flex-col">
+                <label htmlFor="footer-email" className="sr-only">Email address</label>
+                <input
+                  id="footer-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm manrope-regular focus:outline-none focus:border-gray-400 transition-colors"
+                  required
+                  autoComplete="email"
+                />
+              </div>
               <button
                 type="submit"
-                className="bg-black hover:bg-gray-800 text-white p-3 rounded-lg transition-colors"
-                aria-label="Subscribe"
+                className="bg-black hover:bg-gray-800 text-white p-3 rounded-lg transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2"
+                aria-label="Subscribe to newsletter"
               >
                 <svg
                   className="w-5 h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"

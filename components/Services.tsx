@@ -98,13 +98,30 @@ export default function Services() {
       <div className="flex flex-col lg:flex-row min-h-[800px] border-t border-black/10">
         {/* Sidebar */}
         <div className="w-full lg:w-[400px] border-b lg:border-b-0 lg:border-r border-black/10 bg-[#f7f5ef]">
-          <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar p-6 lg:p-10 space-y-3">
+          <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar p-6 lg:p-10 space-y-3" role="tablist" aria-label="Services categories">
             {services.map((service, index) => (
               <button
                 key={service.title}
+                id={`tab-${index}`}
+                role="tab"
+                aria-selected={activeIndex === index}
+                aria-controls={`panel-${index}`}
                 onClick={() => setActiveIndex(index)}
+                onKeyDown={(e) => {
+                  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    const nextIndex = (index + 1) % services.length;
+                    setActiveIndex(nextIndex);
+                    document.getElementById(`tab-${nextIndex}`)?.focus();
+                  } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const prevIndex = (index - 1 + services.length) % services.length;
+                    setActiveIndex(prevIndex);
+                    document.getElementById(`tab-${prevIndex}`)?.focus();
+                  }
+                }}
                 className={[
-                  "flex-1 lg:w-full flex items-center justify-between px-6 lg:px-10 py-5 lg:py-6 transition-all whitespace-nowrap lg:whitespace-normal group rounded-xl",
+                  "flex-1 lg:w-full flex items-center justify-between px-6 lg:px-10 py-5 lg:py-6 transition-all whitespace-nowrap lg:whitespace-normal group rounded-xl outline-none focus:ring-2 focus:ring-black/20",
                   activeIndex === index ? "bg-[#ede9e1]" : "hover:bg-[#ede9e1]/30 text-black/40"
                 ].join(" ")}
               >
@@ -114,7 +131,7 @@ export default function Services() {
                 <span className={[
                   "hidden lg:block text-black text-2xl transition-all duration-300",
                   activeIndex === index ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-                ].join(" ")}>
+                ].join(" ")} aria-hidden="true">
                   ›
                 </span>
               </button>
@@ -127,6 +144,9 @@ export default function Services() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
+              id={`panel-${activeIndex}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${activeIndex}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -157,9 +177,9 @@ export default function Services() {
                         key={idx} 
                         className="flex gap-4 px-8 py-4 lg:px-12 lg:py-5 xl:px-16 xl:py-5 border-t border-black/10 group hover:bg-black/[0.01] transition-colors"
                       >
-                        <div className="flex-shrink-0 w-9 h-9 rounded-lg border border-black/10 bg-white flex items-center justify-center shadow-sm group-hover:border-black/20 transition-all">
-                          <feature.icon size={16} strokeWidth={1.5} className="text-black/80" />
-                        </div>
+                                <div className="flex-shrink-0 w-9 h-9 rounded-lg border border-black/10 bg-white flex items-center justify-center shadow-sm group-hover:border-black/20 transition-all">
+                                  <feature.icon size={16} strokeWidth={1.5} className="text-black/80" aria-hidden="true" />
+                                </div>
                         <div className="pt-1">
                           <p className="manrope-regular text-sm md:text-base text-black/65 leading-relaxed">
                             {feature.description}

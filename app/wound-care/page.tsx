@@ -2,7 +2,7 @@ import BecomePartner from '@/components/BecomeProvider'
 
 export default function WoundCareProgramPage() {
   return (
-    <main className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
+    <main id="main-content" className="bg-[#f7f5ef] text-[#1a1a1a] pt-20 md:pt-28">
       <SubNav />
 
       {/* Hero */}
@@ -43,7 +43,7 @@ export default function WoundCareProgramPage() {
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -133,22 +133,20 @@ export default function WoundCareProgramPage() {
                 />
               </div>
               <div className="mt-8 md:mt-10">
-                <h3 className="red-hat-display-medium text-xl md:text-2xl text-[#1a1a1a]">Contact details</h3>
+                <h3 className="red-hat-display-medium text-xl md:text-2xl text-[#1a1a1a]">Contact Details</h3>
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div>
                     <div className="manrope-regular text-xs md:text-sm text-black/60 uppercase tracking-widest">Address</div>
                     <div className="mt-2 manrope-regular text-sm text-black/75 leading-relaxed">
-                      1435 Wellington Road
-                      <br />
-                      Windsor, Vic 3181
-                      <br />
-                      Australia
+                      11333 Valley Blvd, <br />
+                      Ste 700 <br />
+                      El Monte, CA 91731
                     </div>
                   </div>
                   <div>
                     <div className="manrope-regular text-xs md:text-sm text-black/60 uppercase tracking-widest">Email</div>
-                    <a className="mt-2 inline-block manrope-regular text-sm text-black/70 hover:text-black transition-colors" href="mailto:hello@bdl.com">
-                      hello@bdl.com
+                    <a className="mt-2 inline-block manrope-regular text-sm text-black/70 hover:text-black transition-colors focus:underline outline-none" href="mailto:connect@bdlusa.com" aria-label="Email us at connect@bdlusa.com">
+                      connect@bdlusa.com
                     </a>
                   </div>
                 </div>
@@ -165,7 +163,7 @@ export default function WoundCareProgramPage() {
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -269,7 +267,7 @@ export default function WoundCareProgramPage() {
         {/* Pill row */}
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/5 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
@@ -371,7 +369,7 @@ export default function WoundCareProgramPage() {
 
         <div className="mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4">
-            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70">
+            <div className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-black/20 flex items-center justify-center text-black/70" aria-hidden="true">
               ↓
             </div>
             <div className="inline-flex items-center rounded-full bg-[#1F271B] text-white px-4 md:px-5 py-1.5 md:py-2 text-[10px] md:text-sm manrope-regular uppercase tracking-wider">
