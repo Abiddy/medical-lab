@@ -315,7 +315,7 @@ export default function RespiratoryCareProgramPage() {
           <div className="pb-24" />
         </div>
       </section>
-      <BecomePartner />
+      <BecomePartner variant="dark" />
     </main>
   )
 }

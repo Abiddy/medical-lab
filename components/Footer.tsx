@@ -1,17 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-
 export default function Footer() {
-  const [email, setEmail] = useState('')
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle newsletter signup
-    console.log('Newsletter signup:', email)
-    setEmail('')
-  }
-
   return (
     <footer className="bg-[#f7f5ef] border-t border-gray-200">
       {/* Main Footer Content */}
@@ -24,14 +13,6 @@ export default function Footer() {
             <p className="manrope-regular text-sm text-gray-600 leading-relaxed">
               Your partner in better healthcare. We provide comprehensive diagnostic and billing solutions to healthcare facilities nationwide.
             </p>
-            <div className="space-y-2 pt-2">
-              <a href="tel:5629242299" className="block manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
-                Phone: (562) 924-2299
-              </a>
-              <a href="mailto:connect@bdlusa.com" className="block manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
-                Email: connect@bdlusa.com
-              </a>
-            </div>
           </div>
 
           {/* Services */}
@@ -72,47 +53,23 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact Information */}
           <div className="space-y-6">
-            <h4 id="newsletter-heading" className="red-hat-display-medium text-lg text-black">Newsletter</h4>
-            <p className="manrope-regular text-sm text-gray-600">
-              Discover new offers and stay up to date
-            </p>
-            <form onSubmit={handleSubmit} className="flex gap-2" aria-labelledby="newsletter-heading">
-              <div className="flex-1 flex flex-col">
-                <label htmlFor="footer-email" className="sr-only">Email address</label>
-                <input
-                  id="footer-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm manrope-regular focus:outline-none focus:border-gray-400 transition-colors"
-                  required
-                  autoComplete="email"
-                />
+            <h4 className="red-hat-display-medium text-lg text-black">Contact</h4>
+            <div className="space-y-4">
+              <div className="flex flex-col gap-1">
+                <span className="manrope-bold text-[10px] uppercase tracking-widest text-black/40">Phone</span>
+                <a href="tel:5629242299" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+                  (562) 924-2299
+                </a>
               </div>
-              <button
-                type="submit"
-                className="bg-black hover:bg-gray-800 text-white p-3 rounded-lg transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2"
-                aria-label="Subscribe to newsletter"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
-              </button>
-            </form>
+              <div className="flex flex-col gap-1">
+                <span className="manrope-bold text-[10px] uppercase tracking-widest text-black/40">Email</span>
+                <a href="mailto:connect@bdlusa.com" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors underline underline-offset-4">
+                  connect@bdlusa.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -447,7 +447,7 @@ export default function WoundCareProgramPage() {
           <div className="pb-24" />
         </div>
       </section>
-      <BecomePartner />
+      <BecomePartner variant="dark" />
     </main>
   )
 }

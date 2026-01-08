@@ -44,7 +44,7 @@ export default function Services() {
       {
         title: 'Diagnostics',
         description:
-          'Our Diagnostics services center around the needs of real facilities—starting with high-value wound care PCR and respiratory testing.',
+          'Our diagnostic services are built around the real needs of healthcare facilities, delivering high value molecular and clinical testing solutions that support timely diagnosis and better treatment decisions across multiple areas of care.',
         image: '/z32.jpg',
         features: [
           {
