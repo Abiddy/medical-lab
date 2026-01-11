@@ -273,10 +273,12 @@ export default function CodingBillingPage() {
               </div>
               <div className="mt-12">
                 <a
-                  href="/#contact"
+                  href="https://calendly.com/connect-bdlusa/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-12 py-5 rounded-md bg-white text-black manrope-medium hover:bg-white/90 transition-all"
                 >
-                  Request a Consultation
+                  Book a Call
                 </a>
               </div>
             </div>

@@ -20,10 +20,12 @@ export default function PartnerSection() {
             
             <div className="mt-12 md:mt-16 flex flex-col sm:flex-row gap-8 md:gap-12">
               <a 
-                href="/get-started" 
+                href="https://calendly.com/connect-bdlusa/30min" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-4 manrope-medium text-base md:text-lg tracking-tight hover:opacity-60 transition-all outline-none focus:underline"
               >
-                Schedule a Consultation
+                Book a Call
                 <span className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all group-focus:bg-white group-focus:border-white">
                   <span className="text-xl text-white group-hover:text-[#1F271B] group-focus:text-[#1F271B] transition-colors" aria-hidden="true">›</span>
                 </span>

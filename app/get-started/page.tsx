@@ -144,7 +144,7 @@ export default function GetStartedPage() {
             </h1>
             
             <p className="manrope-regular text-base text-black/60 mb-10 leading-relaxed">
-              Ready to transform your facility's diagnostics? You can also <a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" className="manrope-bold text-[#1a1a1a] hover:opacity-60 underline underline-offset-4 transition-all">Schedule an Appointment</a> directly or reach us at <a href="mailto:connect@bdlusa.com" className="manrope-bold text-[#1a1a1a] hover:opacity-60 underline underline-offset-4 transition-all">connect@bdlusa.com</a>
+              Ready to transform your facility's diagnostics? You can also <a href="https://calendly.com/connect-bdlusa/30min" target="_blank" rel="noopener noreferrer" className="manrope-bold text-[#1a1a1a] hover:opacity-60 underline underline-offset-4 transition-all">Book a Call</a> directly or reach us at <a href="mailto:connect@bdlusa.com" className="manrope-bold text-[#1a1a1a] hover:opacity-60 underline underline-offset-4 transition-all">connect@bdlusa.com</a>
             </p>
 
             <form onSubmit={onSubmit} className="space-y-8">

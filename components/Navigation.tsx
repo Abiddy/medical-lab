@@ -231,10 +231,12 @@ export default function Navigation() {
             {/* CTA Button (Desktop Only) */}
             <div className="hidden md:flex items-center ml-auto">
               <a 
-                href="/get-started"
+                href="https://calendly.com/connect-bdlusa/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-12 py-5 rounded-md transition-colors text-base font-normal bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white whitespace-nowrap focus:ring-2 focus:ring-black focus:ring-offset-2 focus:outline-none"
               >
-                Get Started
+                Book a Call
             </a>
           </div>
 
@@ -371,11 +373,13 @@ export default function Navigation() {
 
                 <div className="pt-10">
                   <a 
-                    href="/get-started"
-              onClick={() => setIsMenuOpen(false)}
+                    href="https://calendly.com/connect-bdlusa/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
                     className="flex w-full py-6 rounded-xl bg-[#1a1a1a] text-white text-xl manrope-medium shadow-xl items-center justify-center"
             >
-              Get Started
+              Book a Call
             </a>
           </div>
               </div>

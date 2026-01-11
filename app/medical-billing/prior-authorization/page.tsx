@@ -225,10 +225,12 @@ export default function PriorAuthorizationPage() {
                 ))}
               </div>
               <a
-                href="/get-started"
+                href="https://calendly.com/connect-bdlusa/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-12 py-5 rounded-md bg-[#1a1a1a] text-white manrope-medium hover:bg-black transition-all"
               >
-                Get Started Today
+                Book a Call
               </a>
             </div>
           </div>

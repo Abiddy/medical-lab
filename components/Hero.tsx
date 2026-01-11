@@ -54,20 +54,22 @@ export default function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-2 md:h-full md:flex-1">
               <div className="hidden lg:block" />
 
-              <div className="flex items-center justify-center py-16 md:py-16 lg:py-0">
+              <div className="flex items-center justify-center py-16 md:py-16 lg:py-0 bg-[#1F271B] text-white">
                 <motion.div 
                   style={{ y: contentY }}
                   className="text-center lg:text-left max-w-md px-6"
                 >
-                  <p className="text-gray-700 text-xl md:text-2xl lg:text-3xl font-light leading-snug">
+                  <p className="text-white/90 text-xl md:text-2xl lg:text-3xl font-light leading-snug">
                     Connecting the systems that matter most.
                   </p>
                       <div className="mt-8 flex justify-center lg:justify-start">
                         <a 
-                          href="/get-started"
-                          className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white px-8 md:px-10 py-3 md:py-4 rounded-full transition-colors font-medium text-base md:text-lg relative z-10 outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                          href="https://calendly.com/connect-bdlusa/30min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white hover:bg-gray-100 text-[#1F271B] px-8 md:px-10 py-3 md:py-4 rounded-full transition-all font-bold text-base md:text-lg relative z-10 outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1F271B] shadow-lg hover:scale-[1.02] active:scale-[0.98]"
                         >
-                          Schedule Consultation
+                          Book a Call
                         </a>
                       </div>
                 </motion.div>
