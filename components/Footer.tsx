@@ -88,7 +88,10 @@ export default function Footer() {
               <a href="/get-started" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
                 Contact
               </a>
-              <a href="#" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+              <a 
+                href="/privacy-policy" 
+                className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors"
+              >
                 Privacy Policy
               </a>
               <a href="#" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">

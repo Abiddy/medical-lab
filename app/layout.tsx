@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Red_Hat_Display, Manrope, Instrument_Serif, Aldrich } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
@@ -48,6 +49,14 @@ export default function RootLayout({
       <Navigation />
         {children}
         <Footer />
+        {/* UserWay Accessibility Widget */}
+        <Script
+          id="userway-accessibility"
+          strategy="afterInteractive"
+          src="https://cdn.userway.org/widget.js"
+          data-account="REPLACE_WITH_YOUR_ID"
+          data-position="3" 
+        />
       </body>
     </html>
   )
