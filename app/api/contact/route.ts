@@ -5,6 +5,14 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
+    // Validate API key
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { success: false, error: 'Email service is not configured' },
+        { status: 500 }
+      );
+    }
+
     const { 
       userType, 
       firstName, 
@@ -17,11 +25,33 @@ export async function POST(request: Request) {
       message 
     } = await request.json();
 
+    // Basic validation
+    if (!firstName || !lastName || !email) {
+      return NextResponse.json(
+        { success: false, error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid email address' },
+        { status: 400 }
+      );
+    }
+
     const fullName = `${firstName} ${lastName}`;
 
-    const data = await resend.emails.send({
-      from: 'BDL Contact Form <onboarding@resend.dev>',
-      to: ['connect@bdlusa.com'],
+    // Use verified domain email from environment variable
+    // Fallback to onboarding@resend.dev only for testing
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'BDL Contact Form <onboarding@resend.dev>';
+    const toEmail = process.env.RESEND_TO_EMAIL || 'connect@bdlusa.com';
+
+    const result = await resend.emails.send({
+      from: fromEmail,
+      to: [toEmail],
       subject: `New Contact Form Submission: ${fullName}`,
       replyTo: email,
       html: `
@@ -51,9 +81,25 @@ export async function POST(request: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true, data });
-  } catch (error) {
-    return NextResponse.json({ success: false, error }, { status: 500 });
+    // Check if Resend returned an error
+    if (result.error) {
+      console.error('Resend API error:', result.error);
+      return NextResponse.json(
+        { success: false, error: result.error.message || 'Failed to send email' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ 
+      success: true, 
+      data: { id: result.data?.id } 
+    });
+  } catch (error: any) {
+    console.error('Contact form error:', error);
+    return NextResponse.json(
+      { success: false, error: error?.message || 'Failed to send email' },
+      { status: 500 }
+    );
   }
 }
 
