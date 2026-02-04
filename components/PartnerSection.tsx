@@ -15,7 +15,7 @@ export default function PartnerSection() {
           
           <div className="flex flex-col h-full justify-between">
             <p className="manrope-light text-lg md:text-xl lg:text-2xl text-white/20 leading-relaxed max-w-xl">
-              We give facilities full flexibility to choose the solutions that fit their needs, whether that is diagnostics, specialized care support, medical billing, or any combination of the three. Each service is powerful on its own and even stronger together, creating a unified system that helps your team work more efficiently and deliver higher quality care.
+              We give facilities full flexibility to choose the solutions that fit their needs, whether that is diagnostics, specialized care support, or a combination of both. Each service is powerful on its own and even stronger together, creating a unified system that helps your team work more efficiently and deliver higher quality care.
             </p>
             
             <div className="mt-12 md:mt-16 flex flex-col sm:flex-row gap-8 md:gap-12">

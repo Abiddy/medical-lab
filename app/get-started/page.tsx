@@ -38,7 +38,8 @@ export default function GetStartedPage() {
   ]
 
   const interests = [
-    'Specialized Care', 'Diagnostics', 'Medical Billing', 'Partnership Inquiry', 'Other'
+    'Specialized Care', 'Diagnostics', 'Partnership Inquiry', 'Other'
+    // 'Medical Billing' – uncomment when billing is shown
   ]
 
   const onSubmit = async (e: React.FormEvent) => {

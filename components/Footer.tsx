@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="space-y-6">
             <h3 className="text-xl text-black manrope-medium">Bioanalysis Diagnostic Laboratories</h3>
             <p className="manrope-regular text-sm text-gray-600 leading-relaxed">
-              Your partner in better healthcare. We provide comprehensive diagnostic and billing solutions to healthcare facilities nationwide.
+              Your partner in better healthcare. We provide comprehensive diagnostic solutions to healthcare facilities nationwide.
             </p>
           </div>
 
@@ -29,11 +29,12 @@ export default function Footer() {
                   Diagnostics
                 </a>
               </li>
-              <li>
-                <a href="#" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
+              {/* Medical Billing – uncomment when billing is shown */}
+              {/* <li>
+                <a href="/medical-billing" className="manrope-regular text-sm text-gray-600 hover:text-black transition-colors">
                   Medical Billing
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

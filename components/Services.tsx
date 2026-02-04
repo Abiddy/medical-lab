@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { FlaskConical, Globe, ClipboardCheck, Activity, Users, FileText, PieChart, Headset, ShieldCheck } from 'lucide-react'
 
@@ -18,6 +18,9 @@ interface Service {
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0)
+
+  // Set to true to show Medical Billing card (kept for later)
+  const SHOW_BILLING_SERVICES = false
 
   const services = useMemo<Service[]>(
     () => [
@@ -61,29 +64,28 @@ export default function Services() {
           }
         ]
       },
-      {
-        title: 'Medical Billing',
-        description:
-          'Our Medical Billing services give facilities complete revenue cycle support across all specialties.',
-        image: '/m1.jpg',
-        features: [
-          {
-            description: 'Complete revenue cycle support from claims submission to payment.',
-            icon: FileText
-          },
-          {
-            description: 'Expert denial management and A/R follow-up to maximize recovery.',
-            icon: PieChart
-          },
-          {
-            description: 'Dedicated support team for payer communication and administrative tasks.',
-            icon: Headset
-          }
-        ]
-      },
+      ...(SHOW_BILLING_SERVICES
+        ? [
+            {
+              title: 'Medical Billing',
+              description:
+                'Our Medical Billing services give facilities complete revenue cycle support across all specialties.',
+              image: '/m1.jpg',
+              features: [
+                { description: 'Complete revenue cycle support from claims submission to payment.', icon: FileText },
+                { description: 'Expert denial management and A/R follow-up to maximize recovery.', icon: PieChart },
+                { description: 'Dedicated support team for payer communication and administrative tasks.', icon: Headset }
+              ]
+            }
+          ]
+        : []),
     ],
-    []
+    [SHOW_BILLING_SERVICES]
   )
+
+  useEffect(() => {
+    if (activeIndex >= services.length) setActiveIndex(0)
+  }, [services.length, activeIndex])
 
   const activeService = services[activeIndex]
 

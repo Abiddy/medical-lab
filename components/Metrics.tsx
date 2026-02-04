@@ -18,10 +18,11 @@ const metrics: Metric[] = [
     number: '<24 Hours',
     description: 'Same-day PCR results built into every Specialized Care program.'
   },
-  {
-    number: '10–20%',
-    description: 'Typical revenue improvement for facilities using our billing services.'
-  }
+  // Billing metric – uncomment when billing is shown
+  // {
+  //   number: '10–20%',
+  //   description: 'Typical revenue improvement for facilities using our billing services.'
+  // }
 ]
 
 export default function Metrics() {

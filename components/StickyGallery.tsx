@@ -26,7 +26,7 @@ export default function StickyGallery() {
             
             <div className="space-y-6">
               <p className="manrope-regular text-lg text-gray-700 leading-relaxed">
-                We partner with healthcare facilities across the care continuum, providing specialized diagnostics and billing solutions that strengthen operations and improve patient outcomes.
+                We partner with healthcare facilities across the care continuum, providing specialized diagnostics and solutions that strengthen operations and improve patient outcomes.
               </p>
             </div>
 
