@@ -18,7 +18,7 @@ export default function WoundCareProgramPage() {
               </h1>
 
               <p className="mt-8 md:mt-20 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
-                We combine the option of on-site clinical support, coordinated biopsy services, designated courier pickup, and same day PCR diagnostics to help providers make timely and effective treatment decisions.
+                We combine the option of on-site clinical support, coordinated biopsy services, designated courier pickup, and same-day PCR diagnostics to support provider decision-making with faster organism identification.
               </p>
             </div>
 
@@ -68,8 +68,7 @@ export default function WoundCareProgramPage() {
                 <p>
                   Our Wound Care Program provides an integrated solution for facilities managing complex or chronic
                   wounds. We combine the option of on-site clinical support, coordinated biopsy services, designated
-                  courier pickup, and same day PCR diagnostics to help providers make timely and effective treatment
-                  decisions.
+                  courier pickup, and same-day PCR diagnostics to support provider decision-making with faster organism identification.
                 </p>
                 <p>
                   This program is designed for skilled nursing facilities, long term acute care centers, assisted
@@ -79,9 +78,9 @@ export default function WoundCareProgramPage() {
 
                 <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">Flexible Clinical Support</h3>
                 <p>
-                  Facilities may choose to work with our partnered wound care team, which provides patient evaluation,
-                  biopsy coordination, treatment planning, and ongoing case oversight. This team integrates directly
-                  into your workflow and works closely with your nursing leadership.
+                  Facilities may choose to work with our partnered wound care team, which provides clinical support
+                  coordination, biopsy/specimen collection coordination, and case logistics support. This team
+                  coordinates closely with your workflow and works closely with your nursing leadership.
                 </p>
                 <p>
                   If your facility already has an established wound care provider or clinical group, our program can
@@ -91,10 +90,10 @@ export default function WoundCareProgramPage() {
 
                 <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">Same Day PCR Diagnostics</h3>
                 <p>
-                  Wound samples are processed through our same day PCR platform, providing rapid identification of
-                  bacterial pathogens and resistance markers. Fast turnaround enables clinical teams, whether ours or
-                  yours, to adjust treatment plans quickly and avoid unnecessary delays. Reports are delivered in a
-                  clear, provider-ready format designed for straightforward clinical use.
+                  Wound samples are processed through our same-day PCR platform, providing rapid identification of
+                  bacterial pathogens and resistance markers. Fast turnaround helps providers reduce delays when
+                  additional diagnostic clarity is needed. Reports are delivered in a clear, provider-ready format
+                  designed for straightforward clinical use.
                 </p>
 
                 <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">Designated Courier for Same Day Pickups</h3>
@@ -195,14 +194,14 @@ export default function WoundCareProgramPage() {
 
                 <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">On-Site Clinical Support (Optional)</h3>
                 <p>
-                  Facilities that select clinical support gain access to an experienced wound care team that evaluates
-                  patients, coordinates biopsies, assists with documentation, and helps guide treatment planning. This
+                  Facilities that select clinical support gain access to an experienced wound care team that coordinates
+                  with patients and facility staff, coordinates biopsies, assists with documentation, and supports
+                  care coordination. This
                   team collaborates directly with nursing staff, DONs, and medical leadership to ensure wound
                   assessments and collections follow best-practice standards.
                 </p>
                 <p>
-                  Our clinical partners function as an integrated extension of your facility, maintaining communication
-                  throughout the patient’s care cycle.
+                  Our external clinical partners coordinate closely with facility teams (when selected) to support workflow and documentation
                 </p>
 
                 <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">Support for Existing Wound Care Teams</h3>
@@ -236,12 +235,12 @@ export default function WoundCareProgramPage() {
                   strengthens the reliability of your wound care workflow.
                 </p>
 
-                <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">Continuous Communication</h3>
+                <h3 className="red-hat-display-bold text-xl text-[#1a1a1a]">Coordinated Logistics and Reporting Support</h3>
                 <p>
-                  Throughout the process, our staff remains in contact with your nursing team and clinical partners,
-                  providing updates and confirming each step from collection to result delivery. This communication
-                  helps avoid delays, reduces confusion, and ensures a smooth experience for both providers and the
-                  facility.
+                  Throughout the process, our staff provides workflow-aligned support—coordinated logistics and
+                  reporting support—keeping your nursing team and clinical partners updated and confirming each step
+                  from collection to result delivery. This helps avoid delays, reduces confusion, and ensures a
+                  smooth experience for both providers and the facility.
                 </p>
               </div>
             </div>
@@ -291,8 +290,7 @@ export default function WoundCareProgramPage() {
               <div className="mt-8 md:mt-10 space-y-6 md:space-y-8 manrope-regular text-sm md:text-base text-black/70 leading-relaxed max-w-xl">
                 <p>
                   Our wound PCR diagnostics identify 19 clinically significant bacterial, fungal, and viral pathogens
-                  using a rapid, extraction-free molecular workflow. This provides clinical teams with fast, actionable
-                  information to guide treatment decisions for complex or nonhealing wounds.
+                  using a rapid, extraction-free molecular workflow. This provides clinical teams with fast, clinically relevant findings to support physician-directed care decisions for complex or nonhealing wounds.
                 </p>
                 <p>
                   Same day reporting allows providers to intervene earlier, reduce uncertainty, and avoid delays

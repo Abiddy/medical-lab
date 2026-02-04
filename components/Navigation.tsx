@@ -104,6 +104,9 @@ export default function Navigation() {
     ]
   }
 
+  // Set to true to show Medical Billing in navbar (pages remain at /medical-billing/*)
+  const SHOW_BILLING_IN_NAV = false
+
   return (
     <>
       <a 
@@ -191,7 +194,8 @@ export default function Navigation() {
                 </div>
               </div>
 
-              {/* Medical Billing Dropdown */}
+              {/* Medical Billing Dropdown - hidden when SHOW_BILLING_IN_NAV is false */}
+              {SHOW_BILLING_IN_NAV && (
               <div 
                 className="relative h-full flex items-center" 
                 onMouseEnter={() => setActiveDropdown('medicalBilling')}
@@ -222,6 +226,7 @@ export default function Navigation() {
                   </div>
                 </div>
               </div>
+              )}
 
               <a href="/about" className="text-[#1a1a1a] hover:text-gray-600 transition-colors focus:underline focus:outline-none">About</a>
               <a href="/providers" className="text-[#1a1a1a] hover:text-gray-600 transition-colors focus:underline focus:outline-none">For Providers</a>
@@ -331,7 +336,8 @@ export default function Navigation() {
                   </AnimatePresence>
         </div>
 
-                {/* Medical Billing Accordion */}
+                {/* Medical Billing Accordion - hidden when SHOW_BILLING_IN_NAV is false */}
+                {SHOW_BILLING_IN_NAV && (
                 <div className="border-b border-black/5 pb-4">
                   <button
                     onClick={() => setMobileActiveDropdown(mobileActiveDropdown === 'medicalBilling' ? null : 'medicalBilling')}
@@ -364,6 +370,7 @@ export default function Navigation() {
                     )}
                   </AnimatePresence>
                 </div>
+                )}
 
                 <a href="/about" className="text-2xl manrope-medium border-b border-black/5 pb-4" onClick={() => setIsMenuOpen(false)}>About</a>
                 <a href="/providers" className="text-2xl manrope-medium border-b border-black/5 pb-4" onClick={() => setIsMenuOpen(false)}>For Providers</a>

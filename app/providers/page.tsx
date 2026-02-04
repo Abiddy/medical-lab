@@ -21,7 +21,7 @@ export default function ProvidersPage() {
       label: 'Clinical Decision Support',
       description: 'Fast diagnostics to strengthen medical oversight.',
       headline: 'Specialized Care for Facilities',
-      content: 'Our Specialized Care programs provide same day wound and respiratory PCR results, coordinated logistics, and continuous communication with facility teams. These programs are built specifically for SNFs, LTACs, ALFs and similar care environments that require rapid diagnostics and reliable workflow integration.',
+      content: 'Our Specialized Care programs provide same day wound and respiratory PCR results, coordinated logistics, and reporting support with facility teams. These programs are built specifically for SNFs, LTACs, ALFs and similar care environments that require rapid diagnostics and reliable workflow integration.',
       image: '/spec1.jpg'
     },
     {

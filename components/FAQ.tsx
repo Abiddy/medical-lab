@@ -29,8 +29,8 @@ const faqData: FAQCategory[] = [
         answer: 'Our Specialized Care program serves SNFs, nursing homes, and long-term care facilities, in addition to clinics, wellness centers, telemedicine groups, and other healthcare organizations seeking a comprehensive, fully integrated solution for patient testing, care coordination, and continuous clinical support.'
       },
       {
-        question: 'What does “full integration” include?',
-        answer: 'Integration includes patient workflow setup, telemedicine implementation, testing protocols, reporting guidance, dashboards, and ongoing clinical support. We tailor everything to your practice’s needs.'
+        question: 'What does workflow-aligned support include?',
+        answer: 'Workflow-aligned support includes patient workflow setup, telemedicine implementation, testing protocols, reporting guidance, dashboards, and coordinated logistics and reporting support. We tailor everything to your practice’s needs.'
       },
       {
         question: 'Do you accept insurance?',
@@ -104,9 +104,14 @@ const faqData: FAQCategory[] = [
   }
 ]
 
+// Set to true to show Medical Billing tab and questions (kept for later)
+const SHOW_BILLING_FAQ = false
+
 export default function FAQ() {
-  const [activeCategory, setActiveSection] = useState(faqData[0].id)
+  const visibleCategories = SHOW_BILLING_FAQ ? faqData : faqData.filter((c) => c.id !== 'medical-billing')
+  const [activeCategory, setActiveSection] = useState(visibleCategories[0].id)
   const [openItem, setOpenItem] = useState<string | null>(null)
+  const displayCategory = visibleCategories.some((c) => c.id === activeCategory) ? activeCategory : visibleCategories[0].id
 
   const toggleItem = (question: string) => {
     setOpenItem(openItem === question ? null : question)
@@ -117,7 +122,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Category Bubbles */}
         <div className="flex flex-wrap gap-3 mb-12 md:mb-16">
-          {faqData.map((cat) => (
+          {visibleCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => {
@@ -126,7 +131,7 @@ export default function FAQ() {
               }}
               className={[
                 "px-6 py-2.5 rounded-full border transition-all text-xs md:text-sm manrope-medium tracking-wide uppercase",
-                activeCategory === cat.id 
+                displayCategory === cat.id 
                   ? "bg-black text-white border-black" 
                   : "bg-transparent text-black/50 border-black/10 hover:border-black/30 hover:text-black"
               ].join(" ")}
@@ -162,7 +167,7 @@ export default function FAQ() {
             {/* Header for Mobile only */}
             <div className="lg:hidden mb-12 flex items-center justify-between border-b border-black/5 pb-6">
               <span className="manrope-bold text-xs uppercase tracking-[0.2em] text-black/40">
-                {faqData.find(c => c.id === activeCategory)?.label} FAQS
+                {visibleCategories.find(c => c.id === displayCategory)?.label} FAQS
               </span>
             </div>
 
@@ -170,13 +175,13 @@ export default function FAQ() {
             <div className="divide-y divide-black/10">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={activeCategory}
+                  key={displayCategory}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {faqData.find(c => c.id === activeCategory)?.items.map((item, i) => (
+                  {visibleCategories.find(c => c.id === displayCategory)?.items.map((item, i) => (
                     <div key={i} className="py-6 md:py-8">
                       <button
                         onClick={() => toggleItem(item.question)}

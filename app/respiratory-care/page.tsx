@@ -209,14 +209,14 @@ export default function RespiratoryCareProgramPage() {
                 </ul>
                 <p>
                   PCR technology allows for accurate detection at early stages of infection, supporting timely
-                  decision-making and helping facilities act quickly when symptoms arise.
+                  clinical decision-making and helping facilities act quickly when symptoms arise.
                 </p>
 
                 <h3 className="red-hat-display-medium text-xl text-[#1a1a1a]">Same-Day Turnaround</h3>
                 <p>
                   Samples collected within the scheduled pickup window are processed the same day. Most facilities
-                  receive results the same evening, enabling faster care planning, rapid isolation decisions if needed,
-                  and reduced uncertainty for staff and families.
+                  receive results the same evening, providing the data necessary for rapid isolation protocols and care
+                  planning, and reduced uncertainty for staff and families.
                 </p>
 
                 <h3 className="red-hat-display-medium text-xl text-[#1a1a1a]">Clear, Digital Reporting</h3>
@@ -286,13 +286,13 @@ export default function RespiratoryCareProgramPage() {
                 n: '05',
                 title: 'Digital Result Delivery',
                 body:
-                  'Results are sent electronically in a clear, easy-to-interpret format. Findings are highlighted for quick clinical review and can be added into facility documentation systems.',
+                  'Results are sent electronically in a clear, easy-to-interpret format. Findings are highlighted for quick clinical review and can be integrated into facility medical records.',
               },
               {
                 n: '06',
                 title: 'Ongoing Support for Facility Workflow',
                 body:
-                  'While no clinical team is required for this program, our staff remains available for logistical questions, reporting inquiries, and coordination needs. We ensure the respiratory workflow remains smooth, predictable, and aligned with your operational requirements.',
+                  'While no clinical team is required for this program, our staff remains available for logistical questions, reporting inquiries, and coordination needs. We ensure the respiratory workflow remains smooth, predictable, and aligned with your diagnostic needs.',
               },
             ].map((step) => (
               <div key={step.n} className="py-10 md:py-14">

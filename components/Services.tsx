@@ -28,15 +28,15 @@ export default function Services() {
         image: '/spec1.jpg',
         features: [
           {
-            description: 'Patient evaluation and treatment planning with experienced clinical teams.',
+            description: 'Clinical support coordination with external provider partners (when selected by the facility).',
             icon: Activity
           },
           {
-            description: 'Biopsy coordination and ongoing case oversight for complex wound care.',
+            description: 'Biopsy/specimen collection coordination and case logistics support.',
             icon: Users
           },
           {
-            description: 'Full integration with facility staff to deliver higher quality care.',
+            description: 'Workflow integration to support timely diagnostics and documentation.',
             icon: ClipboardCheck
           }
         ]
